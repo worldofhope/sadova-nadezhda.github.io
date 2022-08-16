@@ -1,0 +1,289 @@
+//preloader
+document.querySelector('body').style.overflow = 'hidden'
+window.onload = () => {
+    let preloader = document.querySelector('.preloader')
+    let preloaderAnim = preloader.animate([{ opacity: '1' }, { opacity: '0' }], {
+        duration: 300,
+        fill: 'forwards',
+        easing: 'ease-in',
+    })
+    preloaderAnim.addEventListener('finish', () => {
+        preloader.style.display = 'none'
+        document.querySelector('body').style.overflow = 'unset'
+    })
+}
+
+
+//burger
+$(document).ready(function(){
+  var link = $('.header__icon');
+  var menu = $('.header__burger-menu');
+  link.click(function(){
+      link.toggleClass('active');
+      menu.toggleClass('open');
+  });
+});
+
+$('.burger__dropdown').on('click', function(){
+  $('.dropdown-list').toggleClass('dropdown');
+});
+
+
+//sliders
+$('.apartments__slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: false,
+  autoplaySpeed: 2000,
+  vertical: true,
+  verticalSwiping: true,
+  dots: true,
+  arrows: false
+});
+$('.partners-banks').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: false,
+  autoplaySpeed: 2000,
+  dots: false,
+  arrows: true,
+  responsive: [
+    {
+      breakpoint: 1450,
+      settings: {
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 980,
+      settings: {
+        dots: true,
+        arrows: false
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 2,
+        dots: true,
+        arrows: false
+      }
+    }
+  ]
+});
+
+$('.posts-column-1').slick({
+  vertical: true,
+  verticalSwiping: true,
+  slidesToShow: 2,
+  focusOnSelect: true,
+  dots: false,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1100,
+      settings: {
+        vertical: false,
+        verticalSwiping: false,
+        slidesToShow: 2
+      }
+    }
+  ]
+});
+
+$('.posts-column-2').slick({
+  vertical: true,
+  verticalSwiping: true,
+  slidesToShow: 2,
+  focusOnSelect: true,
+  dots: false,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1100,
+      settings: {
+        vertical: false,
+        verticalSwiping: false,
+        slidesToShow: 2,
+        rtl: true
+      }
+    }
+  ]
+});
+
+let flag = true;
+$(window).on('resize', function(){
+  if ($(this).width() < 569 && flag) {
+    flag = false;
+    $('.js-slick-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false,
+      dots: true
+    });
+  }
+  else if ($(this).width() > 568 && !flag) {
+    flag = true;
+    $('.js-slick-slider').slick('unslick');
+  }
+}).resize();
+
+
+//range
+function fun1() {
+  var square = document.getElementById('square'); //rng - это ползунок
+  var i1 = document.getElementById('i1'); // i1 - input
+  i1.value = square.value;
+}
+function fun2() {
+  var square2 =document.getElementById('square2'); 
+  var i2 = document.getElementById('i2'); 
+  i2.value = square2.value;
+}
+function fun3() {
+  var price =document.getElementById('price'); 
+  var i3 = document.getElementById('i3'); 
+  i3.value = price.value;
+}
+
+
+//анимированные цифры
+$(document).ready(function () {
+  $('.number').each(function () {
+     $(this).prop('Counter',0).animate({
+      Counter: $(this).text()
+      }, {
+       duration: 5000,
+       easing: 'swing',
+       step: function (now) {
+          $(this).text(Math.ceil(now));
+       }
+      });
+  });
+});
+
+//tabs
+$(function() {
+  
+  $('ul.history__tabs__caption').on('click', 'li:not(.active)', function() {
+    $(this)
+      .addClass('active').siblings().removeClass('active')
+      .closest('div.history__tabs').find('div.history__tab__content').removeClass('active').eq($(this).index()).addClass('active');
+  });
+  
+});
+
+$(function() {
+  
+  $('.tabs__caption').on('click', ':not(.active)', function() {
+    $(this).addClass('active').siblings().removeClass('active')
+    $('div.tabs').find('div.tab__content').removeClass('active').eq($(this).index()).addClass('active');
+  });
+  
+});
+
+
+//form очистить
+$('.btn_clear').on('click', function(){
+  $("#myForm").trigger("reset");
+});
+
+// input mask tel
+$.fn.setCursorPosition = function(pos) {
+  if ($(this).get(0).setSelectionRange) {
+      $(this).get(0).setSelectionRange(pos, pos)
+  } else if ($(this).get(0).createTextRange) {
+      var range = $(this).get(0).createTextRange()
+      range.collapse(true)
+      range.moveEnd('character', pos)
+      range.moveStart('character', pos)
+      range.select()
+  }
+}
+$('input[type="tel"]').click(function() {
+  $(this).setCursorPosition(3);
+}).mask('+7 (999) 999 99 99');
+
+
+
+/* custom select */
+var x, i, j, l, ll, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
