@@ -2216,6 +2216,7 @@ ol.questions__tabs__caption {
     position: relative;
     top: 0;
     margin-bottom: 80px;
+    padding: 20px;
   }
   .our-complexs__form form {
     grid-template-columns: repeat(2, 1fr);
@@ -2348,6 +2349,7 @@ ol.questions__tabs__caption {
   }
   .our-complexs__form {
     margin-bottom: 40px;
+    padding: 10px;
   }
   .our-complexs__form form {
     display: flex;
@@ -2479,6 +2481,14 @@ ol.questions__tabs__caption {
   .proposal__text {
     font-size: 18px;
   } 
+  .form__footer {
+    flex-wrap: nowrap; 
+    gap: 10px;
+  }
+  .our-complexs__form .form__btn-light , .our-complexs__form .form__btn-dark {
+    padding: 12px 16px;
+    width: 100%;
+  }
 }
 @media (max-width: 620px) {
   .proposal {
