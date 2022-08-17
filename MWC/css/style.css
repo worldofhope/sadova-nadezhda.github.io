@@ -2490,6 +2490,13 @@ ol.questions__tabs__caption {
     padding: 12px 16px;
     width: 100%;
   }
+  .our-complexs__card {
+    border: 1px solid #AFC1D9;
+  }
+  .our-complexs__card .card__description {
+    bottom: auto;
+    top: 70%;
+  }
 }
 @media (max-width: 620px) {
   .proposal {
