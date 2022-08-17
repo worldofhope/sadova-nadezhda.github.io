@@ -2349,7 +2349,7 @@ ol.questions__tabs__caption {
   }
   .our-complexs__form {
     margin-bottom: 40px;
-    padding: 10px;
+    padding: 16px;
   }
   .our-complexs__form form {
     display: flex;
@@ -2481,7 +2481,7 @@ ol.questions__tabs__caption {
   .proposal__text {
     font-size: 18px;
   } 
-  .form__footer {
+  .our-complexs__form .form__footer {
     flex-wrap: nowrap; 
     gap: 10px;
   }
