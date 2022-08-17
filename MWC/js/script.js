@@ -33,8 +33,8 @@ $('.burger__dropdown').on('click', function(){
 $('.apartments__slider').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
+  // autoplay: true,
+  // autoplaySpeed: 2000,
   vertical: true,
   verticalSwiping: true,
   dots: true,

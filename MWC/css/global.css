@@ -323,13 +323,13 @@ h1, h2, h3, h4 {
     height: 20px;
     content: '•';
     text-align: center;
-    color: white;
+    color: #D7E0EB;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 .slick-dots li.slick-active button:before
 {
-  color: white;
+  color: #3157BA;
 }
 
 

@@ -1389,7 +1389,7 @@ h1.about-us__title {
 .partners-banks .slick-list {
   margin-bottom: 50px;
 }
-.partners .slick-dots {
+.partners .slick-dots, .js-slick-slider .slick-dots {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -1406,13 +1406,14 @@ h1.about-us__title {
   justify-content: space-between;
   max-width: 580px;
 }
-.partners .slick-dots li {
+.partners .slick-dots li, .js-slick-slider .slick-dots li {
   position: relative;
   padding: 0;
   cursor: pointer;
   width: 60px;
+  margin: 0;
 }
-.partners .slick-dots li button {
+.partners .slick-dots li button, .js-slick-slider .slick-dots li button {
   font-size: 0;
   line-height: 0;
   display: block;
@@ -1424,14 +1425,19 @@ h1.about-us__title {
   background: transparent;
 }
 .partners .slick-dots li button:hover,
-.partners .slick-dots li button:focus {
+.partners .slick-dots li button:focus,
+.js-slick-slider .slick-dots li button:hover,
+.js-slick-slider .slick-dots li button:focus {
   outline: none;
 }
 .partners .slick-dots li button:hover:before,
-.partners .slick-dots li button:focus:before {
+.partners .slick-dots li button:focus:before
+.js-slick-slider .slick-dots li button:hover:before,
+.js-slick-slider .slick-dots li button:focus:before {
   opacity: 1;
 }
-.partners .slick-dots li button:before {
+.partners .slick-dots li button:before,
+.js-slick-slider .slick-dots li button:before {
   font-family: 'slick';
   font-size: 6px;
   line-height: 20px;
@@ -1444,13 +1450,24 @@ h1.about-us__title {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.partners .slick-dots li.slick-active button:before {
+.partners .slick-dots li.slick-active button:before,
+.js-slick-slider .slick-dots li.slick-active button:before {
   color: #929DBB;
   height: inherit;
 }
-.partners .slick-dots li.slick-active{
+.partners .slick-dots li.slick-active ,
+.js-slick-slider .slick-dots li.slick-active {
   background-color: #929DBB;
   height: inherit;
+}
+.news__cards .slick-dots {
+  bottom: -40px;
+}
+.js-slick-slider .slick-slide {
+  margin: 0 16px;
+}
+.js-slick-slider .slick-list {
+  margin: 0 -16px;
 }
 
 /*page club*/
@@ -2085,7 +2102,7 @@ ol.questions__tabs__caption {
     flex-direction: column;
     gap: 20px;
     max-height: max-content;
-    margin: -40px -40px;
+    margin: 0 -16px;
   }
   .instagram__posts .posts-column-1,
   .instagram__posts .posts-column-2 {
@@ -2102,10 +2119,10 @@ ol.questions__tabs__caption {
     margin: 0 -10px;
   }
   .instagram__posts .posts-column-1 .slick-slide {
-    transform: translateY(0px) translateX(120px);
+    transform: translateY(0px) translateX(-200px);
   }
   .instagram__posts .posts-column-2 .slick-slide {
-    transform: translateY(-0px) translateX(160px);
+    transform: translateY(-0px) translateX(180px);
   }
   .about-us__definition {
     grid-template-columns: 1fr;
@@ -2244,6 +2261,9 @@ ol.questions__tabs__caption {
   .our-complexs__description ,.about-company__description h2, .news__title, .instagram__description h2 {
     margin-bottom: 40px;
   }
+  .our-complexs__description {
+    align-items: center;
+  }
   .footer__logo, .footer__nav {
     padding-bottom: 40px;
     margin-bottom: 40px;
@@ -2344,6 +2364,9 @@ ol.questions__tabs__caption {
   .our-complexs, .about-company, .news, .instagram, .about-us, .company-worth, .terms, 
    .history, .subsidiaries, .club, .career, .questions, .methods__tab {
     padding: 50px 0;
+  }
+  .news {
+    padding-bottom: 90px;
   }
   .teams, .methods {
     padding-top: 50px;
@@ -2526,8 +2549,8 @@ ol.questions__tabs__caption {
   .header__icon {
     right: 20px;
   }
-  .button {
-    width: 100% !important;
+  .our-complexs__description .button {
+    width: 160px;
   }
   .our-complexs__form .form__room {
     justify-content: space-between;
