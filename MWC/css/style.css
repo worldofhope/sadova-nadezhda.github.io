@@ -2505,6 +2505,9 @@ ol.questions__tabs__caption {
     bottom: 0;
     border-radius: 5px;
   }
+  .our-complexs__card .btn-dark, .our-complexs__card .btn-light {
+    width: 100%;
+  }
 }
 @media (max-width: 620px) {
   .proposal {
