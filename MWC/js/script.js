@@ -43,7 +43,7 @@ $('.apartments__slider').slick({
     {
       breakpoint: 1450,
       settings: {
-        swipeToSlide: false
+        TouchMove: false
       }
     }
   ]
