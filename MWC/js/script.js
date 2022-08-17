@@ -38,7 +38,15 @@ $('.apartments__slider').slick({
   vertical: true,
   verticalSwiping: true,
   dots: true,
-  arrows: false
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1450,
+      settings: {
+        swipeToSlide: false
+      }
+    }
+  ]
 });
 $('.partners-banks').slick({
   slidesToShow: 4,
