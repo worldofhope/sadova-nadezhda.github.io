@@ -171,7 +171,7 @@ h1.caption {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20 px;
   justify-content: space-between;
   color: #FFE4B6;
   position: absolute;
@@ -183,64 +183,7 @@ h1.caption {
 .rasim__footer .connection__link::after {
   background-color: #FFE4B6;
 }
-.sticky__telephone {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background-color: #2D9037;
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  float: right;
-  z-index: 99;
-  display: none;
-}
-.sticky__telephone::after,
-.sticky__telephone::before {
-  content: '';
-  position: absolute;
-  border: 2px solid #2D9037;
-  left: -20px;
-  opacity: 0;
-  right: -20px;
-  top: -20px;
-  bottom: -20px;
-  border-radius: 50%;
-  animation: pulse 2.5s linear infinite;
-  z-index: 0;
-}
-.sticky__telephone::after {
-  animation-delay: 1.25s;
-}
 
-@keyframes pulse {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-}
-.telephone__img {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 99;
-}
-.telephone__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
 
 /*services section*/
 .services {
@@ -461,90 +404,6 @@ h4.caption {
   z-index: 0;
   transform: rotate(45deg);
 }
-.advantages__container {
-  margin-bottom: 150px;
-}
-.quality__container {
-
-}
-.quality__title {
-  margin-bottom: 40px;
-  text-align: center;
-}
-.quality__text {
-  margin-bottom: 50px;
-  text-align: center;
-}
-.quality__cards {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
-}
-.quality__card {
-  display: grid;
-  gap: 60px;
-  align-items: center;
-}
-.quality__card.center {
-  justify-content: center;
-  justify-items: center;
-}
-.quality__item {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
-.quality__item__img {
-  background: #fff;
-  width: 100px;
-  height: 100px;
-  position: relative;
-  z-index: 9;
-}
-.quality__item__img img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  z-index: 9;
-}
-.quality__item__img::after {
-  content: '';
-  background-color: #fff;
-  width: 100px;
-  height: 100px;
-  transform: rotate(45deg);
-  border: 1px solid;
-  border-image-source: linear-gradient(99.07deg, #FCF2B1 -5.63%, #CBBF52 8.83%, #A98C3D 20.08%, #4A3D18 36.15%, #FFE679 43.65%, #A89739 50.61%, #FBF1CC 65.07%, #FFFFFF 72.57%, #9C8832 85.46%);
-  border-image-slice: 1;
-  border-width: 2px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-.quality__item__text {
-  width: 250px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 130%;
-}
-.quality__card__logo {
-  width: 336px;
-  height: 171px;
-}
-.quality__card__logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.displacement {
-  position: relative;
-  left: 100px;
-}
 
 
 /*consultation section*/
@@ -617,9 +476,6 @@ h4.consultation__title {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-.catalog__link {
-  margin-top: auto;
 }
 .catalog__card__title {
   margin-bottom: 16px;
@@ -885,9 +741,9 @@ span.price-orange {
   justify-items: center;
   background-color: #20222F;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  height: 130px;
   margin-bottom: 70px;
   margin-top: -215px;
-  z-index: 1;
 }
 .connection__text {
   font-family: 'RezaZulmiSerif';
@@ -936,7 +792,9 @@ h4.footer__title {
   padding: 20px 0;
   border-top: 0.3px solid rgba(255, 255, 255, 0.55);
 }
-
+.button-mobile {
+  display: none;
+}
 .footer__card {
   position: relative;
   display: flex;
@@ -953,8 +811,8 @@ h4.footer__title {
   border-right: none;
 }
 .footer__image {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 .footer__image img {
   width: 100%;
@@ -979,7 +837,7 @@ h4.footer__title {
 	width: 100%;
 }
 .connection__address {
-  max-width: 170px;
+  max-width: 160px;
   line-height: 1.2em;
 }
 /*.footer__card::before {
@@ -1199,10 +1057,6 @@ h4.footer__title {
   h4.caption {
     font-size: 22px;
   }
-  .displacement {
-    position: relative;
-    left: 20px;
-  }
 }
 @media (max-width: 1450px) {
   .cards {
@@ -1218,24 +1072,6 @@ h4.footer__title {
   }
   h2.caption {
     font-size: 32px;
-  }
-  .displacement {
-    position: relative;
-    left: 0px;
-  }
-  .quality__item {
-    align-items: center;
-    flex-direction: column;
-  }
-  .quality__item__text {
-    text-align: center;
-  }
-  .quality__card.center {
-    justify-content: flex-start;
-    order: 1;
-  }
-  .quality__card {
-    align-items: end;
   }
 }
 @media (max-width: 1200px) {
@@ -1410,26 +1246,6 @@ h4.footer__title {
     top: auto;
     right: auto;
   }
-  .quality__card__logo {
-    display: none;
-  }
-  .quality__card {
-    align-items: start;
-    justify-content: center;
-  }
-  .quality__item__img {
-    width: 80px;
-    height: 80px;
-  }
-  .quality__item__img::after {
-    width: 80px;
-    height: 80px;
-  }
-  .quality__item {
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-  }
 }
 @media (max-width: 880px) {
   .steps__list {
@@ -1437,9 +1253,6 @@ h4.footer__title {
 }
 }
 @media (max-width: 767px) {
-  .sticky__telephone {
-    display: block;
-  }
   h1.caption {
     font-size: 30px;
   }
@@ -1563,8 +1376,15 @@ h4.footer__title {
     margin-bottom: 56px;
     margin-top: -170px;
   }
+  .button-desktop {
+    display: none;
+  }
+  .button-mobile {
+    display: block;
+    grid-column: span 2;
+  }
   .footer__time .footer__text {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     font-size: 14px;
   }
   .footer__card {
@@ -1596,15 +1416,6 @@ h4.footer__title {
   .accessories-catalog__title, .about-service__title, .documents__title, .price__title, .recommendations__title {
     margin-bottom: 32px;
   }
-  .quality__cards {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 40px;
-  }
-  .quality__item__text {
-    max-width: 250px;
-    width: 100%;
-  } 
 }
 
 @media (max-width: 568px) {
@@ -1639,18 +1450,5 @@ h4.footer__title {
   }
   .services__title, .catalog__title {
     max-width: 100%;
-  }
-  .footer__container {
-    position: relative;
-    padding-bottom: 80px;
-  }
-  .footer__time .button {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  .footer__time .footer__text {
-    margin-bottom: 0px;
   }
 }

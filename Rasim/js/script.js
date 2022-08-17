@@ -57,7 +57,7 @@ $(document).ready(function(){
 });
 
 
-/*  $(document).ready(function(){
+  $(document).ready(function(){
     PopUpHide();
   });
 
@@ -85,5 +85,5 @@ $.fn.setCursorPosition = function(pos) {
 $('input[type="tel"]').click(function() {
       $(this).setCursorPosition(3);
   }).mask('+7 (999) 999 99 99');
-  
-*/
+
+
