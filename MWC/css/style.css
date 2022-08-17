@@ -2335,6 +2335,12 @@ ol.questions__tabs__caption {
   .footer__menu {
     order: -1;
   }
+  .apartments__slider .slick-dots {
+    left: -20px;
+  }
+  .apartments__slide__title {
+    left: 60px;
+  }
   .our-complexs, .about-company, .news, .instagram, .about-us, .company-worth, .terms, 
    .history, .subsidiaries, .club, .career, .questions, .methods__tab {
     padding: 50px 0;
@@ -2490,7 +2496,7 @@ ol.questions__tabs__caption {
     padding: 12px 16px;
     width: 100%;
   }
-  .our-complexs__card {
+  .our-complexs__card, .news__card {
     border: 1px solid #AFC1D9;
   }
   .our-complexs__card .card__description {
@@ -2553,7 +2559,6 @@ ol.questions__tabs__caption {
   }
   .apartments__slide__title {
     font-size: 40px;
-    left: 120px;
   }
   .club__cards, .subsidiaries__cards {
     display: grid;
