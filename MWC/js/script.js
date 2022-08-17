@@ -41,9 +41,9 @@ $('.apartments__slider').slick({
   arrows: false,
   responsive: [
     {
-      breakpoint: 1450,
+      breakpoint: 767,
       settings: {
-        TouchMove: false
+        swipe: false
       }
     }
   ]
