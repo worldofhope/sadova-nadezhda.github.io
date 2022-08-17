@@ -2500,6 +2500,11 @@ ol.questions__tabs__caption {
     bottom: auto;
     top: 70%;
   }
+  .our-complexs__card .card__description:hover {
+    top: auto;
+    bottom: 0;
+    border-radius: 5px;
+  }
 }
 @media (max-width: 620px) {
   .proposal {
