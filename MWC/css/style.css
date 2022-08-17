@@ -262,6 +262,7 @@ h4.caption {
   color: #fff;
   background: rgba(12, 33, 56, 0.58);
   backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
   transition: all 0.3s ease-in-out;
   overflow: auto;
 }
