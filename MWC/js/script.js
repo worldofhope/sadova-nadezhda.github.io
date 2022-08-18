@@ -249,35 +249,42 @@ $('input[type="tel"]').click(function() {
 }).mask('+7 (999) 999 99 99');
 
 
+let popupCareerBtn = document.querySelector('.popup-career__btn');
+  if(popupCareerBtn){
+  popupCareerBtn.addEventListener('click', () => {
+    document.querySelector('#popup-career').style.display = 'none';
+    document.querySelector('#popup-form').style.display = 'flex';
+  });
+};
 
-document.querySelector('.popup-career__btn').addEventListener('click', () => {
-  document.querySelector('#popup-career').style.display = 'none';
-  document.querySelector('#popup-form').style.display = 'flex';
-});
+let popupFormCls = document.querySelector('.popup-form__close');
+if(popupFormCls){
+  popupFormCls.addEventListener('click', () => {
+    document.querySelector('#popup-form').style.display = 'none';
+  });
+};
 
-
-document.querySelector('.popup-form__close').addEventListener('click', () => {
-  document.querySelector('#popup-form').style.display = 'none';
-});
-
-document.querySelector('.popup-career__close').addEventListener('click', () => {
-  document.querySelector('#popup-career').style.display = 'none';
-});
-
+let popupCareerCls = document.querySelector('.popup-career__close');
+if(popupCareerCls){
+  popupCareerCls.addEventListener('click', () => {
+    document.querySelector('#popup-career').style.display = 'none';
+  });
+}
 
 let file = document.querySelector('.file');
-
-file.addEventListener('change', ()=> {
-  if(file.files[0]?.name) {
-    document.querySelector('.file-done').style.display = 'block';
-    document.querySelector('.file-done').innerHTML = file.files[0].name;
-    document.querySelector('.file-empty').style.display = 'none';
-  }
-  else {
-    document.querySelector('.file-done').style.display = 'none';
-    document.querySelector('.file-empty').style.display = 'block';
-  }
-});
+if(file){
+  file.addEventListener('change', ()=> {
+    if(file.files[0]?.name) {
+      document.querySelector('.file-done').style.display = 'block';
+      document.querySelector('.file-done').innerHTML = file.files[0].name;
+      document.querySelector('.file-empty').style.display = 'none';
+    }
+    else {
+      document.querySelector('.file-done').style.display = 'none';
+      document.querySelector('.file-empty').style.display = 'block';
+    }
+  });
+}
 
 
 
