@@ -1464,10 +1464,15 @@ h1.about-us__title {
   bottom: -40px;
 }
 .js-slick-slider .slick-slide {
-  margin: 0 16px;
+  margin-right: 16px;
+  height: auto;
 }
-.js-slick-slider .slick-list {
+/* .js-slick-slider .slick-list {
   margin: 0 -16px;
+} */
+.js-slick-slider .slick-track {
+  display: flex !important;
+  align-items: stretch;
 }
 
 /*page club*/
