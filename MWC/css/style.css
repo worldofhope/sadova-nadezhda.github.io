@@ -280,8 +280,11 @@ h4.caption {
 .header__burger-item:last-child {
   margin-bottom: 0px;
 } 
-.dropdown-list, .header__social-burger, .header__burger-button {
+.header__social-burger, .header__burger-button {
   display: none;
+}
+.burger__dropdown {
+  transition: all 0.3s ease;
 }
 .dropdown__link {
   position: relative;
@@ -303,9 +306,13 @@ h4.caption {
   font-size: 16px;
   color: #AFC1D9;
   padding-top: 10px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  height: 0;
 }
 .dropdown-list.dropdown {
-  display: block;
+  opacity: 1;
+  height: 210px;
 }
 .dropdown-item {
   margin-bottom: 16px;
@@ -2031,7 +2038,6 @@ ol.questions__tabs__caption {
   border-radius: 10px;
   padding: 30px;
   width: 100%;
-  height: 100%;
   max-width: 1150px;
   position: relative;
   overflow-y: auto;
@@ -2455,7 +2461,6 @@ input.file:hover {
   .instagram__description p {
     font-size: 18px;
   }
-  .popup-career__container
 }
 @media (max-width: 980px) {
   /*title*/
@@ -2594,6 +2599,11 @@ input.file:hover {
   }
   .teams__tabs__caption {
     max-height: 878px;
+  }
+}
+@media (max-width: 900px) {
+  .career__cards {
+    grid-template-columns: repeat(2,1fr);
   }
 }
 @media (max-width: 767px) {
@@ -2830,6 +2840,20 @@ input.file:hover {
   .history__tab__content span {
     font-size: 120px;
     margin-bottom: 50px;
+  }
+  .form-career {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .message__container, .popup-form__footer {
+    grid-column: span 1;
+  }
+  .form-career textarea {
+    height: 80px;
+  }
+  .popup-career__container, .popup-form__container {
+    height: 100%;
   }
 }
 @media (max-width: 620px) {
