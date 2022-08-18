@@ -1406,6 +1406,9 @@ h1.about-us__title {
   justify-content: space-between;
   max-width: 580px;
 }
+.partners .slick-dots {
+  bottom: -40px;
+}
 .partners .slick-dots li, .js-slick-slider .slick-dots li {
   position: relative;
   padding: 0;
@@ -2253,7 +2256,7 @@ ol.questions__tabs__caption {
   .our-complexs__form .form__footer {
     grid-column: span 2;
   }
-  .our-complexs, .about-company, .news, .instagram, .career,.terms, 
+  .our-complexs, .about-company, .news, .instagram, .career,.terms, .partners, 
   .about-us, .company-worth, .history, .subsidiaries, .club, .questions, .methods__tab {
     padding: 80px 0;
   }
@@ -2382,7 +2385,7 @@ ol.questions__tabs__caption {
     left: 60px;
   }
   .our-complexs, .about-company, .news, .instagram, .about-us, .company-worth, .terms, 
-   .history, .subsidiaries, .club, .career, .questions, .methods__tab {
+   .history, .subsidiaries, .club, .career, .questions, .methods__tab, .partners {
     padding: 50px 0;
   }
   .news {
@@ -2552,7 +2555,7 @@ ol.questions__tabs__caption {
   .our-complexs__card .btn-dark, .our-complexs__card .btn-light {
     width: 100%;
   }
-  .js-slick-slider .slick-slide {
+  .js-slick-slider .slick-slide, .partners-banks {
     width: 85vw !important;
   }
 }

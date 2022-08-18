@@ -74,7 +74,8 @@ $('.partners-banks').slick({
       settings: {
         slidesToShow: 2,
         dots: true,
-        arrows: false
+        arrows: false,
+        variableWidth: true
       }
     }
   ]
