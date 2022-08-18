@@ -2550,7 +2550,7 @@ ol.questions__tabs__caption {
     width: 100%;
   }
   .js-slick-slider .slick-slide {
-    width: 80vw !important;
+    width: 85vw !important;
   }
 }
 @media (max-width: 620px) {
