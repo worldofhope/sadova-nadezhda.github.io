@@ -2569,16 +2569,21 @@ ol.questions__tabs__caption {
     grid-column: span 1;
   }
   .instagram__description .insta_btn {
-    position: absolute;
-    bottom: 0;
     width: 100%;
   }
-  .instagram__description p {
+  .instagram__description .insta_btn, .about-company .button-light {
+    position: absolute;
+    bottom: 0;
+  }
+  .instagram__description p, .about-company__description p {
     margin-bottom: 0;
   }
-  .instagram__container {
+  .instagram__container, .about-company__container {
     position: relative;
     padding-bottom: 100px;
+  }
+  .about-company__container {
+    gap: 30px;
   }
 }
 @media (max-width: 568px) {
@@ -2643,5 +2648,44 @@ ol.questions__tabs__caption {
   }
   .methods__tabs__caption li {
     min-width: 200px;
+  }
+  .about-company .button-light {
+    width: unset;
+    padding: 16px 60px;
+  }
+}
+@media (max-width: 374px) {
+  .our-complexs__form .room label {
+    width: 55px;
+  }
+  .our-complexs__form .form__footer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  h2.caption {
+    font-size: 22px;
+  }
+  .about-company__numbers {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .company__number:last-child {
+    border-bottom: none;
+  }
+  .company__number {
+    border-bottom: 1px solid #AFC1D9;
+  }
+  .clients, .business {
+    border-right: none;
+  }
+  .footer__logo {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .about-company .button-light {
+    width: 220px;
+  }
+  .about-company .company__number {
+    padding-left: 0;
   }
 }
