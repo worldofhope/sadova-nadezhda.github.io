@@ -195,6 +195,38 @@ $(function() {
 });
 
 
+//popup career
+
+let careerCards = document.querySelector('.career__cards');
+if (careerCards) {
+  careerCards.addEventListener('click', e => {
+    let target = e.target;
+    if (target.classList.contains('card__btn') || target.classList.contains('career__card__title')){
+      let careerCard = target.closest('.career__card');
+      let careerTitle = careerCard.querySelector('.career__card__title');
+      let careerList = careerCard.querySelector('.career__card__list');
+      let careerType = careerCard.querySelector('.career__card__type');
+      let careerTerms = careerCard.querySelector('.career__card__terms');
+      let careerSkills = careerCard?.querySelector('.career__card__skills');
+      let popupTitle = document.querySelector('.popup-career__title');
+      let popupList = document.querySelector('.popup-career__list');
+      let popupType = document.querySelector('.popup-career__type');
+      let popupTerms = document.querySelector('.popup-career__terms');
+      let popupSkills = document.querySelector('.popup-career__skills');
+      popupTitle.innerHTML = careerTitle.innerHTML;
+      popupList.innerHTML = careerList?.innerHTML != undefined ? careerList?.innerHTML : ' ';
+      popupType.innerHTML = careerType?.innerHTML != undefined ? careerType?.innerHTML : ' ';
+      popupTerms.innerHTML = careerTerms?.innerHTML != undefined ? careerTerms?.innerHTML :' ';
+      popupSkills.innerHTML = careerSkills?.innerHTML != undefined ? careerSkills?.innerHTML : ' ';
+      document.querySelector('#popup-career').style.display = 'flex';
+    }
+  });
+}
+
+
+
+
+
 //form очистить
 $('.btn_clear').on('click', function(){
   $("#myForm").trigger("reset");
@@ -215,6 +247,37 @@ $.fn.setCursorPosition = function(pos) {
 $('input[type="tel"]').click(function() {
   $(this).setCursorPosition(3);
 }).mask('+7 (999) 999 99 99');
+
+
+
+document.querySelector('.popup-career__btn').addEventListener('click', () => {
+  document.querySelector('#popup-career').style.display = 'none';
+  document.querySelector('#popup-form').style.display = 'flex';
+});
+
+
+document.querySelector('.popup-form__close').addEventListener('click', () => {
+  document.querySelector('#popup-form').style.display = 'none';
+});
+
+document.querySelector('.popup-career__close').addEventListener('click', () => {
+  document.querySelector('#popup-career').style.display = 'none';
+});
+
+
+let file = document.querySelector('.file');
+
+file.addEventListener('change', ()=> {
+  if(file.files[0]?.name) {
+    document.querySelector('.file-done').style.display = 'block';
+    document.querySelector('.file-done').innerHTML = file.files[0].name;
+    document.querySelector('.file-empty').style.display = 'none';
+  }
+  else {
+    document.querySelector('.file-done').style.display = 'none';
+    document.querySelector('.file-empty').style.display = 'block';
+  }
+});
 
 
 
