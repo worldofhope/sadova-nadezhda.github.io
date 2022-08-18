@@ -1230,6 +1230,8 @@ h4.caption {
 .navigation__list {
   display: flex;
   gap: 20px;
+  align-items: center;
+  line-height: 1.2em;
 }
 .navigation__item {
   position: relative;
@@ -1543,6 +1545,9 @@ h1.about-us__title {
 }
 .history__tabs__caption {
   order: 1;
+  max-width: max-content;
+  font-weight: 700;
+  color: #AFC1D9;
 }
 .history__tabs__caption li {
   margin-bottom: 8px;
@@ -1556,6 +1561,17 @@ h1.about-us__title {
 .history__tabs__caption .active {
   color: #0036A7;
 }
+.history__tabs__caption li::after {
+  content: ' ';
+  width: 2px;
+  height: 24px;
+  background-color: #333333;
+  display: block;
+  margin: 0 auto;
+}
+.history__tabs__caption li:last-child:after {
+  content: none;
+}
 .history__tab__content p {
   margin-bottom: 16px;
 }
@@ -1563,7 +1579,8 @@ h1.about-us__title {
   margin-bottom: 0px;
 }
 .history__tab__content span {
-  font-size: 150px;
+  font-size: 370px;
+  line-height: 80%;
   font-weight: 700;
   color: #AFC1D9;
   display: block;
@@ -1981,7 +1998,16 @@ ol.questions__tabs__caption {
   border-radius: 5px;
   color: #333333;
 }
-
+/*scroll*/
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: #0036A7;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 4px;
+}
 
 /*responsive*/
 @media (max-width: 1650px) {
@@ -2028,6 +2054,11 @@ ol.questions__tabs__caption {
   .methods__btn {
     min-width: unset;
     padding: 20px 40px;
+  }
+  .history__tab__content span {
+    font-size: 200px;
+    margin-bottom: 80px;
+    line-height: 80%;
   }
 }
 @media (max-width: 1250px) {
@@ -2331,6 +2362,20 @@ ol.questions__tabs__caption {
   .our-complexs__form .room label {
     width: 70px;
   }
+  .teams__tab__description .caption {
+    margin-bottom: 10px;
+  }
+  .teams__tabs {
+    display: grid;
+    grid-template-columns: 9fr 4fr;
+    max-height: unset;
+  }
+  .teams__tab__content__img {
+    height: 878px;
+  }
+  .teams__tabs__caption {
+    max-height: 878px;
+  }
 }
 @media (max-width: 767px) {
   /*title*/
@@ -2479,6 +2524,7 @@ ol.questions__tabs__caption {
   }
   .club__caption p, .subsidiaries__caption p {
     font-size: 12px;
+    line-height: 1.2em;
   }
   .teams__tab__img {
     width: 70px;
@@ -2502,6 +2548,10 @@ ol.questions__tabs__caption {
   .teams__tab__description {
     padding: 20px 16px;
     border-top: none;
+    grid-column: span 2;
+  }
+  .teams__tab__description p {
+    line-height: 1.2em;
   }
   .teams__tab__caption {
     padding: 10px;
@@ -2557,6 +2607,10 @@ ol.questions__tabs__caption {
   }
   .js-slick-slider .slick-slide, .partners-banks {
     width: 85vw !important;
+  }
+  .history__tab__content span {
+    font-size: 120px;
+    margin-bottom: 50px;
   }
 }
 @media (max-width: 620px) {
@@ -2643,8 +2697,7 @@ ol.questions__tabs__caption {
     gap: 20px;
   }
   .history__tab__content span {
-    font-size: 90px;
-    margin-bottom: 80px;
+    font-size: 100px;
   }
   .methods__btn {
     padding: 18px 40px;
@@ -2656,6 +2709,9 @@ ol.questions__tabs__caption {
     width: unset;
     padding: 16px 60px;
   }
+  .history__tab__content p {
+    max-width: 240px;
+  } 
 }
 @media (max-width: 374px) {
   .our-complexs__form .room label {
