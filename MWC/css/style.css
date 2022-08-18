@@ -2544,6 +2544,9 @@ ol.questions__tabs__caption {
   .our-complexs__card .btn-dark, .our-complexs__card .btn-light {
     width: 100%;
   }
+  .js-slick-slider .slick-slide {
+    width: 80vw !important;
+  }
 }
 @media (max-width: 620px) {
   .proposal {
