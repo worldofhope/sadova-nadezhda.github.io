@@ -247,12 +247,12 @@ h4.caption {
   cursor: pointer;
 }
 .header .search button:before {
-  content: url(../image/svg/search-light.svg);
+  content: url(../img/svg/search-light.svg);
   height: 24px;
   width: 24px;
 }
 .header-light .search button:before {
-  content: url(../image/svg/search.svg);
+  content: url(../img/svg/search.svg);
   height: 24px;
   width: 24px;
 }
@@ -309,7 +309,7 @@ h4.caption {
   padding-right: 20px;
 }
 .dropdown__link::after {
-  content: url(../image/svg/arr-lg-down.svg);
+  content: url(../img/svg/arr-lg-down.svg);
   position: absolute;
   right: 0;
   top: 50%;
@@ -341,7 +341,7 @@ h4.caption {
 /* footer*/
 .footer {
   padding: 50px 0;
-  background: url(../image/background-3.jpg) center no-repeat;
+  background: url(../img/background-3.jpg) center no-repeat;
   background-size: cover;
   color: #fff;
 }
@@ -427,22 +427,22 @@ h4.caption {
   align-content: center;
 }
 .time::before {
-  content: url(../image/svg/time.svg);
+  content: url(../img/svg/time.svg);
   vertical-align: text-top;
   margin-right: 10px;
 }
 .phone::before {
-  content: url(../image/svg/phone.svg);
+  content: url(../img/svg/phone.svg);
   vertical-align: text-top;
   margin-right: 10px;
 }
 .adresse::before {
-  content: url(../image/svg/adresse.svg);
+  content: url(../img/svg/adresse.svg);
   vertical-align: text-top;
   margin-right: 10px;
 }
 .mail::before {
-  content: url(../image/svg/email.svg);
+  content: url(../img/svg/email.svg);
   vertical-align: text-top;
   margin-right: 10px;
 }
@@ -508,7 +508,7 @@ h4.caption {
   color: #fff;
 }
 .apartments__slider .slick-dots li.slick-active button::after {
-  content: url(../image/svg/dick.svg);
+  content: url(../img/svg/dick.svg);
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%) scaley(-1) rotate(45deg);
@@ -829,7 +829,7 @@ h4.caption {
   appearance: none;
 }
 .select-selected:after {
-  content: url('../image/svg/arrow-down.svg');
+  content: url('../img/svg/arrow-down.svg');
   display: block;
   position: absolute;
   right: 20px;
@@ -837,7 +837,7 @@ h4.caption {
   transform: translateY(-50%);
 }
 .select-selected.select-arrow-active:after {
-  content: url('../image/svg/arrow-up.svg');
+  content: url('../img/svg/arrow-up.svg');
 }
 /*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
@@ -881,7 +881,7 @@ h4.caption {
   appearance: none;
 }
 .our-complexs__form select::after {
-  content: url('../image/svg/arrow-down.svg');
+  content: url('../img/svg/arrow-down.svg');
   display: block;
   position: absolute;
   right: 5px;
@@ -1128,7 +1128,7 @@ h4.caption {
   padding-right: 34px;
 }
 .news__card .card__btn:hover::after {
-  content: url(../image/svg/arrow.svg);
+  content: url(../img/svg/arrow.svg);
   position: absolute;
   top: 60%;
   line-height: 1.4em;
@@ -1139,7 +1139,7 @@ h4.caption {
 
 /*instagram section*/
 .instagram {
-  background: url(../image/background-2.jpg) center no-repeat;
+  background: url(../img/background-2.jpg) center no-repeat;
   background-size: cover;
   color: #fff;
 }
@@ -1312,7 +1312,7 @@ h1.about-us__title {
   display: block;
 }
 .about-us__video::before {
-  content: url(../image/svg/youtube-btn.svg);
+  content: url(../img/svg/youtube-btn.svg);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1759,7 +1759,7 @@ ul.career__card__list {
   cursor: pointer;
 }
 .career .card__btn:hover::after {
-  content: url(../image/svg/arrow.svg);
+  content: url(../img/svg/arrow.svg);
   position: absolute;
   top: 60%;
   line-height: 1.4em;
@@ -1806,7 +1806,7 @@ ol.questions__tabs__caption {
   font-weight: 700;
 }
 .questions__tab__item::after {
-  content: url(../image/svg/arrow-white.svg);
+  content: url(../img/svg/arrow-white.svg);
   display: block;
   width: 50px;
   height: 50px;
@@ -2130,13 +2130,13 @@ ul.popup-career__type {
   transform: translateY(-50%);
 }
 .popup-career__list .city::before {
-  content: url(../image/svg/travel.svg);
+  content: url(../img/svg/travel.svg);
 }
 .popup-career__list .year::before {
-  content: url(../image/svg/domain.svg);
+  content: url(../img/svg/domain.svg);
 }
 .popup-career__list .day::before {
-  content: url(../image/svg/description.svg);
+  content: url(../img/svg/description.svg);
 }
 .popup-form__title {
   margin-bottom: 30px;
@@ -2583,7 +2583,7 @@ input.file:hover {
     gap: 40px;
   }
   .questions__tab__item::after {
-    content: url(../image/svg/arrow-wh-down.svg);
+    content: url(../img/svg/arrow-wh-down.svg);
     width: 40px;
     height: 40px;
     padding: 10px 16px;
@@ -2592,7 +2592,7 @@ input.file:hover {
     cursor: pointer;
   }
   .questions__tab__item:hover::after {
-    content: url(../image/svg/arrow-wh-up.svg);
+    content: url(../img/svg/arrow-wh-up.svg);
   }
   .instagram__container {
     gap: 40px;
