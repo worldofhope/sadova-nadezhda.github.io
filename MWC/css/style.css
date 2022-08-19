@@ -90,7 +90,6 @@ h4.caption {
   top: 0;
   left: 0;
   right: 0;
-  padding-right: 120px;
   z-index: 2;
   transition: all 0.2s ease-in-out;
 }
@@ -157,14 +156,11 @@ h4.caption {
   background-color: rgba(51, 51, 51, 0.05);
 }
 .header__icon {
-  top: 50%;
-  transform: translateY(-50%);
-  right: 50px;
   width: 47px;
   height: 23px;
-  position: absolute;
   transition: 0.5s ease-in-out;
   cursor: pointer;
+  position: relative;
 }
 .header__icon span {
   display: block;
