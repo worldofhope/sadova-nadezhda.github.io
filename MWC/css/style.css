@@ -94,6 +94,9 @@ h4.caption {
   z-index: 2;
   transition: all 0.2s ease-in-out;
 }
+.header-light {
+  background-color: #fff;
+}
 .header__container {
   display: flex;
   align-items: center;
@@ -168,6 +171,9 @@ h4.caption {
   transition: 0.25s ease-in-out;
   transform-origin: left center;
 }
+.header-light .header__icon span {
+  background: #333333;
+}
 .header__icon span:nth-child(1) {
   top: 0px;
 }
@@ -218,7 +224,7 @@ h4.caption {
   color: #fff; 
   cursor: pointer;
 }
-.header .search input::placeholder {
+.header .search input::placeholder, .header-light .search input::placeholder {
   color: transparent;
 }
 .header .search input:focus {
@@ -244,6 +250,17 @@ h4.caption {
   content: url(../image/svg/search-light.svg);
   height: 24px;
   width: 24px;
+}
+.header-light .search button:before {
+  content: url(../image/svg/search.svg);
+  height: 24px;
+  width: 24px;
+}
+.header-light .search input:focus, .header-light .search input:focus::placeholder {
+  color: #333333;
+}
+.header-light .search input:focus {
+  border: 1px solid #333333;
 }
 
 
