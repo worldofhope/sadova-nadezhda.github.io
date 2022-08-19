@@ -226,12 +226,7 @@ if (careerCards) {
 
 
 
-//form очистить
-$('.btn_clear').on('click', function(){
-  $("#myForm").trigger("reset");
-});
-
-
+//form
 function submitForm() {
   $('#form_loader').show()
 }
