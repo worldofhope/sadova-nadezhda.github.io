@@ -161,23 +161,32 @@ function fun3() {
 
 
 //анимированные цифры
-$(document).ready(function () {
-  $('.number').each(function () {
-     $(this).prop('Counter',0).animate({
-      Counter: $(this).text()
-      }, {
-       duration: 5000,
-       easing: 'swing',
-       step: function (now) {
-          $(this).text(Math.ceil(now));
-       }
-      });
-  });
+$('.about-company').waypoint({
+  handler: function() {
+    $(this.element).addClass('count')
+  },
+  offset: '80%',
 });
+
+let count = document.querySelector('count');
+if(count) {
+  $('.number').each(function () {
+    $(this).prop('Counter',0).animate({
+     Counter: $(this).text()
+     }, {
+      duration: 2000,
+      easing: 'swing',
+      step: function (now) {
+         $(this).text(Math.ceil(now));
+      }
+     });
+ });
+}
+
+
 
 //tabs
 $(function() {
-
   $('ul.history__tabs__caption').on('click', 'li:not(.active)', function() {
     $(this)
       .addClass('active').siblings().removeClass('active')
@@ -186,7 +195,6 @@ $(function() {
 });
 
 $(function() {
-  
   $('.tabs__caption').on('click', ':not(.active)', function() {
     $(this).addClass('active').siblings().removeClass('active')
     $('div.tabs').find('div.tab__content').removeClass('active').eq($(this).index()).addClass('active');
@@ -194,74 +202,73 @@ $(function() {
 });
 
 
-  // Табы Вопросы
-  var mob = false;
-  var tab = $('.questions__tab__item');
-  var tab_content = $('.questions__tab__content');
+// Табы Вопросы
+var mob = false;
+var tab = $('.questions__tab__item');
+var tab_content = $('.questions__tab__content');
   
-  if($('.tab__contents').css("display") == 'none'){
-    for (var i=0; i<tab_content.length; i++){
-      $(tab_content[i]).appendTo(tab[i]);
-    }
-    mob = true;
-  } else if($('.tab__contents').css("display") != 'none'){
-    for (var i=0; i<tab_content.length; i++){
-      $(tab_content[i]).appendTo('.tab__contents');
-    }
-    mob = false;
+if($('.tab__contents').css("display") == 'none'){
+  for (var i=0; i<tab_content.length; i++){
+    $(tab_content[i]).appendTo(tab[i]);
   }
-    // клик на родительский элемент при клике на дочерние элементы блока .questions__tab__item
-  $('.questions__tab__item').children().on("click", function(){
-    $(this).parent('.questions__tab__item').click();
-  });
-  
-  $('.questions__tabs__caption').on("click", function(event){
-    var target = event.target;
-    if ($(target).hasClass('questions__tab__item')){
-      for(var i=0; i<tab.length; i++){
-        if (target == tab[i]){
-          tab[i].classList.add('active');
-          tab_content[i].classList.add('active');
-          showContent(i);
-        } else{
-          tab[i].classList.remove('active'); 
-          tab_content[i].classList.remove('active'); 
-          hideContent(i);
-        }
-      }
-    }
-  });
-  function showContent(i){
-    if(mob){
-      $(tab_content[i]).slideDown();
-    } else{
-      $(tab_content[i]).show();
-    }
+  mob = true;
+} else if($('.tab__contents').css("display") != 'none'){
+  for (var i=0; i<tab_content.length; i++){
+    $(tab_content[i]).appendTo('.tab__contents');
   }
-  function hideContent(i){
-    if(mob){
-      $(tab_content[i]).slideUp();
-    } else{
-      $(tab_content[i]).hide();
-    }
-  }
-
-$(window).resize(function(){
-  // Табы вакансий, проверка ширины экрана
-  if($('.tab__contents').css("display") == 'none'){
-    for (var i=0; i<tab_content.length; i++){
-      $(tab_content[i]).appendTo(tab[i]);
-    }
-    mob = true;
-  } else if($('.tab__contents').css("display") != 'none'){
-    for (var i=0; i<tab_content.length; i++){
-      $(tab_content[i]).appendTo('.tab__contents');
-    }
-    mob = false;
-  }
-
+  mob = false;
+}
+// клик на родительский элемент при клике на дочерние элементы блока .questions__tab__item
+$('.questions__tab__item').children().on("click", function(){
+  $(this).parent('.questions__tab__item').click();
 });
 
+$('.questions__tabs__caption').on("click", function(event){
+  var target = event.target;
+  if ($(target).hasClass('questions__tab__item')){
+    for(var i=0; i<tab.length; i++){
+      if (target == tab[i]){
+        tab[i].classList.add('active');
+        tab_content[i].classList.add('active');
+        showContent(i);
+      } else{
+        tab[i].classList.remove('active'); 
+        tab_content[i].classList.remove('active'); 
+        hideContent(i);
+      }
+    }
+  }
+});
+
+function showContent(i){
+  if(mob){
+    $(tab_content[i]).slideDown();
+  } else{
+    $(tab_content[i]).show();
+  }
+}
+function hideContent(i){
+  if(mob){
+    $(tab_content[i]).slideUp();
+  } else{
+    $(tab_content[i]).hide();
+  }
+}
+
+$(window).resize(function(){
+// Табы вакансий, проверка ширины экрана
+if($('.tab__contents').css("display") == 'none'){
+  for (var i=0; i<tab_content.length; i++){
+    $(tab_content[i]).appendTo(tab[i]);
+  }
+  mob = true;
+  } else if($('.tab__contents').css("display") != 'none'){
+    for (var i=0; i<tab_content.length; i++){
+      $(tab_content[i]).appendTo('.tab__contents');
+    }
+  mob = false;
+  }
+});
 
 
 //popup career
@@ -292,14 +299,10 @@ if (careerCards) {
 }
 
 
-
-
-
 //form
 function submitForm() {
   $('#form_loader').show()
 }
-
 // input mask tel
 $.fn.setCursorPosition = function(pos) {
   if ($(this).get(0).setSelectionRange) {
@@ -315,15 +318,11 @@ $.fn.setCursorPosition = function(pos) {
 $('input[type="tel"]').click(function() {
   $(this).setCursorPosition(3);
 }).mask('+7 (999) 999 99 99');
-
-
 //валидатор мыла
 function isEmail(string) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(string).toLowerCase());
 }
-
-
 $('#mail').on('keyup', function(){
   let mail = isEmail($('#mail').val());
   if (!mail) {
@@ -332,7 +331,6 @@ $('#mail').on('keyup', function(){
     $('#mail').removeClass('mail-err');
   }
 });
-
 
 let popupCareerBtn = document.querySelector('.popup-career__btn');
   if(popupCareerBtn){
@@ -370,7 +368,6 @@ if(file){
     }
   });
 }
-
 
 let alertt = document.querySelector(".alert--fixed");
 let alertClose = document.querySelectorAll(".alert--close")

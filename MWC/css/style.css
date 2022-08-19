@@ -81,7 +81,6 @@ h4.caption {
   font-weight: 700;
 }
 
-
 /*header*/
 .header {
   background-color: #0036A7;
@@ -271,7 +270,6 @@ h4.caption {
 .header-light .search input:focus {
   border: 1px solid #333333;
 }
-
 
 /*burger menu*/
 .header__burger-menu {
@@ -504,6 +502,7 @@ h4.caption {
 .footer a:hover::after {
 	width: 100%;
 }
+
 /*apartments section*/
 .apartments {
   overflow: hidden;
@@ -559,7 +558,6 @@ h4.caption {
   width: 26px;
   height: 26px;
 }
-
 
 /*our-complexs section*/
 .our-complexs {
@@ -855,6 +853,7 @@ h4.caption {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 /*custom select*/
 .custom-select {
   position: relative;
@@ -883,7 +882,6 @@ h4.caption {
 .select-selected.select-arrow-active:after {
   content: url('../img/svg/arrow-up.svg');
 }
-/*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
   padding: 16px;
   border: none;
@@ -891,8 +889,6 @@ h4.caption {
   cursor: pointer;
   user-select: none;
 }
-
-/*style items (options):*/
 .select-items {
   position: absolute;
   background: #F2F6F7;
@@ -901,12 +897,7 @@ h4.caption {
   left: 0;
   right: 0;
   z-index: 99;
-  /* border-top: 1px solid #ccc; */
 }
-/* .select-items div {
-  padding: 10px 16px;
-} */
-/*hide the items when the select box is closed:*/
 .select-hide {
   display: none;
 }
@@ -914,27 +905,7 @@ h4.caption {
   background-color: rgba(49, 86, 187, 0.1);
   color: #333333;
 }
-/* .our-complexs__form select {
-  padding: 16px;
-  background: #F2F6F7;
-  border-radius: 5px;
-  border: none;
-  width: 100%;
-  display: block;
-  position: relative;
-  appearance: none;
-}
-.our-complexs__form select::after {
-  content: url('../img/svg/arrow-down.svg');
-  display: block;
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.our-complexs__form select:focus {
-  outline: none;
-} */
+
 .our-complexs__form .form__room {
   display: flex;
   flex-wrap: wrap;
@@ -1041,7 +1012,6 @@ h4.caption {
   opacity: 1;
   text-indent: 0px;
 }
-
 
 /*about-company section*/
 .about-company {
@@ -1180,7 +1150,6 @@ h4.caption {
   transform: translateY(-50%);
 }
 
-
 /*instagram section*/
 .instagram {
   background: url(../img/background-2.jpg) #0036A7 center no-repeat;
@@ -1290,7 +1259,6 @@ h4.caption {
   object-fit: cover;
 }
 
-
 /*page about us*/
 .navigation {
   padding-top: 170px;
@@ -1324,6 +1292,7 @@ h4.caption {
 .navigation__item:last-child::after {
   content: none;
 }
+
 /*about*/
 .about-us {
   padding: 100px 0;
@@ -1436,7 +1405,7 @@ h1.about-us__title {
 .company-worth__item p {
   color: #fff;
 }
-
+/*partners*/
 .partners {
   padding: 100px 0;
   overflow: hidden;
