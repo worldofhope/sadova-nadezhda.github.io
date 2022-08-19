@@ -2692,7 +2692,7 @@ input.file:hover {
   }
   .questions__tabs {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 0px;
   }
   .questions__tab__item .questions__item__content::after {
     content: url(../img/svg/arrow-wh-down.svg);
@@ -2709,15 +2709,21 @@ input.file:hover {
   .questions__tab__item {
     overflow: hidden;
   }
-  .questions__item__content {
-    margin-bottom: 20px;
+  .questions__tab__item .questions__item__content {
     z-index: 1;
     background: #fff;
+    padding: 20px 35px;
+    border-top: 1px solid #AFC1D9;
+    border-bottom: none;
+  }
+  .questions__tab__item.active .questions__item__content,   .questions__tab__item .questions__item__content:last-child {
+    border-bottom: 1px solid #AFC1D9;
   }
   .questions__tab__content {
     opacity: 0;
     transform: translate(0, -100vh);
     position: absolute;
+    margin: 20px 0;
     top: 0;
     left: 0;
     transition: transform 1s ease;
@@ -2728,6 +2734,7 @@ input.file:hover {
     position: relative;
     transform: translate(0,0);
   }
+
 }
 @media (max-width: 900px) {
   .career__cards {
