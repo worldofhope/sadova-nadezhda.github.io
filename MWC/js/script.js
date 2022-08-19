@@ -194,8 +194,22 @@ $(function() {
 });
 
 
-//popup career
+//tabs to accordeon
+let tabList = document.querySelectorAll('.questions__item__content');
+let tabContent = document.querySelectorAll('.questions__tab__content');
+window.addEventListener("resize", function(){
+  if (window.innerWidth < 980) {
+    if(tabList) {
+      tabList.forEach((item, i) =>{
+        item.after(tabContent[i])
+      })
+    }
+  }
+});
 
+
+
+//popup career
 let careerCards = document.querySelector('.career__cards');
 if (careerCards) {
   careerCards.addEventListener('click', e => {

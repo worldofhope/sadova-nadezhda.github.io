@@ -1833,13 +1833,13 @@ ol.questions__tabs__caption {
   counter-reset: list;
   list-style-type: none;
 }
-.questions__tab__item.active{
+.questions__tab__item.active .questions__item__content {
   font-weight: 700;
 }
-.questions__tab__item:first-child {
+.questions__tab__item:first-child .questions__item__content {
   border-top: 1px solid #AFC1D9;
 }
-.questions__tab__item {
+.questions__tab__item .questions__item__content {
   padding: 30px 0;
   padding-left: 35px;
   padding-right: 58px;
@@ -1847,7 +1847,7 @@ ol.questions__tabs__caption {
   position: relative;
   transition: all 0.3s ease;
 }
-.questions__tab__item::before {
+.questions__tab__item .questions__item__content::before {
   counter-increment: list;
   content: "0" counter(list)  ".";
   font-size: 18px;
@@ -1856,7 +1856,7 @@ ol.questions__tabs__caption {
   left: 0;
   font-weight: 700;
 }
-.questions__tab__item::after {
+.questions__tab__item .questions__item__content::after {
   content: url(../img/svg/arrow-white.svg);
   display: block;
   width: 50px;
@@ -1871,15 +1871,15 @@ ol.questions__tabs__caption {
   border-radius: 100%;
   transition: all 0.3s ease;
 }
-.questions__tab__item:hover {
+.questions__tab__item .questions__item__content:hover {
   cursor: pointer;
   color: #0036A7;
 }
-.questions__tab__item.active:hover {
+.questions__tab__item.active .questions__item__content:hover {
   color: #333333;
   cursor: default;
 }
-.questions__tab__item.active::after {
+.questions__tab__item.active .questions__item__content::after {
   background-color: #76777E;
 }
 
@@ -2667,22 +2667,6 @@ input.file:hover {
     font-size: 18px;
     min-height: unset;
   }
-  .questions__tabs {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .questions__tab__item::after {
-    content: url(../img/svg/arrow-wh-down.svg);
-    width: 40px;
-    height: 40px;
-    padding: 10px 16px;
-  }
-  .questions__tab__item:hover {
-    cursor: pointer;
-  }
-  .questions__tab__item:hover::after {
-    content: url(../img/svg/arrow-wh-up.svg);
-  }
   .instagram__container {
     gap: 40px;
   }
@@ -2705,6 +2689,44 @@ input.file:hover {
   }
   .teams__tabs__caption {
     max-height: 878px;
+  }
+  .questions__tabs {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .questions__tab__item .questions__item__content::after {
+    content: url(../img/svg/arrow-wh-down.svg);
+    width: 40px;
+    height: 40px;
+    padding: 10px 16px;
+  }
+  .questions__tab__item:hover {
+    cursor: pointer;
+  }
+  .questions__tab__item.active .questions__item__content::after {
+    content: url(../img/svg/arrow-wh-up.svg);
+  }
+  .questions__tab__item {
+    overflow: hidden;
+  }
+  .questions__item__content {
+    margin-bottom: 20px;
+    z-index: 1;
+    background: #fff;
+  }
+  .questions__tab__content {
+    opacity: 0;
+    transform: translate(0, -100vh);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 1s ease;
+  }
+  .questions__tab__content.active {
+    opacity: 1;
+    width: 100%;
+    position: relative;
+    transform: translate(0,0);
   }
 }
 @media (max-width: 900px) {
