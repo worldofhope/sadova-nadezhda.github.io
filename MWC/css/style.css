@@ -1883,6 +1883,24 @@ ol.questions__tabs__caption {
   background-color: #76777E;
 }
 
+.questions__tab__content {
+  opacity: 0;
+  transform: translateX(0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1s ease;
+}
+.questions__tab__content.active {
+  opacity: 1;
+  width: 100%;
+  position: relative;
+  transform: translateX(0);
+}
+
+
+
+
 /*page methods*/
 .methods {
   padding-top: 100px;
