@@ -25,6 +25,7 @@ $(document).ready(function(){
 });
 
 $('.burger__dropdown').on('click', function(){
+  $('.dropdown__link').toggleClass('active');
   $('.dropdown-list').toggleClass('dropdown');
 });
 
