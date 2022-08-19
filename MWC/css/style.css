@@ -1589,12 +1589,15 @@ h1.about-us__title {
 /*tabs*/
 .tab__content {
   opacity: 0;
+  transform: translateX(-100vw);
   position: absolute;
-  transition: all 0.3s ease;
+  transition: transform 1s ease;
 }
 .tab__content.active {
   opacity: 1;
+  width: 100%;
   position: relative;
+  transform: translateX(0);
 }
 
 /*page history*/
@@ -1609,6 +1612,7 @@ h1.about-us__title {
 .history__tab__content {
   max-width: 1100px;
   opacity: 0;
+  transform: translateX(0vw);
   position: absolute;
 }
 .history__tab__content.active {
@@ -1673,6 +1677,7 @@ h1.about-us__title {
 }
 .teams__tab {
   overflow: hidden;
+  border-top: 1px solid #0036A7;
 }
 .teams__tabs {
   display: grid;
@@ -1683,9 +1688,7 @@ h1.about-us__title {
   order: 1;
   overflow: auto;
   max-height: 900px;
-}
-.teams__tab__caption:first-child {
-  border-top: 1px solid #AFC1D9;
+  border-left: 1px solid #AFC1D9;
 }
 .teams__tab__caption {
   padding: 20px;
@@ -1736,7 +1739,6 @@ h1.about-us__title {
   flex-direction: column;
   justify-content: center;
   padding-left: 150px;
-  border-top: 1px solid #0036A7
 }
 .teams__tab__description .caption {
   max-width: 330px;
@@ -1918,11 +1920,6 @@ ol.questions__tabs__caption {
   height: 100%;
   object-fit: cover;
 }
-.methods__tabs__content.active {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 40px;
-}
 .methods__tab__description {
   max-width: 660px;
 }
@@ -1972,6 +1969,28 @@ ol.questions__tabs__caption {
 .methods__link:hover::before {
   left: 0;
 }
+.methods__tabs__container {
+  position: relative;
+}
+.methods__tabs__content {
+  opacity: 0;
+  transform: translateX(0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1s ease;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 40px;
+}
+.methods__tabs__content.active {
+  opacity: 1;
+  width: 100%;
+  position: relative;
+  transform: translateX(0);
+}
+
+
 
 
 .terms {
