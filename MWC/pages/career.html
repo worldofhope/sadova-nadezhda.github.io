@@ -281,14 +281,14 @@
         </svg>
       </button>
       <h3 class="popup-form__title caption">Откликнуться на вакансию</h3>
-      <form action="" class="form-career">
+      <form action="" class="form-career" onsubmit="submitForm()">
         <div>
           <label for="name">Имя</label>
-          <input id="name" type="text">
+          <input id="name" type="text" required>
         </div>
         <div>
           <label for="lastName">Фамилия</label>
-          <input id="lastName" type="text">
+          <input id="lastName" type="text" required>
         </div>
         <div>
           <label for="">Отчество</label>
@@ -296,7 +296,7 @@
         </div>
         <div>
           <label for="phone">Телефон</label>
-          <input id="phone" type="tel">
+          <input id="phone" type="tel" required>
         </div>
         <div>
           <label for="mail">Почта</label>

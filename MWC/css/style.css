@@ -2020,6 +2020,9 @@ ol.questions__tabs__caption {
 .form__methods input:focus {
   outline: unset;
 }
+.form-career input.mail-err {
+  border: 1px solid #F0304E;
+}
 .form__methods label {
   font-weight: 500;
   font-size: 18px;

@@ -232,6 +232,11 @@ $('.btn_clear').on('click', function(){
   $("#myForm").trigger("reset");
 });
 
+
+function submitForm() {
+  $('#form_loader').show()
+}
+
 // input mask tel
 $.fn.setCursorPosition = function(pos) {
   if ($(this).get(0).setSelectionRange) {
@@ -247,6 +252,23 @@ $.fn.setCursorPosition = function(pos) {
 $('input[type="tel"]').click(function() {
   $(this).setCursorPosition(3);
 }).mask('+7 (999) 999 99 99');
+
+
+//валидатор мыла
+function isEmail(string) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(string).toLowerCase());
+}
+
+
+$('#mail').on('keyup', function(){
+  let mail = isEmail($('#mail').val());
+  if (!mail) {
+    $('#mail').addClass('mail-err');
+  } else {
+    $('#mail').removeClass('mail-err');
+  }
+});
 
 
 let popupCareerBtn = document.querySelector('.popup-career__btn');
@@ -286,6 +308,16 @@ if(file){
   });
 }
 
+
+let alertt = document.querySelector(".alert--fixed");
+let alertClose = document.querySelectorAll(".alert--close")
+for (let item of alertClose) {
+ item.addEventListener('click', function (event) {
+    alertt.classList.remove("alert--active")
+   alertt.classList.remove("alert--warning")
+   alertt.classList.remove("alert--error")
+ })
+}
 
 
 /* custom select */
