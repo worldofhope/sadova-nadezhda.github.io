@@ -363,6 +363,13 @@ h4.caption {
   height: 100%;
   object-fit: contain;
 }
+.footer .footer__logo a:hover {
+  cursor: pointer;
+  padding: 0;
+}
+.footer .footer__logo a:hover::after {
+  content: none;
+}
 .footer__social {
   display: flex;
   justify-content: space-between;
