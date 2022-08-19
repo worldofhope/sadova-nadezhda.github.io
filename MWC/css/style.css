@@ -341,7 +341,7 @@ h4.caption {
 /* footer*/
 .footer {
   padding: 50px 0;
-  background: url(../img/background-3.jpg) center no-repeat;
+  background: url(../img/background-3.jpg) #001D59 center no-repeat;
   background-size: cover;
   color: #fff;
 }
@@ -464,6 +464,7 @@ h4.caption {
 /*apartments section*/
 .apartments {
   overflow: hidden;
+  background: #0036A7;
 }
 .apartments__slide {
   position: relative;
@@ -1139,7 +1140,7 @@ h4.caption {
 
 /*instagram section*/
 .instagram {
-  background: url(../img/background-2.jpg) center no-repeat;
+  background: url(../img/background-2.jpg) #0036A7 center no-repeat;
   background-size: cover;
   color: #fff;
 }
