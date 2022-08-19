@@ -221,8 +221,13 @@ $(function() {
       for(var i=0; i<tab.length; i++){
         if (target == tab[i]){
           tab[i].classList.add('active');
+          tab_content[i].classList.add('active');
           showContent(i);
-        } else{tab[i].classList.remove('active'); hideContent(i);}
+        } else{
+          tab[i].classList.remove('active'); 
+          tab_content[i].classList.remove('active'); 
+          hideContent(i);
+        }
       }
     }
   });
