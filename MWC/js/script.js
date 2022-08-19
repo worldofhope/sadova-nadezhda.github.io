@@ -183,7 +183,6 @@ $(function() {
       .addClass('active').siblings().removeClass('active')
       .closest('div.history__tabs').find('div.history__tab__content').removeClass('active').eq($(this).index()).addClass('active');
   });
-  
 });
 
 $(function() {
@@ -192,7 +191,6 @@ $(function() {
     $(this).addClass('active').siblings().removeClass('active')
     $('div.tabs').find('div.tab__content').removeClass('active').eq($(this).index()).addClass('active');
   });
-  
 });
 
 
