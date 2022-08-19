@@ -98,8 +98,9 @@ h4.caption {
 }
 .header__container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 150px;
+  /* gap: 150px; */
   min-height: 100px;
   padding: 25px 0;
 }
@@ -107,6 +108,7 @@ h4.caption {
   display: block;
   width: 165px;
   height: 49px;
+  margin-right: 150px;
 }
 .header__logo img {
   width: 100%;
@@ -161,6 +163,7 @@ h4.caption {
   transition: 0.5s ease-in-out;
   cursor: pointer;
   position: relative;
+  margin-left: 50px;
 }
 .header__icon span {
   display: block;
@@ -2665,8 +2668,8 @@ input.file:hover {
   .header__interaction {
     display: none;
   }
-  .header__container {
-    display: block;
+  .header__nav {
+    display: none;
   }
   .footer__nav {
     grid-template-columns: repeat(2, 1fr);
