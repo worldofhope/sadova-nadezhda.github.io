@@ -194,17 +194,67 @@ $(function() {
 });
 
 
-//tabs to accordeon
-let tabList = document.querySelectorAll('.questions__item__content');
-let tabContent = document.querySelectorAll('.questions__tab__content');
-window.addEventListener("resize", function(){
-  if (window.innerWidth < 980) {
-    if(tabList) {
-      tabList.forEach((item, i) =>{
-        item.after(tabContent[i])
-      })
+  // Табы Вопросы
+  var mob = false;
+  var tab = $('.questions__tab__item');
+  var tab_content = $('.questions__tab__content');
+  
+  if($('.tab__contents').css("display") == 'none'){
+    for (var i=0; i<tab_content.length; i++){
+      $(tab_content[i]).appendTo(tab[i]);
+    }
+    mob = true;
+  } else if($('.tab__contents').css("display") != 'none'){
+    for (var i=0; i<tab_content.length; i++){
+      $(tab_content[i]).appendTo('.tab__contents');
+    }
+    mob = false;
+  }
+    // клик на родительский элемент при клике на дочерние элементы блока .questions__tab__item
+  $('.questions__tab__item').children().on("click", function(){
+    $(this).parent('.questions__tab__item').click();
+  });
+  
+  $('.questions__tabs__caption').on("click", function(event){
+    var target = event.target;
+    if ($(target).hasClass('questions__tab__item')){
+      for(var i=0; i<tab.length; i++){
+        if (target == tab[i]){
+          tab[i].classList.add('active');
+          showContent(i);
+        } else{tab[i].classList.remove('active'); hideContent(i);}
+      }
+    }
+  });
+  function showContent(i){
+    if(mob){
+      $(tab_content[i]).slideDown();
+    } else{
+      $(tab_content[i]).show();
     }
   }
+  function hideContent(i){
+    if(mob){
+      $(tab_content[i]).slideUp();
+    } else{
+      $(tab_content[i]).hide();
+    }
+  }
+
+$(window).resize(function(){
+  // Табы вакансий, проверка ширины экрана
+  if($('.tab__contents').css("display") == 'none'){
+    for (var i=0; i<tab_content.length; i++){
+      $(tab_content[i]).appendTo(tab[i]);
+    }
+    mob = true;
+  } else if($('.tab__contents').css("display") != 'none'){
+    for (var i=0; i<tab_content.length; i++){
+      $(tab_content[i]).appendTo('.tab__contents');
+    }
+    mob = false;
+  }
+
 });
 
 

@@ -1834,12 +1834,9 @@ ol.questions__tabs__caption {
   list-style-type: none;
 }
 .questions__tab__item.active .questions__item__content {
-  font-weight: 700;
+  text-shadow: 0 0 1px black;
 }
-.questions__tab__item:first-child .questions__item__content {
-  border-top: 1px solid #AFC1D9;
-}
-.questions__tab__item .questions__item__content {
+.questions__item__content {
   padding: 30px 0;
   padding-left: 35px;
   padding-right: 58px;
@@ -1847,16 +1844,15 @@ ol.questions__tabs__caption {
   position: relative;
   transition: all 0.3s ease;
 }
-.questions__tab__item .questions__item__content::before {
+.questions__item__content::before {
   counter-increment: list;
   content: "0" counter(list)  ".";
   font-size: 18px;
   position: absolute;
-  top: 30px;
   left: 0;
   font-weight: 700;
 }
-.questions__tab__item .questions__item__content::after {
+.questions__item__content::after {
   content: url(../img/svg/arrow-white.svg);
   display: block;
   width: 50px;
@@ -1871,7 +1867,7 @@ ol.questions__tabs__caption {
   border-radius: 100%;
   transition: all 0.3s ease;
 }
-.questions__tab__item .questions__item__content:hover {
+.questions__item__content:hover {
   cursor: pointer;
   color: #0036A7;
 }
@@ -1882,23 +1878,12 @@ ol.questions__tabs__caption {
 .questions__tab__item.active .questions__item__content::after {
   background-color: #76777E;
 }
-
 .questions__tab__content {
-  opacity: 0;
-  transform: translateX(0);
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 1s ease;
+  display: none;
 }
 .questions__tab__content.active {
-  opacity: 1;
-  width: 100%;
-  position: relative;
-  transform: translateX(0);
+  display: block;
 }
-
-
 
 
 /*page methods*/
@@ -2690,51 +2675,32 @@ input.file:hover {
   .teams__tabs__caption {
     max-height: 878px;
   }
+  .tab__contents {
+    display: none;
+  }
+  .questions__tab__content {
+    margin: 20px 0;
+  }
+  .questions__item__content {
+    padding: 20px 35px;
+    border-top: 1px solid #AFC1D9;
+    border-bottom: none;
+  }
+  .questions__tab__item.active .questions__item__content, .questions__tab__item:last-child .questions__item__content {
+    border-bottom: 1px solid #AFC1D9;
+  }
   .questions__tabs {
     grid-template-columns: 1fr;
-    gap: 0px;
   }
-  .questions__tab__item .questions__item__content::after {
+  .questions__item__content::after {
     content: url(../img/svg/arrow-wh-down.svg);
     width: 40px;
     height: 40px;
     padding: 10px 16px;
   }
-  .questions__tab__item:hover {
-    cursor: pointer;
-  }
   .questions__tab__item.active .questions__item__content::after {
     content: url(../img/svg/arrow-wh-up.svg);
   }
-  .questions__tab__item {
-    overflow: hidden;
-  }
-  .questions__tab__item .questions__item__content {
-    z-index: 1;
-    background: #fff;
-    padding: 20px 35px;
-    border-top: 1px solid #AFC1D9;
-    border-bottom: none;
-  }
-  .questions__tab__item.active .questions__item__content,   .questions__tab__item .questions__item__content:last-child {
-    border-bottom: 1px solid #AFC1D9;
-  }
-  .questions__tab__content {
-    opacity: 0;
-    transform: translate(0, -100vh);
-    position: absolute;
-    margin: 20px 0;
-    top: 0;
-    left: 0;
-    transition: transform 1s ease;
-  }
-  .questions__tab__content.active {
-    opacity: 1;
-    width: 100%;
-    position: relative;
-    transform: translate(0,0);
-  }
-
 }
 @media (max-width: 900px) {
   .career__cards {
