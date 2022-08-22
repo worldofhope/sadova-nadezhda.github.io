@@ -538,7 +538,7 @@ h4.caption {
   position: absolute;
   top: 50%;
   transform: translatey(-50%) rotate(90deg);
-  left: 0;
+  left: 120px;
   width: max-content;
   height: max-content;
 }
@@ -1963,8 +1963,6 @@ ol.questions__tabs__caption {
 }
 
 
-
-
 .terms {
   padding: 100px 0;
 }
@@ -1993,6 +1991,7 @@ ol.questions__tabs__caption {
   transform: translateY(-50%);
   left: 0;
 }
+
 
 .proposal {
   background: linear-gradient(90deg, #F0F2F3 0%, #F0F2F3 53%, #0036A7 53%, #0036A7 100%);
@@ -2079,6 +2078,317 @@ ol.questions__tabs__caption {
   border-radius: 4px;
 }
 
+/*buy-apartments*/
+.buy-apartments {
+  padding: 100px 0;
+}
+.apartments-filter {
+  padding: 30px;
+  box-shadow: 0px 4px 24px -3px rgba(181, 190, 214, 0.34);
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+.filter__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+.filter__row {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 40px;
+  align-items: end;
+}
+.filter__form input[type=range] {
+  height: 2px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  background-color: #B9CDFF;
+}
+.filter__form #i1, .filter__form #i2, .filter__form #i3 {
+  margin-bottom: 0;
+}
+.form__price, .form__square .range-box div {
+  position: relative;
+}
+.filter__form  input#price, .filter__form  input#square, .filter__form  input#square2 {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+}
+.filter__form .label__title {
+  display: block;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  color: #333333;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.filter__form .form__room {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.filter__form .room label {
+  width: 80px;
+  height: 50px;
+  text-align: center;
+  background: #F2F6F7;
+  border-radius: 5px;
+  color: #333333;
+  padding: 16px 35px;
+  display: block;
+  line-height: 1;
+}
+.filter__form input[type="checkbox"] {
+  display: none;
+}
+.filter__form input[type="checkbox"] + label:hover {
+  cursor: pointer;
+}
+.filter__form input[type="checkbox"]:checked + label {
+  background: #0036A7;
+  color: #fff;
+}
+.filter__form .range-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.filter__form .form__btn-dark {
+  background: #0036A7;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 16px 20px;
+  transition: all 0.2s linear 0s;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: max-content;
+}
+.filter__form .form__btn-light {
+  background: transparent;
+  border: 1px solid #B7C0C7;
+  border-radius: 5px;
+  padding: 16px 20px;
+  transition: all 0.2s linear 0s;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: max-content;
+}
+.filter__form .filter-btn::after {
+  content: ">";
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  height: 100%;
+  width: 40px;
+  transition: all 0.2s linear 0s;
+}
+.filter__form .filter-btn:hover {
+  text-indent: -20px;
+  cursor: pointer;
+}
+.filter__form .filter-btn:hover::after {
+  opacity: 1;
+  text-indent: 0px;
+}
+
+.buy-apartment__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.buy-apartment__card {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 24px -3px rgba(181, 190, 214, 0.34);
+  border-radius: 5px;
+  /*padding: 20px;*/
+  position: relative;
+  overflow: hidden;
+  height: 460px;
+}
+.buy-apartment__card.card__img {
+  position: relative;
+  /*margin: -20px -20px 10px;*/
+  height: 336px;
+  display: block;
+}
+.buy-apartment__card .card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.buy-apartment__card .card__img p {
+  padding: 6px 20px;
+  background: #0036A7;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+.buy-apartment__card .card__description {
+  background: #fff;
+  padding: 20px;
+  padding-top: 10px;
+  width: 100%;
+  transition: all 0.2s linear;
+  position: absolute;
+  bottom: -190px;
+}
+.buy-apartment__card .card__description:hover {
+  bottom: 0;
+  border-radius: 5px;
+}
+.buy-apartment__card.card__text {
+  color: #0036A7;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(181, 190, 214, 0.34);
+  font-size: 18px;
+  font-weight: 500;
+}
+.buy-apartment__card .card__title {
+  margin-bottom: 10px;
+}
+.buy-apartment__card .card__price {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  color: #333333;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(181, 190, 214, 0.34);
+}
+.buy-apartment__card .card__rooms {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(181, 190, 214, 0.34);
+}
+.buy-apartment__card.item_room {
+  padding: 16px 20px;
+  color: #B7C0C7;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1em;
+  background: #F2F6F7;
+  border-radius: 5px;
+  text-align: center;
+  width: 60px;
+  height: 50px;
+}
+.buy-apartment__card .item_room.active {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  color: #0036A7;
+}
+.buy-apartment__card.card__btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.buy-apartment__card .btn-light {
+  background: #B7C0C7;
+  border-radius: 5px;
+  color: #fff;
+  padding: 16px 20px;
+  width: 160px;
+  transition: all 0.2s linear 0s;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.buy-apartment__card .btn-light:before {
+  content: ">";
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  height: 100%;
+  width: 40px;
+  transition: all 0.2s linear 0s;
+}
+.buy-apartment__card .btn-light:hover {
+  text-indent: -20px;
+}
+.buy-apartment__card .btn-light:hover:before {
+  opacity: 1;
+  text-indent: 0px;
+}
+.buy-apartment__card .btn-dark {
+  background: #0036A7;
+  border-radius: 5px;
+  color: #fff;
+  padding: 16px 20px;
+  width: 160px;
+  transition: all 0.2s linear 0s;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.buy-apartment__card .btn-dark:before {
+  content: ">";
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  height: 100%;
+  width: 40px;
+  transition: all 0.2s linear 0s;
+}
+.buy-apartment__card .btn-dark:hover {
+  text-indent: -20px;
+}
+.buy-apartment__card .btn-dark:hover:before {
+  opacity: 1;
+  text-indent: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*popup*/
 .popup-career, .popup-form {
   width: 100vw;
   height: 100vh;
@@ -2295,10 +2605,17 @@ input.file:hover {
 
 /*responsive*/
 @media (max-width: 1650px) {
-
+  .filter__form .room label {
+    width: 68px;
+    height: 45px;
+    padding: 16px 20px;
+  }
 }
 @media (max-width: 1450px) {
   .our-complexs__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .buy-apartment__cards {
     grid-template-columns: repeat(3, 1fr);
   }
   .our-complexs__form .room label {
@@ -2306,11 +2623,21 @@ input.file:hover {
     height: 45px;
     padding: 16px 20px;
   }
+  .filter__form .room label {
+    width: 80px;
+    height: 50px;
+    padding: 16px 30px;
+  }
   .news__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
+  .filter__row {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+  } 
   .club__card__img, .subsidiaries__card__img {
     height: 150px;
   }
@@ -2402,6 +2729,9 @@ input.file:hover {
 }
 @media (max-width: 1100px) {
   .our-complexs__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .buy-apartment__cards {
     grid-template-columns: repeat(2, 1fr);
   }
   .instagram {
@@ -2627,7 +2957,7 @@ input.file:hover {
   .instagram__description p {
     font-size: 16px;
   }
-  .our-complexs__form .room label {
+  .our-complexs__form .room label, .filter__form .room label {
     width: 70px;
   }
   .teams__tab__description .caption {
@@ -2670,6 +3000,9 @@ input.file:hover {
   }
   .questions__tab__item.active .questions__item__content::after {
     content: url(../img/svg/arrow-wh-up.svg);
+  }
+  .apartments__slider .slick-dots { 
+    left: 0;
   }
 }
 @media (max-width: 900px) {
@@ -2936,6 +3269,17 @@ input.file:hover {
   .popup-career__container, .popup-form__container {
     height: 100%;
   }
+  .apartments-filter {
+    padding: 16px;
+  }
+  .filter__form {
+    gap: 20px;
+  }
+  .filter__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 @media (max-width: 620px) {
   .proposal {
@@ -2985,18 +3329,19 @@ input.file:hover {
   .our-complexs__form .form__room {
     justify-content: space-between;
   }
-  .our-complexs__cards.slick-dotted.slick-slider {
+  .our-complexs__cards.slick-dotted.slick-slider, .buy-apartment__cards.slick-dotted.slick-slider {
     margin-bottom: 50px;
   }
-  .our-complexs__cards .slick-dots {
+  .our-complexs__cards .slick-dots, .buy-apartment__cards .slick-dots {
     bottom: -40px;
   }
   .news__cards {
     display: block;
   }
-  .our-complexs__cards, .news__cards {
+  .our-complexs__cards, .news__cards, .buy-apartment__cards {
     grid-template-columns: repeat(1, 1fr);
   }
+
     /*.about-company__numbers {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -3046,7 +3391,7 @@ input.file:hover {
   } 
 }
 @media (max-width: 374px) {
-  .our-complexs__form .room label {
+  .our-complexs__form .room label, .filter__form .room label  {
     width: 55px;
   }
   .our-complexs__form .form__footer {
