@@ -100,9 +100,6 @@ ul[class],
 ol[class] {
   list-style: none;
 }
-li[class] {
-  margin: 0;
-}
 
 a:not([class]) {
   text-decoration-skip-ink: auto;
