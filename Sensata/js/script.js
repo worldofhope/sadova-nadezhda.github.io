@@ -76,13 +76,13 @@ $('.structure__slider').slick({
 /*---------- End slider ------------- */
 
 /*------------ Start Tab Projects ---------------*/
-$(function() {
-  $('ul.projects__captions').on('click', 'li:not(.active)', function() {
-    $(this)
-      .addClass('active').siblings().removeClass('active')
-      .closest('div.projects__tabs').find('div.projects__content').removeClass('active').eq($(this).index()).addClass('active');
-  });
-});
+// $(function() {
+//   $('ul.projects__captions').on('click', 'li:not(.active)', function() {
+//     $(this)
+//       .addClass('active').siblings().removeClass('active')
+//       .closest('div.projects__tabs').find('div.projects__content').removeClass('active').eq($(this).index()).addClass('active');
+//   });
+// });
 /*------------ End Tab Projects ---------------*/
 
 /* accordion */

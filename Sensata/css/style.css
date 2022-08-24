@@ -251,8 +251,8 @@ h4.caption {
 .full__slider .slick-dots li {
   position: relative;
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   margin: 0 5px;
   padding: 0;
   cursor: pointer;
@@ -263,8 +263,8 @@ h4.caption {
   font-size: 0;
   line-height: 0;
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   padding: 5px;
   cursor: pointer;
   color: transparent;
@@ -283,13 +283,13 @@ h4.caption {
 }
 .full__slider .slick-dots li button:before {
   font-family: 'slick';
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1;
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   content: '•';
   text-align: center;
   color: #fff;
@@ -384,24 +384,13 @@ h4.caption {
   box-shadow: 0px -8px 15px rgba(0, 0, 0, 0.05);
   z-index: 0;
 }
-.projects__contents {
+.projects__content {
   background: #FFFFFF;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 0px 10px 10px 10px;
   z-index: 1;
   position: relative;
-}
-.projects__content {
-  position: absolute;
-  top: 0;
-  left: 0;
   padding: 25px;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-.projects__content.active {
-  opacity: 1;
-  position: static;
 }
 .projects__form {
   display: grid;
