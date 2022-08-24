@@ -1842,7 +1842,7 @@ h4.location__caption {
   .our-projects, .stock, .gallery, .advantages {
     padding: 80px 0;
   }
-  .request__description, .methods, .news {
+  .request__description, .methods, .news, .implemented {
     padding-top: 80px;
   }
   .advantages {
@@ -1932,7 +1932,7 @@ h4.location__caption {
   .our-projects, .stock, .gallery, .advantages {
     padding: 50px 0;
   }
-  .request__description, .methods, .news {
+  .request__description, .methods, .news, .implemented {
     padding-top: 50px;
   }
   h2.caption {
@@ -1987,6 +1987,9 @@ h4.location__caption {
   .btn {
     width: 100%;
     text-align: center;
+  }
+  .advantages__btn {
+    max-width: unset;
   }
   .button svg{
     right: 20%;
