@@ -89,8 +89,8 @@ h4.caption {
 }
 .header__elem_tel::before {
   content: url(../img/phone.svg);
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   border: 1px solid #354FD5;
   border-radius: 100%;
   position: absolute;
