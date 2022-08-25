@@ -996,15 +996,10 @@ h2.advantages__caption {
 .implemented__title {
   margin-bottom: 40px;
 }
-/* .implemented__cards {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 30px;
-} */
-.implemented__card {
+.implemented__card, .progress__card {
   margin: 0 15px;
 }
-.implemented__video {
+.implemented__video, .progress__video {
   height: 250px;
   overflow: hidden;
   border-radius: 10px;
@@ -1012,10 +1007,10 @@ h2.advantages__caption {
   position: relative;
   background-color: rgba(53, 80, 213, 0.1);
 }
-.implemented__video:hover iframe {
+.implemented__video:hover iframe, .progress__video:hover iframe {
   cursor: pointer;
 }
-h4.imp__card__title {
+h4.imp__card__title, h4.progress__card__title {
   color: #000;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1587,6 +1582,14 @@ h4.location__caption {
 .layouts__rooms__caption li:hover {
   cursor: pointer;
   color: #354FD5;
+}
+.tabs__room__img {
+  height: 320px;
+}
+.tabs__room__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 
@@ -2230,6 +2233,9 @@ h4.location__caption {
   }
   .request__img {
     height: 210px;
+  }
+  .tabs__room__img {
+    height: 250px;
   }
 }
 /*------------------ End Responsive ------------------*/
