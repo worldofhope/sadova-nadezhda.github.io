@@ -72,17 +72,50 @@ $('.structure__slider').slick({
   prevArrow: '<button type="button" class="slick_arrow slick_prev"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="white"/><path d="M23 10L13 20L23 30" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
   dots: false
 });
-
+$('.benefits__slider').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: true,
+  dots: true,
+  nextArrow: '<button type="button" class="slick_arrow slick_next"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle r="20" transform="matrix(-1 0 0 1 20 20)" fill="white"/><path d="M17 10L27 20L17 30" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+  prevArrow: '<button type="button" class="slick_arrow slick_prev"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="white"/><path d="M23 10L13 20L23 30" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+  responsive: [
+    {
+      breakpoint: 1260,
+      settings: {
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 980,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 568,
+      settings: {
+        slidesToShow: 1,
+        arrows: false
+      }
+    }
+  ]
+});
 /*---------- End slider ------------- */
 
 /*------------ Start Tab Projects ---------------*/
-// $(function() {
-//   $('ul.projects__captions').on('click', 'li:not(.active)', function() {
-//     $(this)
-//       .addClass('active').siblings().removeClass('active')
-//       .closest('div.projects__tabs').find('div.projects__content').removeClass('active').eq($(this).index()).addClass('active');
-//   });
-// });
+$(function() {
+  $('ul.layouts__tabs__caption').on('click', 'li:not(.active)', function() {
+    $(this).addClass('active').siblings().removeClass('active')
+    $('div.layouts__tabs__contents').find('div.layouts__tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+  });
+});
+$(function() {
+  $('ul.layouts__rooms__caption').on('click', 'li:not(.active)', function() {
+    $(this).addClass('active').siblings().removeClass('active')
+    $('.layouts__tabs__content.active').find('div.layouts__tabs__room').removeClass('active').eq($(this).index()).addClass('active');
+  });
+});
 /*------------ End Tab Projects ---------------*/
 
 /* accordion */
