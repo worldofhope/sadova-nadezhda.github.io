@@ -1765,6 +1765,9 @@ h4.location__caption {
   .project__item {
     margin-right: 60px;
   }
+  .benefits .slick-dots {
+    width: 70%;
+  }
 }
 @media (max-width: 1260px) {
   .header__elem_time {
@@ -2138,6 +2141,9 @@ h4.location__caption {
   .project__captions {
     margin-bottom: 60px;
   }
+  .benefits .slick-dots {
+    width: 60%;
+  }
 }
 @media (max-width: 767px) {
   .slider__item {
@@ -2202,6 +2208,12 @@ h4.location__caption {
   .advantages__pagin {
     font-size: 25px;
   }
+  .benefits .slick-dots {
+    width: 75%;
+  }
+  .benefits__number {
+    display: none;
+  }
 }
 @media (max-width: 568px) {
   .projects__form {
@@ -2241,7 +2253,7 @@ h4.location__caption {
   .structure .slick_next, .structure .slick_prev {
     display: none !important;
   }
-  .structure__slide-txt {
+  .structure__slide-txt, .benefits .slick-dots {
     width: 100%;
   }
 }
