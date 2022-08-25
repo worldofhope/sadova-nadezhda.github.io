@@ -700,6 +700,7 @@ h4.caption {
   margin-bottom: 15px;
   border-radius: 10px;
   overflow: hidden;
+  height: 250px;
 }
 .news__img::after {
   content: '';
@@ -798,7 +799,7 @@ h4.news__title {
 }
 .stock__footer {
   position: absolute;
-  bottom: -42px;
+  bottom: -45px;
   left: 30px;
   z-index: 1;
   color: #fff;
@@ -1768,6 +1769,9 @@ h4.location__caption {
   }
   .benefits .slick-dots {
     width: 70%;
+  }
+  .request__img {
+    height: 400px;
   }
 }
 @media (max-width: 1260px) {
