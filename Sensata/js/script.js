@@ -7,6 +7,24 @@ link.addEventListener('click', function () {
 }, false);
 /*---------- End burger menu ------------- */
 
+
+/*counter slide*/
+$('.benefits__slider').each(function(){
+	var $slickElement = $(this);
+	$slickElement.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+		var i = (currentSlide ? currentSlide : 0) + 1;			   
+		$('.benefits__number', slick.$slider.parent()).text( '0'+ i + '/0' + slick.slideCount);
+  });
+});
+$('.advantages__slider-txt').each(function(){
+	var $slickElement = $(this);
+	$slickElement.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+		var i = (currentSlide ? currentSlide : 0) + 1;			   
+		$('.advantages__pagin', slick.$slider.parent()).text( '0'+ i + '/0' + slick.slideCount);
+  });
+});
+
+
 /*---------- Start slider ------------- */
 $('.full__slider').slick({
   slidesToShow: 1,
@@ -102,6 +120,7 @@ $('.benefits__slider').slick({
   ]
 });
 /*---------- End slider ------------- */
+
 
 /*------------ Start Tab Projects ---------------*/
 $(function() {

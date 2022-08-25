@@ -853,6 +853,8 @@ h4.news__title {
   top: 180px;
   z-index: 2;
   color: #fff;
+  font-size: 35px;
+  font-weight: 300;
 }
 .advantages__sliders {
   position: relative;
@@ -1469,6 +1471,9 @@ h4.location__caption {
   stroke: #000;
 }
 
+.benefits__container {
+  position: relative;
+}
 .benefits__slide {
   position: relative;
   min-height: 500px;
@@ -1509,13 +1514,24 @@ h4.location__caption {
 .benefits .slick_next, .benefits .slick_prev {
   top: auto;
   left: auto;
-  bottom: -30px;
+  bottom: -40px;
   right: 15px;
 }
 .benefits .slick_prev {
   right: 70px;
 }
-
+.benefits__number {
+  position: absolute;
+  right: 150px;
+  bottom: -20px;
+  padding: 8px 25px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 100px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 100%;
+}
 
 
 
@@ -1944,6 +1960,10 @@ h4.location__caption {
   .subheader {
     display: none;
   }
+  .advantages__pagin {
+    right: auto;
+    left: 50%;
+  }
 }
 @media (max-width: 980px) {
   .project__caption {
@@ -2066,7 +2086,12 @@ h4.location__caption {
     top: 40px;
   }
   .advantages__pagin {
-    top: 6px;
+    top: 50%;
+    right: 15px;
+    left: auto;
+  }
+  .advantages .slick-dots {
+    width: 75%;
   }
   .location__card, .about-project__txt {
     grid-template-columns: 1fr;
@@ -2174,6 +2199,9 @@ h4.location__caption {
   .project__captions {
     margin-bottom: 40px;
   }
+  .advantages__pagin {
+    font-size: 25px;
+  }
 }
 @media (max-width: 568px) {
   .projects__form {
@@ -2202,7 +2230,7 @@ h4.location__caption {
     grid-column: unset;
   }
   .advantages .slick-dots {
-    width: 70%;
+    width: 65%;
   }
   .structure__description {
     grid-template-columns: 1fr;
