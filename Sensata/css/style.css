@@ -2239,7 +2239,7 @@ h4.location__caption {
     grid-column: unset;
   }
   .structure .slick_next, .structure .slick_prev {
-    display: none;
+    display: none !important;
   }
   .structure__slide-txt {
     width: 100%;
