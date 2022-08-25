@@ -1232,6 +1232,9 @@ h4.imp__card__title, h4.progress__card__title {
 .about__img {
   height: 800px;
 }
+.about__img:hover {
+  cursor: grab;
+}
 .about__img img {
   width: 100%;
   max-width: 100%;
