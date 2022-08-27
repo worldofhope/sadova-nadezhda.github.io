@@ -2913,6 +2913,9 @@ input.file:hover {
   .instagram__description {
     padding: 0;
   }
+  .post__item__img {
+    height: 250px;
+  }
   h2.caption {
     font-size: 32px;
   }
