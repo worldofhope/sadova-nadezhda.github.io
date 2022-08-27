@@ -2857,6 +2857,13 @@ input.file:hover {
   .instagram__description p {
     font-size: 18px;
   }
+  .apartments__slide__title {
+    font-size: 60px;
+    left: 150px;
+  }
+  .apartments__slider .slick-dots { 
+    left: 0;
+  }
 }
 @media (max-width: 980px) {
   /*title*/
@@ -2882,10 +2889,6 @@ input.file:hover {
   }
   .header__burger-button {
     display: block;
-  }
-  .apartments__slide__title {
-    font-size: 60px;
-    left: 150px;
   }
   /*.apartments__slider .slick-slide img {
     display: block;
@@ -3011,9 +3014,6 @@ input.file:hover {
   }
   .questions__tab__item.active .questions__item__content::after {
     content: url(../img/svg/arrow-wh-up.svg);
-  }
-  .apartments__slider .slick-dots { 
-    left: 0;
   }
 }
 @media (max-width: 900px) {
