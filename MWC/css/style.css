@@ -1239,10 +1239,10 @@ h4.caption {
   margin: -10px 0;
 }
 .instagram__posts .posts-column-1 .slick-slide {
-  transform: translateY(-100px);
+  transform: translateY(-180px);
 }
 .instagram__posts .posts-column-2 .slick-slide {
-  transform: translateY(60px);
+  transform: translateY(180px);
 }
 .instagram__posts__item {
   background-color: #fff;
@@ -2886,14 +2886,13 @@ input.file:hover {
     height: 80vh;
     object-fit: cover;
   }*/
-  .our-complexs {
-    overflow: hidden;
-  }
   .our-complexs__form {
     position: relative;
     top: 0;
     margin-bottom: 80px;
     padding: 20px;
+    margin-top: -120px;
+    border-radius: 5px;
   }
   .our-complexs__form form {
     grid-template-columns: repeat(2, 1fr);
@@ -2904,6 +2903,9 @@ input.file:hover {
   .our-complexs, .about-company, .news, .instagram, .career,.terms, .partners, 
   .about-us, .company-worth, .history, .subsidiaries, .club, .questions, .methods__tab {
     padding: 80px 0;
+  }
+  .our-complexs__description {
+    overflow: hidden;
   }
   .teams, .methods {
     padding-top: 80px;
@@ -3091,6 +3093,8 @@ input.file:hover {
   .our-complexs__form {
     margin-bottom: 40px;
     padding: 16px;
+    margin-top: -120px;
+    border-radius: 5px;
   }
   .our-complexs__form form {
     display: flex;
