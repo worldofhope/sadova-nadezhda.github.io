@@ -3407,6 +3407,8 @@ input.file:hover {
   }
   .proposal__img {
     height: 300px;
+    width: 300px;
+    margin-left: auto;
   }
   .proposal {
     background: linear-gradient(180deg, #F0F2F3 0%, #F0F2F3 53.3%, #0036A7 46.7%, #0036A7 100%);
@@ -3420,6 +3422,14 @@ input.file:hover {
   }
   .proposal__form {
     padding: 50px 0;
+  }
+  .questions__tab__content, .questions__tab__item  {
+    font-size: 12px;
+  }
+  .questions__item__content::after {
+    width: 30px;
+    height: 30px;
+    padding: 5px 11px;
   }
 }
 @media (max-width: 374px) {
@@ -3455,5 +3465,8 @@ input.file:hover {
   }
   .about-company .company__number {
     padding-left: 0;
+  }
+  .questions__item__content::before {
+    font-size: 14px;
   }
 }
