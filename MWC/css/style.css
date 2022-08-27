@@ -3287,6 +3287,9 @@ input.file:hover {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  .partners-bank__img {
+    height: 60px;
+  }
 }
 @media (max-width: 620px) {
   .proposal {
