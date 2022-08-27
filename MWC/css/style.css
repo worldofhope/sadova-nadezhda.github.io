@@ -3287,9 +3287,6 @@ input.file:hover {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .partners-bank__img {
-    height: 60px;
-  }
 }
 @media (max-width: 620px) {
   .proposal {
@@ -3399,6 +3396,31 @@ input.file:hover {
   .history__tab__content p {
     max-width: 240px;
   } 
+  .form__methods {
+    grid-template-columns: 1fr;
+  }
+  .form__methods__btn {
+    grid-column: unset;
+  }
+  .partners-bank__img {
+    height: 60px;
+  }
+  .proposal__img {
+    height: 300px;
+  }
+  .proposal {
+    background: linear-gradient(180deg, #F0F2F3 0%, #F0F2F3 53.3%, #0036A7 46.7%, #0036A7 100%);
+  }
+  .proposal__description, .proposal__form {
+    padding: 0;
+    align-self: center;
+  }
+  .proposal__description {
+    padding-top: 50px;
+  }
+  .proposal__form {
+    padding: 50px 0;
+  }
 }
 @media (max-width: 374px) {
   .our-complexs__form .room label, .filter__form .room label  {
