@@ -79,6 +79,7 @@ $('.advantages__slider-txt').slick({
 $('.advantages__slider-img').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
+  fade: true,
   asNavFor: '.advantages__slider-txt',
   arrows: false
 });
@@ -150,5 +151,39 @@ for (i = 0; i < acc.length; i++) {
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
+  });
+}
+
+/*hide/show*/
+$(function() {
+  $("#btn-hide").click(function() {
+    $(".hidden").fadeOut();
+    $("#btn-hide").hide();
+    $("#btn-display").show();
+  });
+  $("#btn-display").click(function() {
+    $(".hidden").fadeIn();
+    $("#btn-hide").show();
+    $("#btn-display").hide();
+  });
+});
+
+
+/* select */
+let formFilter = document.querySelector('.projects__form');
+let selectCity = document.querySelector('.city');
+let selectLoca = document.querySelector('.location');
+if(formFilter){
+  selectCity.addEventListener('change', () => {
+  let optionCity = document.querySelector('.city option:checked');
+  let optionLoca = document.querySelectorAll('.location option');
+  optionLoca.forEach(item => {
+    if(item.getAttribute("data-city") == optionCity.getAttribute("data-city")) {
+      item.style.display = "block";
+    }
+    else {
+      item.style.display = "none";
+    }
+  })
   });
 }
