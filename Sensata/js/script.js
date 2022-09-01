@@ -201,3 +201,8 @@ function PopUpShow(){
 function PopUpHide(){
   $("#popup").hide();
 }
+$(document).ready(function() {
+  $(".projects__form").change(function(){
+      $(".filter-btn").addClass('active')
+  });
+});
