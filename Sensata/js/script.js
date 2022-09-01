@@ -187,12 +187,12 @@ for (i = 0; i < acc.length; i++) {
 /*hide/show*/
 $(function() {
   $("#btn-hide").click(function() {
-    $(".hidden").fadeOut();
+    $(".hidden").hide();
     $("#btn-hide").hide();
     $("#btn-display").show();
   });
   $("#btn-display").click(function() {
-    $(".hidden").fadeIn();
+    $(".hidden").show();
     $("#btn-hide").show();
     $("#btn-display").hide();
   });
