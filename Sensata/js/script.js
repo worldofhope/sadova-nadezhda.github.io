@@ -120,6 +120,26 @@ $('.benefits__slider').slick({
     }
   ]
 });
+
+let flag = true;
+$(window).on('resize', function(){
+  if ($(this).width() < 569 && flag) {
+    flag = false;
+    $('.js-slick-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false,
+      variableWidth: true,
+      dots: true
+    });
+  }
+  else if ($(this).width() > 568 && !flag) {
+    flag = true;
+    $('.js-slick-slider').slick('unslick');
+  }
+}).resize();
 /*---------- End slider ------------- */
 
 

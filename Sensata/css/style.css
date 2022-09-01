@@ -1701,7 +1701,9 @@ h4.location__caption {
   height: 100%;
   object-fit: contain;
 }
-
+.tabs__room__img:hover {
+  cursor: zoom-in;
+}
 
 
 
@@ -2358,7 +2360,7 @@ h4.location__caption {
     bottom: 20px;
   }
   .project__captions {
-    margin-bottom: 60px;
+    margin-bottom: 70px;
   }
   .benefits .slick-dots {
     width: 60%;
@@ -2367,7 +2369,7 @@ h4.location__caption {
     padding: 30px 10px;
   }
   .project__container {
-    height: 600px;
+    height: 500px;
   }
 }
 @media (max-width: 767px) {
@@ -2449,6 +2451,18 @@ h4.location__caption {
   .subheader {
     position: static;
   }
+  .commer__container{
+    padding: 20px;
+  }
+  .stock__footer {
+    left: 15px;
+  }
+  .structure__slide {
+    min-height: 400px;
+  }
+  .structure__slide-txt {
+    font-size: 20px;
+  }
 }
 @media (max-width: 568px) {
   .projects__content {
@@ -2508,6 +2522,7 @@ h4.location__caption {
   }
   .subheader__btn {
     max-width: 100%;
+    text-align: center;
   }
   .subheader__btn-light {
     margin-right: 0;
