@@ -104,12 +104,12 @@
             </div>
           </div>
 
-          <form action="" class="projects__form">
+          <form action="" class="projects__form" onsubmit="submitForm()">
             <div class="projects__captions">
-              <input type="radio" name="all" id="all"><label for="all">Все</label>
-              <input type="radio" name="sale" id="sale"><label for="sale">В продаже</label>
-              <input type="radio" name="perspective" id="perspective"><label for="perspective">Перспективные</label>
-              <input type="radio" name="realize" id="realize"><label for="realize">Реализованные</label>
+              <input type="radio" name="project" id="all" checked><label for="all">Все</label>
+              <input type="radio" name="project" id="sale"><label for="sale">В продаже</label>
+              <input type="radio" name="project" id="perspective"><label for="perspective">Перспективные</label>
+              <input type="radio" name="project" id="realize"><label for="realize">Реализованные</label>
             </div>
             <div class="projects__content">
                 <div class="projects__city content__column">
@@ -297,7 +297,7 @@
             <div class="request__txt">
               <p>Оставьте заявку и получите информацию о будущих проектах</p>
             </div>
-            <button class="request__btn button btn">
+            <button class="request__btn button btn" onclick="PopUpShow()">
               Оставить заявку
               <svg width="17" height="9" viewBox="0 0 17 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 4C0.723858 4 0.5 4.22386 0.5 4.5C0.5 4.77614 0.723858 5 1 5V4ZM16.3536 4.85355C16.5488 4.65829 16.5488 4.34171 16.3536 4.14645L13.1716 0.964466C12.9763 0.769204 12.6597 0.769204 12.4645 0.964466C12.2692 1.15973 12.2692 1.47631 12.4645 1.67157L15.2929 4.5L12.4645 7.32843C12.2692 7.52369 12.2692 7.84027 12.4645 8.03553C12.6597 8.2308 12.9763 8.2308 13.1716 8.03553L16.3536 4.85355ZM1 5H16V4H1V5Z" fill="#3A3A3A"/>
@@ -648,14 +648,15 @@
     </section>
   </main>
 
-  <div class="popup">
+  <div id="popup" class="popup">
     <div class="popup__container">
+      <button class="popup-close" onclick="PopUpHide()"></button>
       <h3 class="popup__title"><span>наш менеджер</span>
         Свяжется с вами</h3>
-      <form action="" class="popup__form">
-        <input type="text" placeholder="Введите имя">
+      <form action="" class="popup__form" onsubmit="submitForm()">
+        <input type="text" placeholder="Введите имя" required>
         <input type="tel" placeholder="Введите номер">
-        <div class="popup__check"><input type="checkbox" name="" id="check"><label for="check">согласен на обработку информации</label></div>
+        <div class="popup__check"><input type="checkbox" name="" id="check" required><label for="check">согласен на обработку информации</label></div>
         <button class="popup__btn button btn">Оставить заявку
           <svg width="17" height="9" viewBox="0 0 17 9" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 4C0.723858 4 0.5 4.22386 0.5 4.5C0.5 4.77614 0.723858 5 1 5V4ZM16.3536 4.85355C16.5488 4.65829 16.5488 4.34171 16.3536 4.14645L13.1716 0.964466C12.9763 0.769204 12.6597 0.769204 12.4645 0.964466C12.2692 1.15973 12.2692 1.47631 12.4645 1.67157L15.2929 4.5L12.4645 7.32843C12.2692 7.52369 12.2692 7.84027 12.4645 8.03553C12.6597 8.2308 12.9763 8.2308 13.1716 8.03553L16.3536 4.85355ZM1 5H16V4H1V5Z" fill="#fff"/>
