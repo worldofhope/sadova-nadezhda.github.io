@@ -89,7 +89,16 @@ $('.structure__slider').slick({
   arrows: true,
   nextArrow: '<button type="button" class="slick_arrow slick_next"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle r="20" transform="matrix(-1 0 0 1 20 20)" fill="white"/><path d="M17 10L27 20L17 30" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
   prevArrow: '<button type="button" class="slick_arrow slick_prev"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="white"/><path d="M23 10L13 20L23 30" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
-  dots: false
+  dots: false,
+  responsive: [
+    {
+      breakpoint: 568,
+      settings: {
+        arrows: false,
+        dots: true
+      }
+    }
+  ]
 });
 $('.benefits__slider').slick({
   slidesToShow: 4,
@@ -128,9 +137,10 @@ $(window).on('resize', function(){
     $('.js-slick-slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
+      // autoplay: true,
+      // autoplaySpeed: 2000,
       arrows: false,
+      adaptiveHeight: true,
       variableWidth: true,
       dots: true
     });

@@ -131,7 +131,6 @@ $(window).on('resize', function(){
       // autoplay: true,
       // autoplaySpeed: 2000,
       arrows: false,
-      variableWidth: true,
       dots: true
     });
   }
