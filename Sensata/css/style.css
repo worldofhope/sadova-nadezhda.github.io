@@ -372,6 +372,7 @@ h4.caption {
   background-color: #354FD5;
   border: 1px solid #354FD5;
   color: #fff;
+  cursor: pointer;
 }
 .projects__map:hover path, .projects__panorama:hover path {
   fill: #fff;
@@ -1553,6 +1554,12 @@ h4.location__caption {
   overflow: hidden;
   margin: 0 10px;
 }
+.benefits__slide-caption {
+  flex-grow: 1;
+}
+.benefits__slide-txt {
+  font-size: 14px;
+}
 .benefits__slide-img {
   position: absolute;
   left: 0;
@@ -1766,6 +1773,7 @@ h4.location__caption {
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(4px);
   z-index: 99;
+  display: none;
 }
 .popup__container {
   padding: 40px 30px;

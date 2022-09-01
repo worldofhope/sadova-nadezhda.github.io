@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sensata</title>
+  <link rel="stylesheet" href="css/jquery.fancybox.css">
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/style.css">
@@ -85,7 +86,7 @@
                 </span>
                  На карте
               </a>
-              <a href="#" class="projects__panorama btn">
+              <a class="projects__panorama btn" data-fancybox data-src="#maps">
                 <span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_9_18)">
@@ -103,7 +104,9 @@
               </a>
             </div>
           </div>
-
+          <div id="maps" style="display: none; width: 90%; height: 90%;" class="fancybox-content">
+            <iframe src="https://nur-sultan3d.kz/3d/sensata3d/index2.html#pano137/-178.3/14.2/90.0" width="100%" height="100%" frameborder="0"></iframe>
+          </div>
           <form action="" class="projects__form" onsubmit="submitForm()">
             <div class="projects__captions">
               <input type="radio" name="project" id="all" checked><label for="all">Все</label>
@@ -668,6 +671,7 @@
 
   <footer></footer>
   <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/script.js"></script>
 </body>
