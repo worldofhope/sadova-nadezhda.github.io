@@ -236,6 +236,12 @@ $(document).ready(function() {
       $(".filter-btn").addClass('active')
   });
 });
+$('#popup').on("click", function(event){
+  var target = event.target;
+  if ($(target).hasClass('popup')){
+    PopUpHide()
+  }
+});
 
 // input mask tel
 $.fn.setCursorPosition = function(pos) {
