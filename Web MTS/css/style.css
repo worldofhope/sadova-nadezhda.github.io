@@ -1,0 +1,126 @@
+.page__header {
+  width: 350px;
+  background-color: #1A2738;
+  box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.25);
+}
+.header__container {
+  height: 100vh;
+}
+.header__logo {
+  display: block;
+  padding: 30px 50px;
+  padding-bottom: 60px;
+}
+.logo {
+  width: 90px;
+  height: 55px;
+}
+.header__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.header__menu-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+}
+.header__menu-item {
+  overflow: hidden;
+  position: relative;
+}
+.item__caption, .item {
+  display: block;
+  padding: 12px;
+  padding-left: 50px;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.item__content {
+  background-color: #172331;
+  padding: 0;
+  height: 0;
+  opacity: 0;
+  font-weight: 400;
+  font-size: 14px;
+}
+.header__menu-item.active .item__caption {
+  background-color: #121C28;
+  color: rgba(255, 255, 255, 0.5);
+}
+.header__menu-item.active path {
+  fill: rgba(255, 255, 255, 0.5);
+}
+.header__menu-item.active .item__content {
+  animation: ani 1s forwards;
+  padding: 10px;
+  padding-left: 80px;
+}
+.header__menu-item svg {
+  margin-right: 15px;
+}
+.content-list li {
+  margin-bottom: 14px;
+}
+.content-list li:last-child {
+  margin-bottom: 0px;
+}
+.item-icon::after {
+  content: url(../img/arr-down.svg);
+  margin-left: 15px;
+}
+.header__menu-item.active .item-icon::after {
+  content: url(../img/arr-up.svg);
+}
+.header__info {
+  position: sticky;
+  top: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1;
+}
+.tel svg, .mail svg {
+  margin-right: 15px;
+}
+.header__title {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 15px;
+}
+.header-tel {
+  margin-bottom: 15px;
+}
+.header-mail {
+  margin-bottom: 20px;
+}
+.header__social-icon svg{
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+.header__social-icon:last-child {
+  margin-right: 15px;
+}
+.header__social-icon:hover svg{
+  transform: scale(1.1);
+}
+@keyframes ani {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
