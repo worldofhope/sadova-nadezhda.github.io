@@ -280,6 +280,7 @@ h4.caption {
   padding: 25px 0;
   padding-left: 50px;
   min-height: 150px;
+  overflow: hidden;
 }
 
 /*cards*/
