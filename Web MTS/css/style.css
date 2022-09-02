@@ -275,6 +275,12 @@ h4.caption {
 .news__container, .deals__container, .purchases__container {
   position: relative;
 }
+.quotes__container {
+  background-color: #172331;
+  padding: 25px 0;
+  padding-left: 50px;
+  min-height: 150px;
+}
 
 /*cards*/
 .chosen__card {
@@ -309,9 +315,6 @@ h4.caption {
   min-height: 380px;
 }
 .quotes__cards {
-  background-color: #172331;
-  padding: 25px 0;
-  padding-left: 50px;
   display: flex;
 }
 .quotes__card {
