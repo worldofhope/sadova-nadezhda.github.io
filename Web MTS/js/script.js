@@ -80,6 +80,5 @@ $('.trust__cards').slick({
 /*marquee*/
 $('.marquee').marquee({
   direction: 'right',
-  speed: 100,
-  duplicated: true
+  speed: 100
 })
