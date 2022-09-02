@@ -1,3 +1,4 @@
+/*menu*/
 const buttons = document.querySelectorAll('.item__caption');
 
 buttons.forEach(function(button, index) {
@@ -12,6 +13,8 @@ buttons.forEach(function(button, index) {
   });
 });
 
+
+/*slider*/
 $('.js-slider').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -73,3 +76,10 @@ $('.trust__cards').slick({
   }
 ]
 });
+
+/*marquee*/
+$('.marquee').marquee({
+  direction: 'right',
+  speed: 100,
+  duplicated: true
+})
