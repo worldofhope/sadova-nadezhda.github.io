@@ -1,34 +1,43 @@
 /*fonts*/
-
+/* inter-300 - latin */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 300;
-  src: url('../fonts/Inter-Light.ttf') format('truetype');
+  src: local(''),
+       url('../fonts/inter-v12-latin-300.ttf') format('truetype');
 }
+/* inter-regular - latin */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/Inter-Regular.ttf') format('truetype');
+  src: local(''),
+       url('../fonts/inter-v12-latin-regular.ttf') format('truetype');
 }
+/* inter-500 - latin */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/Inter-Medium.ttf') format('truetype');
+  src: local(''),
+       url('../fonts/inter-v12-latin-500.ttf') format('truetype');
 }
+/* inter-600 - latin */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/Inter-SemiBold.ttf') format('truetype');
+  src: local(''),
+       url('../fonts/inter-v12-latin-600.ttf') format('truetype');
 }
+/* inter-700 - latin */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/inter-v12-latin-700.ttf') format('truetype');
 }
 
 
@@ -88,15 +97,12 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0px;
   padding: 0px;
-  background: linear-gradient(107.56deg, #3E3F52 0%, #2A2A32 100%);
+  background: linear-gradient(90deg, #3E3F52 0%, #2A2A32 100%);
 }
 
 ul[class],
 ol[class] {
   list-style: none;
-}
-li[class] {
-  margin: 0;
 }
 
 a:not([class]) {
