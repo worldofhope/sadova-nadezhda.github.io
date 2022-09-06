@@ -117,3 +117,38 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+
+/* Arrows */
+.slick_prev, .slick_next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+  z-index: 1;
+}
+.slick_prev {
+  left: -20px;
+}
+.slick_next {
+  right: -20px;
+}
+.slick_prev circle, .slick_next circle {
+  transition: all 0.3s ease;
+}
+.slick_prev:hover circle, .slick_next:hover circle {
+  fill: #41D4C3;
+  fill-opacity: 1;
+}
