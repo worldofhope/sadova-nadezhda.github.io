@@ -11,8 +11,9 @@ cls.addEventListener('click', function () {
   menu.classList.toggle('opened');
 }, false);
 
+
 /*menu tabs*/
-window.addEventListener('load', function () {
+$(function() {
   $('ul.header__list').on('click', 'li:not(.active)', function() {
     $(this).addClass('active').siblings().removeClass('active')
     $('.main').find('section.page').removeClass('active').eq($(this).index()).addClass('active');
