@@ -55,17 +55,23 @@ let anim = document.querySelector('.audio-anim');
 if (audio) {
   audio.addEventListener('click', e => {
     let target = e.target;
-    console.log(target)
     if(target.classList.contains('activity__card-audio')) {
+      let audioAct = audio.querySelector('.activity__card-audio.active');
+      if(audioAct) {
+        audioAct.classList.remove('active');
+      }
       let linkAudio = target.getAttribute('data-src');
       let infoAudio = target.querySelector('.activity__audio-txt');
+      target.classList.add('active');
       frameAudio.querySelector('source').setAttribute('src', linkAudio);
       audioPlayer.load();
-      anim.classList.remove('active');
+      audioPlayer.play();
+      anim.classList.add('active');
       frameAudio.querySelector('.activity__audio-info').innerHTML = infoAudio.innerHTML;
     }
   })
 }
+let audioAct = audio.querySelector('.activity__card-audio.active');
 audioPlayer.addEventListener("play", () => {
   anim.classList.add('active');
 });

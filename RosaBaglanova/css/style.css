@@ -88,7 +88,7 @@
   content: url(../img/icon-2.svg);
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -8px;
   z-index: -1;
 }
 .header__list {
@@ -276,6 +276,7 @@
 .activity__tabs {
   display: flex;
   justify-content: flex-end;
+  height: max-content;
 }
 .activity__tabs li {
   padding: 12px 40px;
@@ -537,6 +538,15 @@
 }
 .activity__audio-play, .activity__audio-anim {
   pointer-events: none;
+}
+.activity__card-audio .pause {
+  display: none;
+}
+.activity__card-audio.active .pause {
+  display: block;
+}
+.activity__card-audio.active .play {
+  display: none;
 }
 
 /*public*/
