@@ -7,8 +7,8 @@ link.addEventListener('click', function () {
   menu.classList.toggle('opened');
 }, false);
 cls.addEventListener('click', function () {
-  link.classList.toggle('active');
-  menu.classList.toggle('opened');
+  link.classList.remove('active');
+  menu.classList.remove('opened');
 }, false);
 
 
@@ -19,13 +19,34 @@ $(function() {
     $('.main').find('section.page').removeClass('active').eq($(this).index()).addClass('active');
     $('.nav_icon').removeClass('active');
     $('.header__nav').removeClass('opened');
+    let slickCont = document.querySelector('.public');
+    if( slickCont.classList.contains('active') ){
+      $('.public__slider').slick('setPosition');
+    } 
   });
 
   $('ul.activity__tabs').on('click', 'li:not(.active)', function() {
     $(this).addClass('active').siblings().removeClass('active')
-    $('.activity__contents').find('div.activity__content').removeClass('active').eq($(this).index()).addClass('active');
+    $('div.activity__contents').find('div.activity__content').removeClass('active').eq($(this).index()).addClass('active');
   });
 });
+
+/*video*/
+let video = document.querySelector('.activity__cards-video');
+let frameVideo = document.querySelector('.activity__video-preview');
+if (video) {
+  video.addEventListener('click', e => {
+    let target = e.target;
+    if(target.classList.contains('activity__card-video')) {
+      let linkVideo = target.getAttribute('data-link');
+      let linkImg = target.querySelector('.activity__video img').getAttribute('src');
+      let info = target.querySelector('.activity__video-txt');
+      frameVideo.setAttribute('href', linkVideo);
+      frameVideo.querySelector('img').setAttribute('src', linkImg);
+      frameVideo.querySelector('.activity__video-info').innerHTML = info.innerHTML;
+    }
+  })
+}
 
 
 /*slider*/
@@ -62,3 +83,6 @@ $('.public__slider').slick({
       }
   ]
 });
+
+  
+
