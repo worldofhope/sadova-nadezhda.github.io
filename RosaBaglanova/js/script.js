@@ -11,10 +11,12 @@ cls.addEventListener('click', function () {
   menu.classList.remove('opened');
 }, false);
 
+
 let audio = document.querySelector('.activity__cards-audio');
 let frameAudio = document.querySelector('.activity__audio-player');
 let audioPlayer = document.getElementById("audio");
 let anim = document.querySelector('.audio-anim');
+
 /*menu tabs*/
 $(function() {
   $('ul.header__list').on('click', 'li:not(.active)', function() {
@@ -35,6 +37,7 @@ $(function() {
   });
 });
 
+
 /*video*/
 let video = document.querySelector('.activity__cards-video');
 let frameVideo = document.querySelector('.activity__video-preview');
@@ -51,6 +54,7 @@ if (video) {
     }
   })
 }
+
 /*audio*/
 if (audio) {
   audio.addEventListener('click', e => {
@@ -78,7 +82,6 @@ audioPlayer.addEventListener("play", () => {
 audioPlayer.addEventListener("pause", () => {
   anim.classList.remove('active');
 });
-
 
 
 /*slider*/
@@ -115,6 +118,3 @@ $('.public__slider').slick({
       }
   ]
 });
-
-  
-

@@ -151,6 +151,58 @@
   justify-content: space-between;
 }
 
+/*header*/
+h1  {
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #4F4F4F;
+}
+.about__description h1 {
+  font-size: 96px;
+  margin-right: 20px;
+}
+.biography h1 {
+  font-size: 94px;
+  margin-bottom: 12px;
+}
+.activity__container h1, .public__container h1, .archive h1, .photo__container h1 {
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+.biography h3 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #333333;
+}
+.biography__awards h3 {
+  margin-bottom: 50px;
+}
+.archive__card h4 {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/*img*/
+.about__img img, .biography__img img, .activity__video-preview img, 
+.activity__video img, .public__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*section*/
+.activity {
+  padding-top: 140px;
+  padding-bottom: 50px;
+  background-color: #EDEDED;
+}
+.public, .photo, .archive {
+  padding-top: 140px;
+  padding-bottom: 50px;
+}
 
 /*about*/
 .about {
@@ -166,23 +218,11 @@
 .about__img {
   height: 720px;
 }
-.about__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .about__description {
   display: flex;
   align-items: center;
 }
-.about__description h1 {
-  font-weight: 700;
-  font-size: 96px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #4F4F4F;
-  margin-right: 20px;
-}
+
 /*biography__img*/
 .biography__img {
   width: 100%;
@@ -199,36 +239,12 @@
 .biography__img-5 {
   height: 736px;
 }
-
-.biography__img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
 .biography__description {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 50px;
   margin-bottom: 50px;
   position: relative;
-}
-.biography h1 {
-  font-weight: 700;
-  font-size: 94px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #333333;  
-  margin-bottom: 12px;
-}
-.biography h3 {
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #333333;
-}
-.biography__awards h3 {
-  margin-bottom: 50px;
 }
 .biography__txt p {
   margin-bottom: 20px;
@@ -254,20 +270,8 @@
   font-weight: 700;
   font-size: 18px;
 }
+
 /*activity*/
-.activity {
-  padding-top: 140px;
-  padding-bottom: 50px;
-  background-color: #EDEDED;
-}
-.activity__container h1 {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #333333;
-  margin-bottom: 50px;
-}
 .activity__description {
   display: grid;
   grid-template-columns: 1.5fr 0.5fr;
@@ -361,24 +365,6 @@
 .audio-anim.active::after {
   animation-delay: 1.25s;
 }
-@keyframes pulse {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-}
-.activity__video-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .activity__video-preview::before {
   content: url(../img/play.svg);
   padding: 50px 60px;
@@ -412,11 +398,6 @@
 .activity__video {
   position: relative;
   pointer-events: none;
-}
-.activity__video img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 .activity__video::after {
   content: ' ';
@@ -539,29 +520,30 @@
 .activity__audio-play, .activity__audio-anim {
   pointer-events: none;
 }
+.activity__card-audio .play {
+  display: block;
+  opacity: 1;
+  position: relative;
+  transition: all 0.3s ease;
+}
 .activity__card-audio .pause {
   display: none;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.3s ease;
 }
 .activity__card-audio.active .pause {
   display: block;
+  opacity: 1;
+  position: relative;
 }
 .activity__card-audio.active .play {
   display: none;
+  opacity: 0;
+  position: absolute;
 }
 
 /*public*/
-.public {
-  padding-top: 140px;
-  padding-bottom: 50px;
-}
-.public__container h1 {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #333333;
-  margin-bottom: 50px;
-}
 .public__video {
   margin-bottom: 50px;
   height: 850px;
@@ -585,24 +567,8 @@
 .public__img {
   height: 382px;
 }
-.public__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
 /*photo*/
-.photo {
-  padding-top: 140px;
-  padding-bottom: 50px;
-}
-.photo__container h1 {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #333333;
-  margin-bottom: 50px;
-}
 .photo__items {
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -647,19 +613,8 @@
   vertical-align: middle;
   margin-right: 5px;
 }
+
 /*archive*/
-.archive {
-  padding-top: 140px;
-  padding-bottom: 50px;
-}
-.archive h1 {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #333333;
-  margin-bottom: 50px;
-}
 .archive__cards {
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -690,10 +645,6 @@
   height: 100%;
   object-fit: cover;
   filter: blur(6px);
-}
-.archive__card h4 {
-  font-weight: 700;
-  font-size: 16px;
 }
 .archive__year {
   font-weight: 700;
@@ -777,4 +728,18 @@
 }
 .header__list .active {
   color: #784704;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
 }
