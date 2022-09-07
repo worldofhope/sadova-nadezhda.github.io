@@ -325,7 +325,7 @@ main {
   font-size: 16px;
   color: #FFFFFF;
 }
-h2.caption {
+h1.caption, h2.caption {
   font-weight: 500;
   font-size: 18px;
   line-height: 1.2em;
