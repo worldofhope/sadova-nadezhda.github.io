@@ -11,7 +11,10 @@ cls.addEventListener('click', function () {
   menu.classList.remove('opened');
 }, false);
 
-
+let audio = document.querySelector('.activity__cards-audio');
+let frameAudio = document.querySelector('.activity__audio-player');
+let audioPlayer = document.getElementById("audio");
+let anim = document.querySelector('.audio-anim');
 /*menu tabs*/
 $(function() {
   $('ul.header__list').on('click', 'li:not(.active)', function() {
@@ -28,6 +31,7 @@ $(function() {
   $('ul.activity__tabs').on('click', 'li:not(.active)', function() {
     $(this).addClass('active').siblings().removeClass('active')
     $('div.activity__contents').find('div.activity__content').removeClass('active').eq($(this).index()).addClass('active');
+    audioPlayer.pause();
   });
 });
 
@@ -48,10 +52,6 @@ if (video) {
   })
 }
 /*audio*/
-let audio = document.querySelector('.activity__cards-audio');
-let frameAudio = document.querySelector('.activity__audio-player');
-let audioPlayer = document.getElementById("audio");
-let anim = document.querySelector('.audio-anim');
 if (audio) {
   audio.addEventListener('click', e => {
     let target = e.target;
