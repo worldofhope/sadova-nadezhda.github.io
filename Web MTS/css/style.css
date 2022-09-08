@@ -330,23 +330,41 @@ h1.caption, h2.caption {
   font-size: 18px;
   line-height: 1.2em;
 }
-h4.caption {
-  
-}
-.chosen__title, .info-mart__title, .quotes__title, .deals__title, 
-.news__title, .trust__title, .purchases__title, .registr-info__title {
+.chosen__title, .info-mart__title, .quotes__title, .deals__title, .about__container h4, 
+.news__title, .trust__title, .purchases__title, .registr-info__title, .about__container h1, 
+.members__container h1, .members__list h2, .arbitration__container h1, .arbitration__container h4, 
+.clearing__container h1, .clearing__container h4, .requisites h1, .regulations h1, .members h2, .contact h1 {
   margin-bottom: 30px;
 }
 .deals__title, .news__title, .purchases__title {
   display: inline-block;
   margin-right: 30px;
 }
+.about__container h4, .arbitration__container h4, .clearing__container h4 {
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.about__card h4 {
+  font-weight: 500;
+  font-size: 16px;
+  color: #40FFB5;
+  margin-bottom: 15px;
+}
+.about-benefits__card h4 {
+  font-weight: 500;
+  font-size: 16px;
+  color: #40FFB5;
+  text-transform: none;
+  margin-bottom: 15px;
+}
 
 /*section*/
 .chosen, .info-mart, .quotes, .deals, .news, .purchases, .navigation {
   padding-top: 80px;
 }
-.trust, .registr-info {
+.trust, .registr-info, .about, .members, .arbitration, .clearing, .requisites, 
+.regulations, .contact {
   padding: 80px 0;
 }
 .quotes {
@@ -423,7 +441,7 @@ h4.caption {
   padding: 15px 20px;
   position: relative;
 }
-.news__cards {
+.news__cards, .about__cards, .about-benefits__cards, .regulations__cards {
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 24px;
@@ -432,6 +450,15 @@ h4.caption {
   position: relative;
   display: flex;
   flex-direction: column;
+}
+.about__card, .about-benefits__card, .regulations__card {
+  background: #1A2738;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 20px;
+}
+.about__cards {
+  margin-bottom: 80px;
 }
 .trust__cards {
   max-width: 1360px;
@@ -601,6 +628,41 @@ h4.caption {
 .registr-info__txt p:last-child {
   margin-bottom: 0px;
 }
+.about__card-txt, .regulations__txt {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 130%;
+}
+.members__description, .arbitration__description, .clearing__description {
+  max-width: 1040px;
+  margin-bottom: 80px;
+}
+.clearing__description {
+  margin-bottom: 30px;
+}
+.members__description p, .arbitration__description p, .clearing__description p {
+  margin-bottom: 20px;
+}
+.members__description p:last-child, .arbitration__description p:last-child, .clearing__description p:last-child {
+  margin-bottom: 0px;
+}
+.arbitration__list {
+  width: 100%;
+  background: #1A2738;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.arbitration__list li {
+  padding: 20px;
+}
+.arbitration__list li:nth-child(odd) {
+  background: #1A2738;
+}
+.arbitration__list li:nth-child(even) {
+  background: #172331;
+}
+
 
 /*img*/
 .chosen__card img {
@@ -649,8 +711,19 @@ h4.caption {
   opacity: 1;
   cursor: pointer;
 } 
+.about-benefits__img, .regulations__img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 20px;
+}
+.about-benefits__img img, .regulations__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /*table*/
-.purchases__table {
+.purchases__table, .requisites__table, .members__table {
   background: #1A2738;
   box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -699,6 +772,52 @@ tr:first-child {
 .info-mart__decline .ton {
   color: #FF4040;
 }
+
+/*contact*/
+.contact__description {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 24px;
+  max-width: 1220px;
+}
+.contact__info a, .contact__adresse {
+  display: block;
+  margin-bottom: 20px;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+}
+.contact__info svg {
+  margin-right: 13px;
+}
+.contact__info .contact__adresse {
+  align-items: flex-start;
+}
+.contact__info a:last-child {
+  margin-bottom: 0px;
+}
+.contact__info path {
+  transition: all 0.3s ease;
+}
+.contact__info a:hover path, .contact__info a:hover {
+  color: #40FFB5;
+  fill: #40FFB5;
+}
+/*map*/
+.contact__map {
+  border-radius: 5px;
+  overflow: hidden;
+  height: 300px;
+}
+.contact__map iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
 
 /*Responsive*/
 @media (max-width: 1780px) {
@@ -750,7 +869,7 @@ tr:first-child {
   .trust__cards {
     max-width: 1100px;
   }
-  .deals__cards {
+  .deals__cards, .about__cards, .about-benefits__cards {
     grid-template-columns: repeat(3,1fr);
   }
 }
@@ -760,7 +879,7 @@ tr:first-child {
   }
 }
 @media (max-width: 1100px) {
-  .news__cards {
+  .news__cards, .about__cards, .about-benefits__cards {
     grid-template-columns: repeat(2,1fr);
   }
   .trust__cards {
@@ -840,19 +959,26 @@ tr:first-child {
   .chosen, .info-mart, .quotes, .deals, .news, .purchases, .trust, .navigation {
     padding-top: 50px;
   }
-  .registr-info {
+  .registr-info, .about, .members, .arbitration, .clearing, .requisites, 
+  .regulations, .contact {
     padding: 50px 0;
   }
 }
 @media (max-width: 568px) {
-  .news__cards {
+  .contact__description {
+    grid-template-columns: 1fr;
+  }
+  .news__cards, .about__cards, .about-benefits__cards {
     display: block;
   }
-  .news__card {
+  .news__card, .about__card, .about-benefits__card {
     width: 95vw;
     margin: 0 10px;
   }
-  .news .slick-dotted.slick-slider {
+  .about__cards.slick-dotted.slick-slider {
+    margin-bottom: 80px;
+  }
+  .news .slick-dotted.slick-slider, .members__description {
     margin-bottom: 50px;
   }
   .news .slick-dots {
@@ -867,6 +993,12 @@ tr:first-child {
   }
   .chosen__card {
     margin: 0;
+  }
+  .item__caption, .item {
+    padding-left: 30px;
+  }
+  .header__logo {
+    margin: 30px;
   }
 }
 @media (max-width: 480px) {
