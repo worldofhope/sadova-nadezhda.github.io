@@ -1,3 +1,18 @@
+/*scroll*/
+.header__container::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar {
+  background: #2A2A32;
+  width: 4px;
+  height: 4px;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #121C28;
+  border-radius: 5px;
+}
+
 /*header*/
 .page__header {
   min-width: 320px;
@@ -26,6 +41,7 @@
   top: 0;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 .header__logo {
   display: block;
@@ -379,7 +395,7 @@ h1.caption, h2.caption {
   padding: 25px 0;
   min-height: 150px;
   overflow: hidden;
-  max-width: 1560px;
+  width: 100%;
   margin-right: -40px;
 }
 
@@ -457,7 +473,7 @@ h1.caption, h2.caption {
   border-radius: 5px;
   padding: 20px;
 }
-.about__cards {
+.about__cards, .about-benefits__cards {
   margin-bottom: 80px;
 }
 .trust__cards {
@@ -662,6 +678,11 @@ h1.caption, h2.caption {
 .arbitration__list li:nth-child(even) {
   background: #172331;
 }
+.about__txt-green {
+  font-weight: 400;
+  font-size: 16px;
+  color: #40FFB5;
+}
 
 
 /*img*/
@@ -759,6 +780,18 @@ tr:first-child {
   padding: 15px 20px;
   text-align: left;
 }
+.members__table .address {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+.requisites__table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
 
 .info-mart__growth .arr-red {
   display: none;
@@ -780,7 +813,7 @@ tr:first-child {
   gap: 24px;
   max-width: 1220px;
 }
-.contact__info a, .contact__adresse {
+.contact__info a, .contact__address {
   display: block;
   margin-bottom: 20px;
   max-width: 400px;
@@ -793,7 +826,7 @@ tr:first-child {
 .contact__info svg {
   margin-right: 13px;
 }
-.contact__info .contact__adresse {
+.contact__info .contact__address {
   align-items: flex-start;
 }
 .contact__info a:last-child {
@@ -869,7 +902,7 @@ tr:first-child {
   .trust__cards {
     max-width: 1100px;
   }
-  .deals__cards, .about__cards, .about-benefits__cards {
+  .deals__cards, .about__cards, .about-benefits__cards, .regulations__cards {
     grid-template-columns: repeat(3,1fr);
   }
 }
@@ -879,7 +912,7 @@ tr:first-child {
   }
 }
 @media (max-width: 1100px) {
-  .news__cards, .about__cards, .about-benefits__cards {
+  .news__cards, .about__cards, .about-benefits__cards, .regulations__cards {
     grid-template-columns: repeat(2,1fr);
   }
   .trust__cards {
@@ -931,7 +964,10 @@ tr:first-child {
     grid-template-columns: repeat(2,1fr);
   }
   .deals__tooltip .deals__txt {
-    width: 300px;
+    width: 260px;
+  }
+  .deals__str {
+    font-size: 10px;
   }
   .deals__card:nth-child(odd) .deals__tooltip .deals__txt {
     right: auto;
@@ -965,17 +1001,21 @@ tr:first-child {
   }
 }
 @media (max-width: 568px) {
+  .button {
+    font-size: 14px;
+    line-height: 1.2em;
+  }
   .contact__description {
     grid-template-columns: 1fr;
   }
-  .news__cards, .about__cards, .about-benefits__cards {
+  .news__cards, .about__cards, .about-benefits__cards, .regulations__cards {
     display: block;
   }
-  .news__card, .about__card, .about-benefits__card {
+  .news__card, .about__card, .about-benefits__card, .regulations__card {
     width: 95vw;
     margin: 0 10px;
   }
-  .about__cards.slick-dotted.slick-slider {
+  .about__cards.slick-dotted.slick-slider, .about-benefits__cards.slick-dotted.slick-slider {
     margin-bottom: 80px;
   }
   .news .slick-dotted.slick-slider, .members__description {
