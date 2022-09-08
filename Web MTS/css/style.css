@@ -349,7 +349,8 @@ h1.caption, h2.caption {
 .chosen__title, .info-mart__title, .quotes__title, .deals__title, .about__container h4, 
 .news__title, .trust__title, .purchases__title, .registr-info__title, .about__container h1, 
 .members__container h1, .members__list h2, .arbitration__container h1, .arbitration__container h4, 
-.clearing__container h1, .clearing__container h4, .requisites h1, .regulations h1, .members h2, .contact h1 {
+.clearing__container h1, .clearing__container h4, .requisites h1, .regulations h1, .members h2, 
+.contact h1, .auctions h1 {
   margin-bottom: 30px;
 }
 .deals__title, .news__title, .purchases__title {
@@ -380,7 +381,7 @@ h1.caption, h2.caption {
   padding-top: 80px;
 }
 .trust, .registr-info, .about, .members, .arbitration, .clearing, .requisites, 
-.regulations, .contact {
+.regulations, .contact, .auctions {
   padding: 80px 0;
 }
 .quotes {
@@ -744,7 +745,7 @@ h1.caption, h2.caption {
 }
 
 /*table*/
-.purchases__table, .requisites__table, .members__table {
+.purchases__table, .requisites__table, .members__table{
   background: #1A2738;
   box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -792,6 +793,16 @@ tr:first-child {
   text-overflow: ellipsis;
   max-width: 200px;
 }
+.auctions__table th, .auctions__table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+.auctions__table a {
+  text-decoration: underline;
+  color: #00A3FF;
+}
 
 .info-mart__growth .arr-red {
   display: none;
@@ -805,6 +816,51 @@ tr:first-child {
 .info-mart__decline .ton {
   color: #FF4040;
 }
+
+/*table btn*/
+.auctions__table {
+  position: relative;
+  background: #1A2738;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  overflow-x: auto;
+}
+.table__btn-left, .table__btn-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  z-index: 1;
+}
+.table__btn-left {
+  left: -350px;
+}
+.table__btn-right {
+  right: -350px;
+}
+.table__btn-left::before {
+  content: url(../img/tbl-arrow.svg);
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%) rotate(180deg);
+}
+.table__btn-right::before {
+  content: url(../img/tbl-arrow.svg);
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.table__btn-left:hover, .table__btn-right:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+
 
 /*contact*/
 .contact__description {
