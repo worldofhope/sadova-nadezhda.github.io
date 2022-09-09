@@ -105,6 +105,10 @@ ol[class] {
   list-style: none;
 }
 
+ol, ul {
+  list-style-position: inside;
+}
+
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }

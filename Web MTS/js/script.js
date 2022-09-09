@@ -123,35 +123,172 @@ document.addEventListener('DOMContentLoaded', function () {
   let btnRgt = document.querySelector('.table__btn-right');
   let btnLft = document.querySelector('.table__btn-left');
   let tableCnt = document.querySelector('.auctions__table__content');
-  btnRgt.onmouseover = function () {
-    let start = Date.now();
-    let timer = setInterval(function() {
-    let timePassed = Date.now() - start;
-    // tableCnt.scrollLeft += tableCnt.clientWidth;
-    tableCnt.scrollLeft += 10;
-    if (timePassed > 1000) clearInterval(timer);
-    if (tableCnt.scrollLeft > 20) {
-      btnLft.classList.add('show');
-    }
-    if (tableCnt.scrollLeft > 1320) {
-      btnRgt.classList.remove('show');
-    }
-    console.log(tableCnt.scrollLeft)
-    }, 20);
-  };
-  btnLft.onmouseover = function () {
-    let start = Date.now();
-    let timer = setInterval(function() {
-    let timePassed = Date.now() - start;
-    // tableCnt.scrollLeft -= tableCnt.clientWidth;
-    tableCnt.scrollLeft -= 10;
-    if (timePassed > 1000) clearInterval(timer);
-    if (tableCnt.scrollLeft < 1320) {
-      btnRgt.classList.add('show');
-    }
-    if (tableCnt.scrollLeft < 20) {
-      btnLft.classList.remove('show');
-    }
-    }, 20);
-  };
+  if (tableCnt) {
+    btnRgt.onmouseover = function () {
+      let start = Date.now();
+      let timer = setInterval(function() {
+      let timePassed = Date.now() - start;
+      // tableCnt.scrollLeft += tableCnt.clientWidth;
+      tableCnt.scrollLeft += 10;
+      if (timePassed > 1000) clearInterval(timer);
+      if (tableCnt.scrollLeft > 20) {
+        btnLft.classList.add('show');
+      }
+      if (tableCnt.scrollLeft > 1320) {
+        btnRgt.classList.remove('show');
+      }
+      console.log(tableCnt.scrollLeft)
+      }, 20);
+    };
+    btnLft.onmouseover = function () {
+      let start = Date.now();
+      let timer = setInterval(function() {
+      let timePassed = Date.now() - start;
+      // tableCnt.scrollLeft -= tableCnt.clientWidth;
+      tableCnt.scrollLeft -= 10;
+      if (timePassed > 1000) clearInterval(timer);
+      if (tableCnt.scrollLeft < 1320) {
+        btnRgt.classList.add('show');
+      }
+      if (tableCnt.scrollLeft < 20) {
+        btnLft.classList.remove('show');
+      }
+      }, 20);
+    };
+  }
 }, false);
+
+
+/*hide-show*/
+$(function() {
+  $(".btn-hide").click(function() {
+    $(".hidden").css("display", "none");
+    $(".btn-hide").css("display", "none");
+    $(".btn-display").css("display", "block");
+  });
+  $(".btn-display").click(function() {
+    $(".hidden").css("display", "block");
+    $(".btn-hide").css("display", "block");
+    $(".btn-display").css("display", "none");
+  });
+});
+
+
+/*Chart*/
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const canvas = document.querySelector('.chart');
+  const ctx = canvas.getContext('2d');
+  const gradient = ctx.createLinearGradient(0, canvas.width, 0, canvas.height);
+  gradient.addColorStop(1, 'rgba(64, 163, 255, 0.5)');
+  gradient.addColorStop(0, 'rgba(64, 163, 255, 0)');
+
+  // let labelsArray = ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022'];
+  // let DataArray = [3, 6, 2, 7, 4];
+
+
+  new Chart(
+    document.querySelector('.chart'),
+    {
+      type: 'line',
+      data: {
+        labels: ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022', '01.09.2022'],
+        datasets: [
+          {
+            label: 'Уголь',
+            data: [0, 6, 2, 7, 4, 5],
+            borderColor: '#40A3FF',
+            borderWidth: 2,
+            pointBackgroundColor: '#1A2738',
+            pointBorderColor: '#40A3FF',
+            pointBorderWidth: 1,
+            backgroundColor: gradient,
+            cubicInterpolationMode: 'monotone',
+            fill: true
+          },
+          {
+            label: 'Цемент',
+            data: [3, 3, 2, 6, 4, 6],
+            borderColor: '#40A3FF',
+            borderWidth: 2,
+            pointBackgroundColor: '#1A2738',
+            pointBorderColor: '#40A3FF',
+            pointBorderWidth: 1,
+            backgroundColor: gradient,
+            cubicInterpolationMode: 'monotone',
+            fill: true
+          },
+          {
+            label: 'ГСМ',
+            data: [1, 3, 7, 6, 4, 2],
+            borderColor: '#40A3FF',
+            borderWidth: 2,
+            pointBackgroundColor: '#1A2738',
+            pointBorderColor: '#40A3FF',
+            pointBorderWidth: 1,
+            backgroundColor: gradient,
+            cubicInterpolationMode: 'monotone',
+            fill: true
+          },
+          {
+            label: 'Картофель',
+            data: [3, 3, 2, 0, 4, 5],
+            borderColor: '#40A3FF',
+            borderWidth: 2,
+            pointBackgroundColor: '#1A2738',
+            pointBorderColor: '#40A3FF',
+            pointBorderWidth: 1,
+            backgroundColor: gradient,
+            cubicInterpolationMode: 'monotone',
+            fill: true
+          },
+          {
+            label: 'Сахар',
+            data: [3, 1, 3, 6, 4, 7],
+            borderColor: '#40A3FF',
+            borderWidth: 2,
+            pointBackgroundColor: '#1A2738',
+            pointBorderColor: '#40A3FF',
+            pointBorderWidth: 1,
+            backgroundColor: gradient,
+            cubicInterpolationMode: 'monotone',
+            fill: true
+          },
+          {
+            label: 'Пшеница',
+            data: [4, 3, 4, 6, 4, 9],
+            borderColor: '#40A3FF',
+            borderWidth: 2,
+            pointBackgroundColor: '#1A2738',
+            pointBorderColor: '#40A3FF',
+            pointBorderWidth: 1,
+            backgroundColor: gradient,
+            cubicInterpolationMode: 'monotone',
+            fill: true
+          }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true // назначили оси Y начинать отсчет с нуля
+          }
+        },
+        plugins: {
+          legend: {
+            display: true,
+            align: 'end',
+            labels: {
+                color: '#fff',
+                boxWidth: 0
+            }
+          }
+        },
+        layout: {
+          padding: 30
+        }
+      }
+    }
+  );
+})
+
