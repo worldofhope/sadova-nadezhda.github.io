@@ -156,6 +156,122 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 20);
     };
   }
+/*Chart*/
+  const canvas = document.querySelector('.chart');
+  if(canvas) {
+    const ctx = canvas.getContext('2d');
+    const gradient = ctx.createLinearGradient(0, canvas.width, 0, canvas.height);
+    gradient.addColorStop(1, 'rgba(64, 163, 255, 0.5)');
+    gradient.addColorStop(0, 'rgba(64, 163, 255, 0)');
+
+    // let labelsArray = ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022'];
+    // let DataArray = [3, 6, 2, 7, 4];
+
+
+    new Chart(
+      document.querySelector('.chart'),
+      {
+        type: 'line',
+        data: {
+          labels: ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022', '01.09.2022'],
+          datasets: [
+            {
+              label: 'Уголь',
+              data: [0, 6, 2, 7, 4, 5],
+              borderColor: '#40A3FF',
+              borderWidth: 2,
+              pointBackgroundColor: '#1A2738',
+              pointBorderColor: '#40A3FF',
+              pointBorderWidth: 1,
+              backgroundColor: gradient,
+              cubicInterpolationMode: 'monotone',
+              fill: true
+            },
+            {
+              label: 'Цемент',
+              data: [3, 3, 2, 6, 4, 6],
+              borderColor: '#40A3FF',
+              borderWidth: 2,
+              pointBackgroundColor: '#1A2738',
+              pointBorderColor: '#40A3FF',
+              pointBorderWidth: 1,
+              backgroundColor: gradient,
+              cubicInterpolationMode: 'monotone',
+              fill: true
+            },
+            {
+              label: 'ГСМ',
+              data: [1, 3, 7, 6, 4, 2],
+              borderColor: '#40A3FF',
+              borderWidth: 2,
+              pointBackgroundColor: '#1A2738',
+              pointBorderColor: '#40A3FF',
+              pointBorderWidth: 1,
+              backgroundColor: gradient,
+              cubicInterpolationMode: 'monotone',
+              fill: true
+            },
+            {
+              label: 'Картофель',
+              data: [3, 3, 2, 0, 4, 5],
+              borderColor: '#40A3FF',
+              borderWidth: 2,
+              pointBackgroundColor: '#1A2738',
+              pointBorderColor: '#40A3FF',
+              pointBorderWidth: 1,
+              backgroundColor: gradient,
+              cubicInterpolationMode: 'monotone',
+              fill: true
+            },
+            {
+              label: 'Сахар',
+              data: [3, 1, 3, 6, 4, 7],
+              borderColor: '#40A3FF',
+              borderWidth: 2,
+              pointBackgroundColor: '#1A2738',
+              pointBorderColor: '#40A3FF',
+              pointBorderWidth: 1,
+              backgroundColor: gradient,
+              cubicInterpolationMode: 'monotone',
+              fill: true
+            },
+            {
+              label: 'Пшеница',
+              data: [4, 3, 4, 6, 4, 9],
+              borderColor: '#40A3FF',
+              borderWidth: 2,
+              pointBackgroundColor: '#1A2738',
+              pointBorderColor: '#40A3FF',
+              pointBorderWidth: 1,
+              backgroundColor: gradient,
+              cubicInterpolationMode: 'monotone',
+              fill: true
+            }
+          ]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true // назначили оси Y начинать отсчет с нуля
+            }
+          },
+          plugins: {
+            legend: {
+              display: true,
+              align: 'end',
+              labels: {
+                  color: '#fff',
+                  boxWidth: 0
+              }
+            }
+          },
+          layout: {
+            padding: 30
+          }
+        }
+      }
+    );
+  }
 }, false);
 
 
@@ -174,121 +290,4 @@ $(function() {
 });
 
 
-/*Chart*/
-document.addEventListener('DOMContentLoaded', () => {
-  
-  const canvas = document.querySelector('.chart');
-  const ctx = canvas.getContext('2d');
-  const gradient = ctx.createLinearGradient(0, canvas.width, 0, canvas.height);
-  gradient.addColorStop(1, 'rgba(64, 163, 255, 0.5)');
-  gradient.addColorStop(0, 'rgba(64, 163, 255, 0)');
-
-  // let labelsArray = ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022'];
-  // let DataArray = [3, 6, 2, 7, 4];
-
-
-  new Chart(
-    document.querySelector('.chart'),
-    {
-      type: 'line',
-      data: {
-        labels: ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022', '01.09.2022'],
-        datasets: [
-          {
-            label: 'Уголь',
-            data: [0, 6, 2, 7, 4, 5],
-            borderColor: '#40A3FF',
-            borderWidth: 2,
-            pointBackgroundColor: '#1A2738',
-            pointBorderColor: '#40A3FF',
-            pointBorderWidth: 1,
-            backgroundColor: gradient,
-            cubicInterpolationMode: 'monotone',
-            fill: true
-          },
-          {
-            label: 'Цемент',
-            data: [3, 3, 2, 6, 4, 6],
-            borderColor: '#40A3FF',
-            borderWidth: 2,
-            pointBackgroundColor: '#1A2738',
-            pointBorderColor: '#40A3FF',
-            pointBorderWidth: 1,
-            backgroundColor: gradient,
-            cubicInterpolationMode: 'monotone',
-            fill: true
-          },
-          {
-            label: 'ГСМ',
-            data: [1, 3, 7, 6, 4, 2],
-            borderColor: '#40A3FF',
-            borderWidth: 2,
-            pointBackgroundColor: '#1A2738',
-            pointBorderColor: '#40A3FF',
-            pointBorderWidth: 1,
-            backgroundColor: gradient,
-            cubicInterpolationMode: 'monotone',
-            fill: true
-          },
-          {
-            label: 'Картофель',
-            data: [3, 3, 2, 0, 4, 5],
-            borderColor: '#40A3FF',
-            borderWidth: 2,
-            pointBackgroundColor: '#1A2738',
-            pointBorderColor: '#40A3FF',
-            pointBorderWidth: 1,
-            backgroundColor: gradient,
-            cubicInterpolationMode: 'monotone',
-            fill: true
-          },
-          {
-            label: 'Сахар',
-            data: [3, 1, 3, 6, 4, 7],
-            borderColor: '#40A3FF',
-            borderWidth: 2,
-            pointBackgroundColor: '#1A2738',
-            pointBorderColor: '#40A3FF',
-            pointBorderWidth: 1,
-            backgroundColor: gradient,
-            cubicInterpolationMode: 'monotone',
-            fill: true
-          },
-          {
-            label: 'Пшеница',
-            data: [4, 3, 4, 6, 4, 9],
-            borderColor: '#40A3FF',
-            borderWidth: 2,
-            pointBackgroundColor: '#1A2738',
-            pointBorderColor: '#40A3FF',
-            pointBorderWidth: 1,
-            backgroundColor: gradient,
-            cubicInterpolationMode: 'monotone',
-            fill: true
-          }
-        ]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true // назначили оси Y начинать отсчет с нуля
-          }
-        },
-        plugins: {
-          legend: {
-            display: true,
-            align: 'end',
-            labels: {
-                color: '#fff',
-                boxWidth: 0
-            }
-          }
-        },
-        layout: {
-          padding: 30
-        }
-      }
-    }
-  );
-})
 
