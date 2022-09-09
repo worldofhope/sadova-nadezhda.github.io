@@ -11,9 +11,9 @@ clsBtn.addEventListener('click', function () {
   menu.classList.remove('opened');
 });
 
+
 /*menu*/
 const buttons = document.querySelectorAll('.item__caption');
-
 buttons.forEach(function(button, index) {
   button.addEventListener('click', function(e) {
     e.preventDefault();
@@ -110,11 +110,48 @@ $(window).on('resize', function(){
 }).resize();
 
 
-
-
 /*marquee*/
 $('.marquee').marquee({
   direction: 'left',
   speed: 100,
   duplicated: true
 })
+
+
+/*table*/
+document.addEventListener('DOMContentLoaded', function () {
+  let btnRgt = document.querySelector('.table__btn-right');
+  let btnLft = document.querySelector('.table__btn-left');
+  let tableCnt = document.querySelector('.auctions__table__content');
+  btnRgt.onmouseover = function () {
+    let start = Date.now();
+    let timer = setInterval(function() {
+    let timePassed = Date.now() - start;
+    // tableCnt.scrollLeft += tableCnt.clientWidth;
+    tableCnt.scrollLeft += 10;
+    if (timePassed > 1000) clearInterval(timer);
+    if (tableCnt.scrollLeft > 20) {
+      btnLft.classList.add('show');
+    }
+    if (tableCnt.scrollLeft > 1320) {
+      btnRgt.classList.remove('show');
+    }
+    console.log(tableCnt.scrollLeft)
+    }, 20);
+  };
+  btnLft.onmouseover = function () {
+    let start = Date.now();
+    let timer = setInterval(function() {
+    let timePassed = Date.now() - start;
+    // tableCnt.scrollLeft -= tableCnt.clientWidth;
+    tableCnt.scrollLeft -= 10;
+    if (timePassed > 1000) clearInterval(timer);
+    if (tableCnt.scrollLeft < 1320) {
+      btnRgt.classList.add('show');
+    }
+    if (tableCnt.scrollLeft < 20) {
+      btnLft.classList.remove('show');
+    }
+    }, 20);
+  };
+}, false);
