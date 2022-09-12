@@ -914,6 +914,7 @@ tr:first-child {
   padding: 15px 20px;
   text-align: left;
   vertical-align: middle;
+  white-space: nowrap;
 }
 .members__table .address {
   white-space: nowrap;
