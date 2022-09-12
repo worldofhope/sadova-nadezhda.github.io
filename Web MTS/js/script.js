@@ -290,4 +290,24 @@ $(function() {
 });
 
 
+/*form*/
+function submitForm() {
+  $('#form_loader').show()
+}
+$(document).ready(function(){
+  PopUpHide();
+});
+function PopUpShow(){
+  $("#popup").show();
+}
+function PopUpHide(){
+  $("#popup").hide();
+}
+$('#popup').on("click", function(event){
+  var target = event.target;
+  if ($(target).hasClass('popup')){
+    PopUpHide()
+  }
+});
+
 
