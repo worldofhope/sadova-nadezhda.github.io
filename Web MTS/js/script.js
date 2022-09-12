@@ -267,7 +267,8 @@ document.addEventListener('DOMContentLoaded', function () {
           },
           layout: {
             padding: 30
-          }
+          },
+          responsive: true
         }
       }
     );
