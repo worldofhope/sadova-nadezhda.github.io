@@ -92,6 +92,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+body.kz {
+  font-family: sans-serif;
+}
 ::-webkit-scrollbar {
   width: 4px;
   background-color: #DEDEDE;
@@ -139,7 +142,7 @@ select {
 
 
 .container {
-  max-width: 1852px;
+  max-width: 1632px;
   padding-left: 16px;
   padding-right: 16px;
   margin: 0 auto;
