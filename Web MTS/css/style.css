@@ -998,6 +998,7 @@ tr:first-child {
   position: relative;
   margin: 0 auto;
   height: 380px;
+  width: 100%;
 }
 
 
@@ -1272,10 +1273,11 @@ tr:first-child {
   .js-slider-mb {
     display: block;
   }
-  .js-slider-mb {
-    width: 95vw;
+  .js-slider-mb .slick-slide {
     margin: 0 10px;
+    width: 80vw;
   }
+
   .about__cards.slick-dotted.slick-slider, .about-benefits__cards.slick-dotted.slick-slider {
     margin-bottom: 80px;
   }
@@ -1309,6 +1311,11 @@ tr:first-child {
   }
   .news__column-rg {
     display: block;
+  }
+  .deals__tooltip {
+    top: 10px;
+    right: 10px;
+    z-index: 1;
   }
 }
 @media (max-width: 480px) {
