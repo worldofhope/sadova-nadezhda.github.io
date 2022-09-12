@@ -595,6 +595,7 @@ button:hover {
 }
 .seatch-btns {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 .seatch-btn {
@@ -1265,11 +1266,18 @@ tr:first-child {
   .table__btn-right {
     right: -18%;
   }
+  .form__seatch input {
+    min-width: 400px;
+  }
 }
 @media (max-width: 568px) {
   .button {
     font-size: 14px;
     line-height: 1.2em;
+  }
+  .seatch-btns .button {
+    width: 100%;
+    max-width: unset;
   }
   .contact__description {
     grid-template-columns: 1fr;
@@ -1320,8 +1328,24 @@ tr:first-child {
     right: 10px;
     z-index: 1;
   }
-  .regulations__cards {
+  .regulations__cards, .coal__cards {
     grid-template-columns: 1fr;
+  }
+  .form__seatch {
+    display: block;
+    width: 100%;
+    max-width: unset;
+  } 
+  .form__seatch input {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    min-width: unset;
+    width: 100%;
+  }
+  .form__seatch button {
+    border-radius: 5px;
+    border-left: unset;
+    width: 100%;
   }
 }
 @media (max-width: 480px) {
@@ -1334,5 +1358,8 @@ tr:first-child {
   .button  {
     display: block;
     margin-bottom: 30px;
+  }
+  .btn-hide {
+    display: none;
   }
 }
