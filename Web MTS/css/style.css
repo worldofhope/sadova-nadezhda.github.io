@@ -1158,6 +1158,9 @@ tr:first-child {
   resize: none;
   height: 100px;
 }
+.popup__form label {
+  font-size: 14px;
+}
 .form__btn {
   background: transparent;
   border-radius: 5px;
@@ -1434,6 +1437,16 @@ tr:first-child {
   }
   .popup__form {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .form__text, .form__btn {
+    grid-column: unset;
+  }
+  .form__btn {
+    padding: 16px;
+    width: 100%;
+    max-width: unset;
+    margin-top: 10px;
   }
 }
 @media (max-width: 480px) {
