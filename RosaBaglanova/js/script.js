@@ -48,11 +48,13 @@ if (video) {
       let linkVideo = target.getAttribute('data-link');
       let linkImg = target.querySelector('.activity__video img').getAttribute('src');
       let info = target.querySelector('.activity__video-txt');
-      frameVideo.setAttribute('href', linkVideo);
-      frameVideo.querySelector('img').setAttribute('src', linkImg);
+      frameVideo.querySelector('video').setAttribute('src', linkVideo);
+      frameVideo.querySelector('.video-js').setAttribute('poster', linkImg);
+      frameVideo.querySelector('video').setAttribute('poster', linkImg);
       frameVideo.querySelector('.activity__video-info').innerHTML = info.innerHTML;
     }
   })
+
 }
 
 /*audio*/

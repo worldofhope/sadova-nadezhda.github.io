@@ -319,6 +319,10 @@ h1 {
   display: block;
   height: inherit;
 }
+.activity__video-preview .video-js {
+  width: 100%;
+  height: 100%;
+}
 .activity__audio-preview {
   height: 560px;
   position: relative;
@@ -366,7 +370,7 @@ h1 {
 .audio-anim.active::after {
   animation-delay: 1.25s;
 }
-.activity__video-preview::before {
+/* .activity__video-preview::before {
   content: url(../img/play.svg);
   padding: 50px 60px;
   position: absolute;
@@ -376,6 +380,29 @@ h1 {
   z-index: 1;
   background: rgba(255, 255, 255, 0.17);
   border-radius: 100%;
+} */
+.video-js .vjs-big-play-button {
+  border-radius: 100%;
+  width: 134px;
+  height: 134px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(255, 255, 255, 0.17);
+  border: none;
+  z-index: 1;
+}
+.vjs-big-play-button .vjs-icon-placeholder {
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  transform: translate(-50%,-50%);
+}
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 .activity__video-preview:hover {
   cursor: pointer;
@@ -449,6 +476,7 @@ h1 {
   width: 100%;
   padding: 30px;
   color: #fff;
+  z-index: 1;
 }
 .activity__video-info .activity__year {
   color: #fff;
