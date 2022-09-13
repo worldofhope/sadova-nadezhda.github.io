@@ -82,7 +82,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.4em;
   color: #333333;
-  background-color: #EDEDED;
+  background: url(../img/back.png) #EDEDED center repeat-y;
   font-size: 18px;
   font-weight: 400;
   font-family: 'Gilroy';
