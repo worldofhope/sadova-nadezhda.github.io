@@ -267,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
             legend: {
               display: true,
               align: 'end',
+              cursor:"pointer",
               labels: {
                   color: '#fff',
                   boxWidth: 0,

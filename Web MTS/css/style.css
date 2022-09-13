@@ -933,9 +933,13 @@ button:hover {
   border-radius: 5px;
   overflow: auto;
 }
-.info-mart__table {
+.info-mart__table, .info__chart {
   border-radius: 5px;
   overflow: auto;
+}
+.app-chart__canvas {
+  min-width: 720px;
+  max-height: 350px;
 }
  table {
   width: 100%;
@@ -1019,6 +1023,23 @@ tr:first-child {
 }
 .info-product option:hover {
   background-color: rgba(64, 255, 181, 0.3);
+}
+
+#chartjs-legend {
+  position:absolute;
+  width:100%;
+  bottom:10%;
+}
+#chartjs-legend li {
+  cursor:pointer;
+  margin: 10px 4px;
+}
+#chartjs-legend li span {
+  position:relative;
+  padding: 6px 20px;
+  border-radius:13px;
+  color:white;
+  z-index:2;
 }
 
 /*table btn*/
