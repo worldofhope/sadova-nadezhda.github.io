@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 20);
     };
   }
-/*Chart*/
+// /*Chart*/
   const canvas = document.querySelector('.chart');
   if(canvas) {
     const ctx = canvas.getContext('2d');
@@ -168,10 +168,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // let DataArray = [3, 6, 2, 7, 4];
 
 
-    new Chart(
-      document.querySelector('.chart'),
+    new Chart(document.querySelector('.chart'),
       {
         type: 'line',
+        axisX:{
+          labelBackgroundColor: "gray",
+          labelFontColor: "white"
+        },
         data: {
           labels: ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022', '01.09.2022'],
           datasets: [
@@ -266,7 +269,12 @@ document.addEventListener('DOMContentLoaded', function () {
               align: 'end',
               labels: {
                   color: '#fff',
-                  boxWidth: 0
+                  boxWidth: 0,
+                  fillStyle: '#fff',
+                  strokeStyle: '#fff',
+                  font: {
+                    size: 12
+                }
               }
             }
           },
@@ -279,6 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
     );
   }
 }, false);
+
 
 
 /*hide-show*/
