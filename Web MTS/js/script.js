@@ -325,4 +325,23 @@ $('#popup').on("click", function(event){
   }
 });
 
+let product = document.querySelector('.info-product');
+if(product){
+  product.addEventListener('change', () => {
+  let optionPrd = document.querySelector('.info-product option:checked');
+  let prdType = document.querySelectorAll('.product-type')
+  prdType.forEach(item => {
+    if(item.getAttribute("data-type") == optionPrd.getAttribute("value")) {
+      item.style.display = "table-row";
+    }
+    else {
+      item.style.display = "none";
+    }
+    if(optionPrd.getAttribute("value")== '0') {
+      item.style.display = "table-row";
+    }
+  })
 
+
+  });
+}

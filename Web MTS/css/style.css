@@ -1002,6 +1002,24 @@ tr:first-child {
 .info-mart__decline .ton {
   color: #FF4040;
 }
+.info-product {
+  background: transparent;
+  border: none;
+  color: #fff;
+}
+.info-product:focus {
+  outline: none;
+}
+.info-product option {
+  background-color: #1A2738;
+  border-radius: 5px;
+}
+.info-product option:checked {
+  color: #40FFB5;
+}
+.info-product option:hover {
+  background-color: rgba(64, 255, 181, 0.3);
+}
 
 /*table btn*/
 .auctions__table{
