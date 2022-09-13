@@ -167,8 +167,20 @@ document.addEventListener('DOMContentLoaded', function () {
     // let labelsArray = ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022'];
     // let DataArray = [3, 6, 2, 7, 4];
 
+    var newLegendClickHandler = function(e, legendItem, legend) {
+      const index = legendItem.datasetIndex;
+      const ci = legend.chart;
+      if (ci.isDatasetVisible(index)) {
+          ci.hide(index);
+          legendItem.hidden = true;
+      } else {
+          ci.show(index);
+          legendItem.hidden = false;
+      }
+    }
 
-    new Chart(document.querySelector('.chart'),
+
+    var chart = new Chart(document.querySelector('.chart'),
       {
         type: 'line',
         axisX:{
@@ -258,6 +270,7 @@ document.addEventListener('DOMContentLoaded', function () {
           ]
         },
         options: {
+          
           scales: {
             y: {
               beginAtZero: true // назначили оси Y начинать отсчет с нуля
@@ -268,6 +281,8 @@ document.addEventListener('DOMContentLoaded', function () {
               display: true,
               align: 'end',
               cursor:"pointer",
+              // onClick: (e) => e.stopPropagation(),
+              onClick: newLegendClickHandler,
               labels: {
                   color: '#fff',
                   boxWidth: 0,

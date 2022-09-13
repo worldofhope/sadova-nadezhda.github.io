@@ -1059,7 +1059,7 @@ tr:first-child {
   top: 50%;
   transform: translateY(-50%);
   width: 25%;
-  height: 50%;
+  height: 48%;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 100%;
   z-index: 1;
@@ -1444,6 +1444,10 @@ tr:first-child {
   .form__seatch input {
     min-width: 400px;
   }
+  .table__btn-left, .table__btn-right {
+    width: 23%;
+    height: 25%;
+  }
 }
 @media (max-width: 568px) {
   .page__header {
@@ -1457,7 +1461,7 @@ tr:first-child {
     width: 100%;
     max-width: unset;
   }
-  .contact__description {
+  .contact__description, .about__cards, .about-benefits__cards {
     grid-template-columns: 1fr;
   }
   .js-slider-mb {
@@ -1552,5 +1556,9 @@ tr:first-child {
   }
   .btn-hide {
     display: none;
+  }
+  .table__btn-left, .table__btn-right {
+    width: 27%;
+    height: 15%;
   }
 }
