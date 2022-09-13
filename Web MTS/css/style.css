@@ -440,13 +440,62 @@ h1.caption, h2.caption {
   box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   max-height: 380px;
+  position: relative;
 }
 /*chart*/
+.info__chart {
+  padding-top: 30px;
+}
+.chart-description {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  left: 30px;
+}
+.chart-txt {
+  width: 100%;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.chart-price {
+  font-weight: 300;
+  font-size: 35px;
+  margin-right: 10px;
+  position: relative;
+  padding-left: 16px;
+  line-height: 1em;
+}
+.chart-price::before {
+  content: ' ';
+  width: 6px;
+  height: 6px;
+  background: #40FFB5;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.chart-date {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1;
+  align-self: flex-end;
+}
+.chart_growth, .chart_decline {
+  margin-right: 10px;
+}
 .app-chart__canvas {
   position: relative;
   margin: auto;
   height: 360px;
-  width: 100%;
+}
+.app-chart__canvas canvas {
+  height: 100% !important;
+  width: 100% !important;
 }
 .quotes__cards {
   display: flex;
@@ -941,13 +990,13 @@ tr:first-child {
 .arr-green, .arr-red {
   display: flex;
 }
-.info-mart__growth .arr-red {
+.info-mart__growth .arr-red, .chart_growth .arr-red {
   display: none;
 }
 .info-mart__growth .ton {
   color: #40FFB5;
 }
-.info-mart__decline .arr-green {
+.info-mart__decline .arr-green, .chart_decline .arr-green {
   display: none;
 }
 .info-mart__decline .ton {
@@ -1242,6 +1291,9 @@ tr:first-child {
   .news__column-lf .news__img {
     height: 400px;
   }
+  .info-mart__cards {
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 1100px) {
   .news__cards, .about__cards, .about-benefits__cards, .regulations__cards, .coal__cards {
@@ -1270,9 +1322,6 @@ tr:first-child {
   }
   .trust .slick-dots {
     bottom: -80px;
-  }
-  .info-mart__cards {
-    grid-template-columns: 1fr;
   }
   .chosen__card img {
     width: 150px;

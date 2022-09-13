@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
               pointBorderColor: '#40A3FF',
-              pointBorderWidth: 1,
+              pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
               fill: true
@@ -194,10 +194,11 @@ document.addEventListener('DOMContentLoaded', function () {
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
               pointBorderColor: '#40A3FF',
-              pointBorderWidth: 1,
+              pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true
+              fill: true,
+              hidden: true
             },
             {
               label: 'ГСМ',
@@ -206,10 +207,11 @@ document.addEventListener('DOMContentLoaded', function () {
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
               pointBorderColor: '#40A3FF',
-              pointBorderWidth: 1,
+              pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true
+              fill: true,
+              hidden: true
             },
             {
               label: 'Картофель',
@@ -218,10 +220,11 @@ document.addEventListener('DOMContentLoaded', function () {
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
               pointBorderColor: '#40A3FF',
-              pointBorderWidth: 1,
+              pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true
+              fill: true,
+              hidden: true
             },
             {
               label: 'Сахар',
@@ -230,10 +233,11 @@ document.addEventListener('DOMContentLoaded', function () {
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
               pointBorderColor: '#40A3FF',
-              pointBorderWidth: 1,
+              pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true
+              fill: true,
+              hidden: true
             },
             {
               label: 'Пшеница',
@@ -242,10 +246,11 @@ document.addEventListener('DOMContentLoaded', function () {
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
               pointBorderColor: '#40A3FF',
-              pointBorderWidth: 1,
+              pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true
+              fill: true,
+              hidden: true
             }
           ]
         },
