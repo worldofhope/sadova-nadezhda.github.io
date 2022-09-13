@@ -167,26 +167,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // let labelsArray = ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022'];
     // let DataArray = [3, 6, 2, 7, 4];
 
-    var newLegendClickHandler = function(e, legendItem, legend) {
-      const index = legendItem.datasetIndex;
-      const ci = legend.chart;
-      if (ci.isDatasetVisible(index)) {
-          ci.hide(index);
-          legendItem.hidden = true;
-      } else {
-          ci.show(index);
-          legendItem.hidden = false;
-      }
-    }
-
-
     var chart = new Chart(document.querySelector('.chart'),
       {
         type: 'line',
-        axisX:{
-          labelBackgroundColor: "gray",
-          labelFontColor: "white"
-        },
         data: {
           labels: ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022', '01.09.2022'],
           datasets: [
@@ -212,8 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
               pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true,
-              hidden: true
+              fill: true
             },
             {
               label: 'ГСМ',
@@ -225,12 +207,11 @@ document.addEventListener('DOMContentLoaded', function () {
               pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true,
-              hidden: true
+              fill: true
             },
             {
               label: 'Картофель',
-              data: [3, 3, 2, 0, 4, 5],
+              data: [3, 3, 2, 4, 4, 5],
               borderColor: '#40A3FF',
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
@@ -238,8 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
               pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true,
-              hidden: true
+              fill: true
             },
             {
               label: 'Сахар',
@@ -251,8 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
               pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true,
-              hidden: true
+              fill: true
             },
             {
               label: 'Пшеница',
@@ -270,20 +249,62 @@ document.addEventListener('DOMContentLoaded', function () {
           ]
         },
         options: {
-          
+          responsive: true,
           scales: {
+            x:{
+                grid: {
+                  display: false,
+                  color: 'rgba(255, 255, 255, 0.2)'
+                }
+            },
             y: {
-              beginAtZero: true // назначили оси Y начинать отсчет с нуля
+                grid: {
+                  display: true,
+                  color: 'rgba(255, 255, 255, 0.2)'
+                }
             }
           },
+          radius: 6,
           plugins: {
             legend: {
               display: true,
               align: 'end',
               cursor:"pointer",
               // onClick: (e) => e.stopPropagation(),
-              onClick: newLegendClickHandler,
+              onHover: function(event, legendItem) {
+                document.querySelector("canvas").style.cursor = 'pointer';
+              },
+              onClick: function(e, legendItem) {
+                var index = legendItem.datasetIndex;
+                var ci = this.chart;
+                var alreadyHidden = (ci.getDatasetMeta(index).hidden === null) ? false : ci.getDatasetMeta(index).hidden;
+      
+                ci.data.datasets.forEach(function(e, i) {
+                  var meta = ci.getDatasetMeta(i);
+      
+                  if (i !== index) {
+                    if (!alreadyHidden) {
+                      meta.hidden = meta.hidden === null ? !meta.hidden : null;
+                    } else if (meta.hidden === null) {
+                      meta.hidden = true;
+                    }
+                  } else if (i === index) {
+                    meta.hidden = null;
+                  }
+                });
+      
+                ci.update();
+              },
+              tooltips: {
+                custom: function(tooltip) {
+                  if (!tooltip.opacity) {
+                    document.querySelector("canvas").style.cursor = 'default';
+                    return;
+                  }
+                }
+              },
               labels: {
+                  display: false,
                   color: '#fff',
                   boxWidth: 0,
                   fillStyle: '#fff',
@@ -296,8 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
           },
           layout: {
             padding: 30
-          },
-          responsive: true
+          }
         }
       }
     );

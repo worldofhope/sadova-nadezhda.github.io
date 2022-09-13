@@ -1025,21 +1025,24 @@ tr:first-child {
   background-color: rgba(64, 255, 181, 0.3);
 }
 
-#chartjs-legend {
-  position:absolute;
-  width:100%;
-  bottom:10%;
+li {
+  list-style-type: none;
 }
-#chartjs-legend li {
-  cursor:pointer;
-  margin: 10px 4px;
+
+.label {
+  margin-left: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #666666;
+  font-size: 14px;
 }
-#chartjs-legend li span {
-  position:relative;
-  padding: 6px 20px;
-  border-radius:13px;
-  color:white;
-  z-index:2;
+
+.legendValue {
+  float: left;
+  height: 25px;  
+}
+
+.clear {
+  clear: both
 }
 
 /*table btn*/
