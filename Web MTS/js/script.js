@@ -183,7 +183,8 @@ document.addEventListener('DOMContentLoaded', function () {
               pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true
+              fill: true,
+              active: true
             },
             {
               label: 'Цемент',
@@ -195,7 +196,8 @@ document.addEventListener('DOMContentLoaded', function () {
               pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true
+              fill: true,
+              hidden: true
             },
             {
               label: 'ГСМ',
@@ -207,7 +209,8 @@ document.addEventListener('DOMContentLoaded', function () {
               pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true
+              fill: true,
+              hidden: true
             },
             {
               label: 'Картофель',
@@ -219,7 +222,8 @@ document.addEventListener('DOMContentLoaded', function () {
               pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true
+              fill: true,
+              hidden: true
             },
             {
               label: 'Сахар',
@@ -231,7 +235,8 @@ document.addEventListener('DOMContentLoaded', function () {
               pointBorderWidth: 2,
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
-              fill: true
+              fill: true,
+              hidden: true
             },
             {
               label: 'Пшеница',
@@ -277,21 +282,18 @@ document.addEventListener('DOMContentLoaded', function () {
               onClick: function(e, legendItem) {
                 var index = legendItem.datasetIndex;
                 var ci = this.chart;
-                var alreadyHidden = (ci.getDatasetMeta(index).hidden === null) ? false : ci.getDatasetMeta(index).hidden;
-      
+                var metaInd = ci.getDatasetMeta(index);
+
                 ci.data.datasets.forEach(function(e, i) {
                   var meta = ci.getDatasetMeta(i);
-      
-                  if (i !== index) {
-                    if (!alreadyHidden) {
-                      meta.hidden = meta.hidden === null ? !meta.hidden : null;
-                    } else if (meta.hidden === null) {
-                      meta.hidden = true;
-                    }
-                  } else if (i === index) {
-                    meta.hidden = null;
-                  }
+                  meta.hidden = true;
                 });
+                console.log(metaInd)
+                if (metaInd.hidden == true){
+                  metaInd.hidden = null;
+                  metaInd._dataset.hidden = null;
+                }
+                
       
                 ci.update();
               },
