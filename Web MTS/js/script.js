@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (metaInd.hidden == true){
                   metaInd.hidden = null;
                   metaInd._dataset.hidden = null;
-                  price.innerHTML = numberWithSpaces(lastElemPrice);
+                  price.innerHTML = numberWithSpaces(lastElemPrice) + ' ₸';
                 }
                 
 
@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if(elem.hidden == null) {
         let arrayPrice = elem.data;
         let lastElemPrice = arrayPrice.slice(-1);
-        price.innerHTML = numberWithSpaces(lastElemPrice);
+        price.innerHTML = numberWithSpaces(lastElemPrice) + ' ₸';
       }
     });
 
