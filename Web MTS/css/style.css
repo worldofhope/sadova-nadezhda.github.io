@@ -336,7 +336,9 @@
 .navigation__item:first-child::before {
   content: none;
 }
-
+.navigation__list a:hover {
+  text-decoration: underline;
+}
 
 main {
   flex-grow: 1;
