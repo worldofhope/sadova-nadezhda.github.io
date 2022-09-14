@@ -1451,8 +1451,19 @@ tr:first-child {
     width: 100%;
     max-width: unset;
   }
-  .contact__description, .about__cards, .about-benefits__cards {
+  .contact__description, .about__cards, .about-benefits__cards, .news__cards {
     grid-template-columns: 1fr;
+  }
+  .news__pagination a {
+    padding: 2px 8px;
+    min-width: unset;
+    font-size: 10px;
+  }
+  .news__pagination {
+    justify-content: center;
+  }
+  .news__cards {
+    margin-bottom: 20px;
   }
   .js-slider-mb {
     display: block;
