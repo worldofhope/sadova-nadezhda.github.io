@@ -52,7 +52,10 @@
   width: 90px;
   height: 55px;
 }
-.header__logo img {
+.logo__container {
+  width: 150px;
+}
+.header__logo img, .logo__container img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -386,7 +389,10 @@ h1.caption, h2.caption {
 }
 
 /*section*/
-.chosen, .info-mart, .quotes, .deals, .news, .purchases, .navigation {
+.main-logo {
+  display: none;
+}
+.chosen, .info-mart, .quotes, .deals, .news, .purchases, .navigation, .main-logo {
   padding-top: 80px;
 }
 .trust, .registr-info, .about, .members, .arbitration, .clearing, .requisites, 
@@ -443,9 +449,6 @@ h1.caption, h2.caption {
   position: relative;
 }
 /*chart*/
-.info__chart {
-  padding-top: 30px;
-}
 .chart-description {
   display: flex;
   flex-wrap: wrap;
@@ -1377,6 +1380,9 @@ tr:first-child {
   }
 }
 @media (max-width: 767px) {
+  .main-logo {
+    display: block;
+  }
   .chosen__card img {
     width: 250px;
   }
@@ -1412,7 +1418,7 @@ tr:first-child {
   .nav__caption {
     display: none;
   }
-  .chosen, .info-mart, .quotes, .deals, .news, .purchases, .trust, .navigation {
+  .chosen, .info-mart, .quotes, .deals, .news, .purchases, .trust, .navigation, .main-logo {
     padding-top: 50px;
   }
   .registr-info, .about, .members, .arbitration, .clearing, .requisites, 

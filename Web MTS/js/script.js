@@ -163,9 +163,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const gradient = ctx.createLinearGradient(0, canvas.width, 0, canvas.height);
     gradient.addColorStop(1, 'rgba(64, 163, 255, 0.5)');
     gradient.addColorStop(0, 'rgba(64, 163, 255, 0)');
-
     // let labelsArray = ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022'];
     // let DataArray = [3, 6, 2, 7, 4];
+
+    function numberWithSpaces(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
 
     var chart = new Chart(ctx,
       {
@@ -175,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
           datasets: [
             {
               label: 'Уголь',
-              data: [0, 6, 2, 7, 4, 5],
+              data: [11400, 11900, 12400, 12000, 12600, 12800],
               borderColor: '#40A3FF',
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
@@ -188,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
               label: 'Цемент',
-              data: [3, 3, 2, 6, 4, 6],
+              data: [11400, 11500, 11800, 12200, 12200, 12700],
               borderColor: '#40A3FF',
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
@@ -201,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
               label: 'ГСМ',
-              data: [1, 3, 7, 6, 4, 2],
+              data: [11800, 11400, 11800, 12000, 12400, 12200],
               borderColor: '#40A3FF',
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
@@ -214,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
               label: 'Картофель',
-              data: [3, 3, 2, 4, 4, 5],
+              data: [11400, 11700, 11800, 12200, 12400, 12000],
               borderColor: '#40A3FF',
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
@@ -227,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
               label: 'Сахар',
-              data: [3, 1, 3, 6, 4, 7],
+              data: [11400, 11600, 11800, 12000, 12200, 12700],
               borderColor: '#40A3FF',
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
@@ -240,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
               label: 'Пшеница',
-              data: [4, 3, 4, 6, 4, 9],
+              data: [11400, 11600, 11800, 12000, 12200, 12600],
               borderColor: '#40A3FF',
               borderWidth: 2,
               pointBackgroundColor: '#1A2738',
@@ -260,20 +263,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 grid: {
                   display: false,
                   color: 'rgba(255, 255, 255, 0.2)'
-                }
+                },
             },
             y: {
                 grid: {
                   display: true,
                   color: 'rgba(255, 255, 255, 0.2)'
-                }
+                },
+                position: 'right',
+                min: 11400,
+                max: 12800
             }
           },
           radius: 6,
           plugins: {
             legend: {
               align: 'end',
+              position: 'top',
               cursor:"pointer",
+              padding: {
+                bottom: 60
+              },
               // onClick: (e) => e.stopPropagation(),
               onHover: function(event, legendItem) {
                 document.querySelector("canvas").style.cursor = 'pointer';
@@ -282,16 +292,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 var index = legendItem.datasetIndex;
                 var ci = this.chart;
                 var metaInd = ci.getDatasetMeta(index);
+                let price = document.querySelector('.chart-price');
+                let arrayPrice = metaInd._dataset.data;
+                let lastElemPrice = arrayPrice.slice(-1);
 
                 ci.data.datasets.forEach(function(e, i) {
                   var meta = ci.getDatasetMeta(i);
                   meta.hidden = true;
                 });
-                console.log(metaInd)
                 if (metaInd.hidden == true){
                   metaInd.hidden = null;
                   metaInd._dataset.hidden = null;
+                  price.innerHTML = numberWithSpaces(lastElemPrice);
                 }
+                
+
                 ci.update();
               },
               tooltips: {
@@ -317,9 +332,38 @@ document.addEventListener('DOMContentLoaded', function () {
           layout: {
             padding: 30
           }
-        }
+        },
+        plugins: [ 
+      {
+        afterInit(chart) {
+          chart.legend._update = chart.legend.update;
+          chart.legend.update = function (...args) {
+            this._update(...args);
+            const padding = { ...(this.options.padding || {}) };
+            this.height += Math.max(0, ~~padding.bottom);
+            this.width += Math.max(0, ~~padding.right);
+          };
+        },
+      },
+    ]
       }
     );
+
+
+    
+    let date = document.querySelector('.chart-date');
+    let price = document.querySelector('.chart-price');
+    let arrayDate = chart.data.labels;
+    let lastElemDate = arrayDate.slice(-1);
+    date.innerHTML = lastElemDate;
+    chart.data.datasets.forEach(function(elem, i) {
+      if(elem.hidden == null) {
+        let arrayPrice = elem.data;
+        let lastElemPrice = arrayPrice.slice(-1);
+        price.innerHTML = numberWithSpaces(lastElemPrice);
+      }
+    });
+
   }
 }, false);
 
