@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // let labelsArray = ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022'];
     // let DataArray = [3, 6, 2, 7, 4];
 
-    var chart = new Chart(document.querySelector('.chart'),
+    var chart = new Chart(ctx,
       {
         type: 'line',
         data: {
@@ -272,7 +272,6 @@ document.addEventListener('DOMContentLoaded', function () {
           radius: 6,
           plugins: {
             legend: {
-              display: true,
               align: 'end',
               cursor:"pointer",
               // onClick: (e) => e.stopPropagation(),
@@ -293,8 +292,6 @@ document.addEventListener('DOMContentLoaded', function () {
                   metaInd.hidden = null;
                   metaInd._dataset.hidden = null;
                 }
-                
-      
                 ci.update();
               },
               tooltips: {
@@ -325,8 +322,6 @@ document.addEventListener('DOMContentLoaded', function () {
     );
   }
 }, false);
-
-
 
 /*hide-show*/
 $(function() {
