@@ -258,12 +258,20 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         options: {
           responsive: true,
+          maintainAspectRatio: true,
           scales: {
             x:{
                 grid: {
                   display: false,
                   color: 'rgba(255, 255, 255, 0.2)'
                 },
+                ticks: {
+                  color: '#fff',
+                  padding: 10,
+                  font: {
+                    size: 10
+                  }
+                }
             },
             y: {
                 grid: {
@@ -272,14 +280,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 position: 'right',
                 min: 11400,
-                max: 12800
+                max: 12800,
+                ticks: {
+                  color: '#fff',
+                  padding: 10,
+                  font: {
+                    size: 10
+                  }
+                }
             }
           },
           radius: 6,
           plugins: {
             legend: {
               align: 'end',
-              position: 'top',
               cursor:"pointer",
               padding: {
                 bottom: 60
@@ -318,19 +332,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
               },
               labels: {
-                  display: false,
-                  color: '#fff',
-                  boxWidth: 0,
-                  fillStyle: '#fff',
-                  strokeStyle: '#fff',
-                  font: {
-                    size: 12
+                display: false,
+                color: '#fff',
+                boxWidth: 0,
+                fillStyle: '#fff',
+                strokeStyle: '#fff',
+                font: {
+                  size: 12
                 }
               }
             }
           },
           layout: {
-            padding: 30
+            padding: 20
           }
         },
         plugins: [ 

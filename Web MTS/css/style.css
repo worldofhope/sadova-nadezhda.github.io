@@ -494,7 +494,7 @@ h1.caption, h2.caption {
 .app-chart__canvas {
   position: relative;
   margin: auto;
-  height: 360px;
+  height: 380px;
 }
 .app-chart__canvas canvas {
   height: 100% !important;
@@ -942,7 +942,7 @@ button:hover {
 }
 .app-chart__canvas {
   min-width: 720px;
-  max-height: 350px;
+  max-height: 380px;
 }
  table {
   width: 100%;
