@@ -1076,8 +1076,11 @@ h4.caption {
 .news, .news-inner {
   padding: 100px 0;
 }
-.news__title, .news-inner__title {
+.news__title {
   margin-bottom: 50px;
+}
+.news-inner__title {
+  margin-bottom: 20px;
 }
 .news-inner__container {
   display: grid;
@@ -1123,9 +1126,13 @@ h4.caption {
   height: 30px;
   border-radius: 5px;
   overflow: hidden;
+  transition: all .3s ease;
 }
 .share__link:last-child {
   margin-right: 0px;
+}
+.share__link:hover {
+  transform: scale(1.1);
 }
 .news-inner__date {
   position: absolute;
@@ -2804,6 +2811,15 @@ input.file:hover {
   .instagram__description p {
     font-size: 20px;
   }
+  .news-inner__container {
+    grid-template-columns: 1fr;
+  }
+  .news-inner__title {
+    grid-column: unset;
+  }
+  .news-inner__cards {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (max-width: 1100px) {
   .our-complexs__cards {
@@ -2985,7 +3001,8 @@ input.file:hover {
     grid-column: span 2;
   }
   .our-complexs, .about-company, .news, .instagram, .career,.terms, .partners, 
-  .about-us, .company-worth, .history, .subsidiaries, .club, .questions, .methods__tab {
+  .about-us, .company-worth, .history, .subsidiaries, .club, .questions, .methods__tab, 
+  .news-inner {
     padding: 80px 0;
   }
   .our-complexs__description {
@@ -3090,7 +3107,9 @@ input.file:hover {
   .questions__tab__item.active .questions__item__content::after {
     content: url(../img/svg/arrow-wh-up.svg);
   }
-}
+  .news-inner__img {
+    height: 400px;
+  }
 @media (max-width: 900px) {
   .career__cards {
     grid-template-columns: repeat(2,1fr);
@@ -3159,7 +3178,7 @@ input.file:hover {
     left: 60px;
   }
   .our-complexs, .about-company, .news, .instagram, .about-us, .company-worth, .terms, 
-   .history, .subsidiaries, .club, .career, .questions, .methods__tab, .partners {
+   .history, .subsidiaries, .club, .career, .questions, .methods__tab, .partners, .news-inner {
     padding: 50px 0;
   }
   .news {
@@ -3195,6 +3214,9 @@ input.file:hover {
   .proposal__title {
     margin-bottom: 30px;
     line-height: 1.2em;
+  }
+  .news-inner__title {
+    margin-bottom: 0;
   }
   .footer__logo, .footer__nav {
     padding-bottom: 30px;
@@ -3554,6 +3576,9 @@ input.file:hover {
   }
   .pagination__container li {
     margin-bottom: 10px;
+  }
+  .news-inner__cards {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 374px) {
