@@ -2464,8 +2464,92 @@ ol.questions__tabs__caption {
   pointer-events: none;
 }
 
-
-
+/*contact*/
+.contact {
+  padding-top: 100px;
+}
+.contact__container {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.contact__title {
+  grid-column: span 2;
+  width: 100%;
+  max-width: 1652px;
+  padding: 0 16px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.contact__tabs {
+  background-color: #0036A7;
+  color: #fff;
+}
+.contact__tabs__captions {
+  display: flex;
+  justify-content: center;
+}
+.contact__tabs__captions li {
+  position: relative;
+  width: 50%;
+  padding: 110px 0;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  border-bottom: 1px solid #7E8596;
+}
+.contact__tabs__captions li.active {
+  border-bottom: 1px solid #fff;
+}
+.contact__tabs__captions li.active::after {
+  content: url(../img/svg/tab-arr-act.svg);
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.contact__tabs__captions li::after {
+  content: url(../img/svg/tab-arr.svg);
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.contact__tabs__captions li:hover {
+  cursor: pointer;
+}
+.contact__tabs__contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+  max-width: 692px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.contact__tabs__content {
+  display: none;
+}
+.contact__tabs__content.active {
+  display: block;
+}
+.contact__city, .contact__mail {
+  font-weight: 700;
+  font-size: 48px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.contact__address, .contact__phone {
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.contact__tabs__content a {
+  display: block;
+}
+.contact__map iframe {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
 
 
 
@@ -2695,6 +2779,12 @@ input.file:hover {
   .our-complexs__card .card__description, .buy-apartment__card .card__description {
     bottom: -57%;
   }
+  .contact__title {
+    max-width: 1400px;
+  }
+  .contact__tabs__contents {
+    max-width: 580px;
+  }
 }
 @media (max-width: 1450px) {
   .our-complexs__cards {
@@ -2756,6 +2846,12 @@ input.file:hover {
     margin-bottom: 80px;
     line-height: 80%;
   }
+  .contact__title {
+    max-width: 1200px;
+  }
+  .contact__tabs__contents {
+    max-width: 480px;
+  }
 }
 @media (max-width: 1250px) {
   .header__social {
@@ -2811,14 +2907,47 @@ input.file:hover {
   .instagram__description p {
     font-size: 20px;
   }
-  .news-inner__container {
+  .news-inner__container, .contact__container {
     grid-template-columns: 1fr;
   }
-  .news-inner__title {
+  .news-inner__title, .contact__title {
     grid-column: unset;
   }
   .news-inner__cards {
     grid-template-columns: 1fr 1fr;
+  }
+  .contact__map, .contact__tabs__contents {
+    min-height: 400px;
+  }
+  .contact__tabs__contents {
+    max-width: 1200px;
+  }
+  .contact__tabs__captions li {
+    padding: 60px 16px;
+    font-size: 20px;
+  }
+  .contact__city, .contact__mail {
+    font-size: 32px;
+  }
+  .contact__address, .contact__phone {
+    font-size: 20px;
+  }
+  .contact__tabs__captions li.active::after {
+    content: url(../img/svg/tab-arr-mb-act.svg);
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+  .contact__tabs__captions li::after {
+    content: url(../img/svg/tab-arr-mb.svg);
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media (max-width: 1200px) {
+  .contact__title, .contact__tabs__contents {
+    max-width: 1100px;
   }
 }
 @media (max-width: 1100px) {
@@ -2954,6 +3083,9 @@ input.file:hover {
   }
   .apartments__slider .slick-dots { 
     left: 0;
+  }
+  .contact__title, .contact__tabs__contents {
+    max-width: 980px;
   }
 }
 @media (max-width: 980px) {
@@ -3110,6 +3242,11 @@ input.file:hover {
   .news-inner__img {
     height: 400px;
   }
+  .contact__title, .contact__tabs__contents {
+    max-width: unset;
+    width: 100%;
+  }
+}
 @media (max-width: 900px) {
   .career__cards {
     grid-template-columns: repeat(2,1fr);
