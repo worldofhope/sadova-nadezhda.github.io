@@ -131,7 +131,8 @@ $(window).on('resize', function(){
       // autoplay: true,
       // autoplaySpeed: 2000,
       arrows: false,
-      dots: true
+      dots: true,
+      variableWidth: true
     });
   }
   else if ($(this).width() > 568 && !flag) {

@@ -654,7 +654,7 @@ h4.caption {
   font-size: 18px;
   font-weight: 400;
 }
-.our-complexs__card .card__description {
+.our-complexs__card .card__description, .buy-apartment__card .card__description {
   background: #fff;
   padding: 20px;
   padding-top: 10px;
@@ -667,7 +667,7 @@ h4.caption {
   bottom: 0;
   border-radius: 5px;
 }
-.our-complexs__card .card__text {
+.our-complexs__card .card__text, .buy-apartment__card .card__text {
   color: #0036A7;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -1073,15 +1073,76 @@ h4.caption {
 }
 
 /*news section*/
-.news {
+.news, .news-inner {
   padding: 100px 0;
 }
-.news__title {
+.news__title, .news-inner__title {
   margin-bottom: 50px;
+}
+.news-inner__container {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+  align-items: start;
+}
+.news-inner__title {
+  grid-column: span 2;
+}
+.news-inner__content {
+  position: relative;
+  padding: 30px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 24px -3px rgba(181, 190, 214, 0.34);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.news-inner__img {
+  height: 660px;
+  margin: -30px -30px 30px;
+}
+.news-inner__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.news-inner__text {
+  margin-bottom: 30px;
+}
+.share__text {
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+.share__links {
+  display: flex;
+}
+.share__link {
+  display: block;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.share__link:last-child {
+  margin-right: 0px;
+}
+.news-inner__date {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  font-weight: 700;
+  line-height: 1;
 }
 .news__cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.news-inner__cards {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 30px;
 }
 .news__card {
@@ -1091,6 +1152,7 @@ h4.caption {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .news__card .card__img {
   margin: -20px -20px 20px;
@@ -2207,6 +2269,9 @@ ol.questions__tabs__caption {
   text-indent: 0px;
 }
 
+.buy-apartment {
+  margin-bottom: 50px;
+}
 .buy-apartment__cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2243,26 +2308,9 @@ ol.questions__tabs__caption {
   font-size: 18px;
   font-weight: 400;
 }
-.buy-apartment__card .card__description {
-  background: #fff;
-  padding: 20px;
-  padding-top: 10px;
-  width: 100%;
-  transition: all 0.2s linear;
-  position: absolute;
-  bottom: -190px;
-}
 .buy-apartment__card .card__description:hover {
   bottom: 0;
   border-radius: 5px;
-}
-.buy-apartment__card.card__text {
-  color: #0036A7;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(181, 190, 214, 0.34);
-  font-size: 18px;
-  font-weight: 500;
 }
 .buy-apartment__card .card__title {
   margin-bottom: 10px;
@@ -2376,11 +2424,38 @@ ol.questions__tabs__caption {
   opacity: 1;
   text-indent: 0px;
 }
-
-
-
-
-
+.pagination__container {
+  display: flex;
+  justify-content: flex-end;
+}
+.pagination__container li {
+  margin-right: 5px;
+}
+.pagination__container li:last-child {
+  margin-right: 0px;
+}
+.pagination__container a {
+  display: block;
+  padding: 16px 20px;
+  background-color: #fff;
+  box-shadow: 0px 3px 10px rgba(195, 212, 218, 0.38);
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  transition: all 0.3s linear;
+}
+.pagination__container li.active a {
+  background-color: #0036A7;
+  color: #fff;
+}
+.pagination__container a:hover {
+  color: #0036A7;
+  text-shadow: #0036A7 0px 0px 1px;
+}
+.pagination__container .disabled {
+  pointer-events: none;
+}
 
 
 
@@ -2757,7 +2832,7 @@ input.file:hover {
     padding: 40px;
   }
   .news__cards {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
   }
   .instagram__posts {
     display: flex;
@@ -3296,8 +3371,8 @@ input.file:hover {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .buy-apartment__card { 
-    height: auto;
+  .our-complexs__card, .buy-apartment__card {
+    height: 400px;
   }
 }
 @media (max-width: 620px) {
@@ -3354,7 +3429,7 @@ input.file:hover {
   .our-complexs__cards .slick-dots, .buy-apartment__cards .slick-dots {
     bottom: -40px;
   }
-  .news__cards {
+  .js-slick-slider {
     display: block;
   }
   .our-complexs__cards, .news__cards, .buy-apartment__cards {
@@ -3466,7 +3541,19 @@ input.file:hover {
     line-height: 1;
   }
   .our-complexs__card .card__description, .buy-apartment__card .card__description {
-    bottom: -44%;
+    bottom: -40%;
+  }
+  .pagination__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .pagination__container a {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+  .pagination__container li {
+    margin-bottom: 10px;
   }
 }
 @media (max-width: 374px) {
