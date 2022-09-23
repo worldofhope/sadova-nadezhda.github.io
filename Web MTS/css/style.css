@@ -809,12 +809,12 @@ button:hover {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 10px;
 }
-.deals__card:first-child .deals__tooltip .deals__txt {
+.deals__card:nth-child(6n-5) .deals__tooltip .deals__txt {
   right: auto;
   left: 50%;
   transform: translateX(-50%);
 }
-.deals__card:first-child .deals__tooltip .deals__txt::after {
+.deals__card:nth-child(6n-5) .deals__tooltip .deals__txt::after {
   right: auto;
   left: 50%;
   transform: translateX(-50%);
@@ -1328,12 +1328,12 @@ tr:first-child {
   .trust__cards {
     max-width: 840px;
   }
-  .deals__card:nth-child(4) .deals__tooltip .deals__txt {
+  .deals__card:nth-child(3n−2) .deals__tooltip .deals__txt {
     right: auto;
     left: 50%;
     transform: translateX(-50%);
   }
-  .deals__card:nth-child(4) .deals__tooltip .deals__txt::after {
+  .deals__card:nth-child(3n−2) .deals__tooltip .deals__txt::after {
     right: auto;
     left: 50%;
     transform: translateX(-50%);
@@ -1355,12 +1355,12 @@ tr:first-child {
   .chosen__card img {
     width: 150px;
   }
-    .deals__card:nth-child(4) .deals__tooltip .deals__txt {
+    .deals__card:nth-child(3n−2) .deals__tooltip .deals__txt {
     right: auto;
     left: 50%;
     transform: translateX(-50%);
   }
-  .deals__card:nth-child(4) .deals__tooltip .deals__txt::after {
+  .deals__card:nth-child(3n−2) .deals__tooltip .deals__txt::after {
     right: auto;
     left: 50%;
     transform: translateX(-50%);
@@ -1408,12 +1408,12 @@ tr:first-child {
     left: 50%;
     transform: translateX(-50%);
   }
-  .deals__card:nth-child(4) .deals__tooltip .deals__txt {
+  .deals__card:nth-child(3n−2) .deals__tooltip .deals__txt {
     right: -30px;
     left: auto;
     transform: translateX(0);
   }
-  .deals__card:nth-child(4) .deals__tooltip .deals__txt::after {
+  .deals__card:nth-child(3n−2) .deals__tooltip .deals__txt::after {
     right: 30px;
     left: auto;
     transform: translateX(0);

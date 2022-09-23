@@ -508,6 +508,18 @@ h4.caption {
   overflow: hidden;
   background: #0036A7;
 }
+.apartment__inner {
+  overflow: hidden;
+  padding-top: 100px;
+  color: #fff;
+}
+.apartment__inner__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  margin-bottom: -100px;
+}
 .apartments__slide {
   position: relative;
   border: none !important;
@@ -521,11 +533,38 @@ h4.caption {
   left: 223px;
   transform: translateY(-50%);
 }
+.apartment__inner__title {
+  margin-bottom: 50px;
+  font-size: 64px;
+}
+.apartment__inner__text {
+  margin-bottom: 50px;
+  font-weight: 500;
+  font-size: 24px;
+  max-width: 550px;
+}
 .apartments__slide__img {
   width: 100vw;
   height: 100vh;
 }
-.apartments__slide__img img {
+.apartment__inner__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.apartment__inner__img::after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(12, 21, 31, 0.71) 9.77%, rgba(17, 22, 35, 0) 100.59%);
+}
+.apartments__slide__img img, .apartment__inner__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1338,6 +1377,11 @@ h4.caption {
   align-items: center;
   line-height: 1.2em;
 }
+.apartment__inner .navigation__list {
+  position: absolute;
+  top: 170px;
+  color: #AFC1D9;
+}
 .navigation__item {
   position: relative;
   padding-right: 27px;
@@ -1345,6 +1389,9 @@ h4.caption {
 .navigation__item.active {
   color: #0036A7;
   font-weight: 700;
+}
+.apartment__inner .navigation__item.active {
+  color: #fff;
 }
 .navigation__item::after {
   content: ' ';
@@ -1358,9 +1405,13 @@ h4.caption {
   top: 50%;
   transform: translateY(-50%);
 }
+.apartment__inner .navigation__item::after {
+  background-color: #fff;
+}
 .navigation__item:last-child::after {
   content: none;
 }
+
 
 /*about*/
 .about-us {
@@ -2525,10 +2576,13 @@ ol.questions__tabs__caption {
   padding: 16px;
 }
 .contact__tabs__content {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  transition: all 1.5s ease;
 }
 .contact__tabs__content.active {
-  display: block;
+  position: static;
+  opacity: 1;
 }
 .contact__city, .contact__mail {
   font-weight: 700;
@@ -3246,6 +3300,9 @@ input.file:hover {
     max-width: unset;
     width: 100%;
   }
+  .contact__map, .contact__tabs__contents {
+    min-height: 300px;
+  }
 }
 @media (max-width: 900px) {
   .career__cards {
@@ -3321,7 +3378,7 @@ input.file:hover {
   .news {
     padding-bottom: 90px;
   }
-  .teams, .methods {
+  .teams, .methods, .contact {
     padding-top: 50px;
   }
   .instagram {
@@ -3348,7 +3405,7 @@ input.file:hover {
     font-size: 20px;
   }
   .our-complexs__description ,.about-company__description h2, .news__title, .instagram__description h2,
-  .proposal__title {
+  .proposal__title, .contact__title {
     margin-bottom: 30px;
     line-height: 1.2em;
   }
@@ -3533,6 +3590,9 @@ input.file:hover {
   .our-complexs__card, .buy-apartment__card {
     height: 400px;
   }
+  .contact__tabs__captions li {
+    padding: 50px 80px;
+  }
 }
 @media (max-width: 620px) {
   .proposal {
@@ -3716,6 +3776,18 @@ input.file:hover {
   }
   .news-inner__cards {
     grid-template-columns: 1fr;
+  }
+  .contact__tabs__contents {
+    min-height: 200px;
+  }
+  .contact__map {
+    min-height: 400px;
+  }
+}
+@media (max-width: 500px) {
+  .contact__tabs__captions li {
+    padding: 50px 60px;
+    font-size: 16px;
   }
 }
 @media (max-width: 374px) {
