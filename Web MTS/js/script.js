@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (tableCnt.scrollLeft > 1320) {
         btnRgt.classList.remove('show');
       }
-      console.log(tableCnt.scrollLeft)
+      // console.log(tableCnt.scrollLeft)
       }, 20);
     };
     btnLft.onmouseover = function () {
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
               backgroundColor: gradient,
               cubicInterpolationMode: 'monotone',
               fill: true,
-              active: true
+              hidden: false
             },
             {
               label: 'Цемент',
@@ -313,14 +313,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 ci.data.datasets.forEach(function(e, i) {
                   var meta = ci.getDatasetMeta(i);
                   meta.hidden = true;
+                  meta._dataset.hidden = true;
                 });
                 if (metaInd.hidden == true){
-                  metaInd.hidden = null;
-                  metaInd._dataset.hidden = null;
+                  metaInd.hidden = false;
+                  metaInd._dataset.hidden = false;
                   price.innerHTML = numberWithSpaces(lastElemPrice) + ' ₸';
                 }
-                
-
                 ci.update();
               },
               tooltips: {
@@ -335,10 +334,40 @@ document.addEventListener('DOMContentLoaded', function () {
                 display: false,
                 color: '#fff',
                 boxWidth: 0,
-                fillStyle: '#fff',
-                strokeStyle: '#fff',
                 font: {
                   size: 12
+                },
+                generateLabels: (chart) => {
+                  const datasets = chart.data.datasets;
+                  const {
+                    labels: {
+                      usePointStyle,
+                      pointStyle,
+                      textAlign,
+                      color
+                    }
+                  } = chart.legend.options;
+
+
+                  total_result = chart._getSortedDatasetMetas().map((meta, i) => {
+                    const style = meta.controller.getStyle(usePointStyle ? 0 : undefined);
+                    if(meta._dataset.hidden){
+                      
+                      return {
+                        text: datasets[meta.index].label,
+                        fontColor: '#fff', 
+                        datasetIndex: meta.index
+                      };
+                    } else {
+                      return {
+                        text: datasets[meta.index].label,
+                        fontColor: '#40FFB5',
+                        datasetIndex: meta.index
+                      };
+                    }
+                  }, this);
+
+                  return total_result;
                 }
               }
             }
@@ -371,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastElemDate = arrayDate.slice(-1);
     date.innerHTML = lastElemDate;
     chart.data.datasets.forEach(function(elem, i) {
-      if(elem.hidden == null) {
+      if(elem.hidden == false) {
         let arrayPrice = elem.data;
         let lastElemPrice = arrayPrice.slice(-1);
         price.innerHTML = numberWithSpaces(lastElemPrice) + ' ₸';

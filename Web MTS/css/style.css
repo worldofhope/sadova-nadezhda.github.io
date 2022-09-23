@@ -398,7 +398,7 @@ h1.caption, h2.caption {
   padding-top: 80px;
 }
 .trust, .registr-info, .about, .members, .arbitration, .clearing, .requisites, 
-.regulations, .contact, .auctions, .coal, .page__news {
+.regulations, .contact, .auctions, .coal, .page__news, .deals__page {
   padding: 80px 0;
 }
 .quotes {
@@ -1425,7 +1425,7 @@ tr:first-child {
     padding-top: 50px;
   }
   .registr-info, .about, .members, .arbitration, .clearing, .requisites, 
-  .regulations, .contact, .coal, .page__news {
+  .regulations, .contact, .coal, .page__news, .deals__page {
     padding: 50px 0;
   }
   .table__btn-left {
