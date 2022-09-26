@@ -223,7 +223,7 @@ select {
   /*margin: 8px;*/
   border-radius: 50%;
   border: 6px solid #fff;
-  border-color: #FF335A transparent #FF335A transparent;
+  border-color: #4ad395 transparent #4ad395 transparent;
   animation: loader-animate 1.2s linear infinite;
 }
 .form_loader_text {

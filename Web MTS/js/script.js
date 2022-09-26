@@ -14,7 +14,7 @@ clsBtn.addEventListener('click', function () {
 
 /*menu*/
 const buttons = document.querySelectorAll('.item__caption');
-if (buttons) {
+if (buttons){
 buttons.forEach(function(button, index) {
   button.addEventListener('click', function(e) {
     e.preventDefault();
@@ -214,11 +214,11 @@ document.addEventListener('DOMContentLoaded', function () {
       hidden: true // true
     };
 
+
     obj.datasets.forEach(item => {
       Object.keys(params).forEach((key,i) => {
         item[key] = Object.values(params)[i];
       });
-      console.log(item)
     });
   
     obj.datasets[0].hidden = false;
