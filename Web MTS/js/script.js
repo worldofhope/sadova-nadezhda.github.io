@@ -14,6 +14,7 @@ clsBtn.addEventListener('click', function () {
 
 /*menu*/
 const buttons = document.querySelectorAll('.item__caption');
+if (buttons) {
 buttons.forEach(function(button, index) {
   button.addEventListener('click', function(e) {
     e.preventDefault();
@@ -25,6 +26,7 @@ buttons.forEach(function(button, index) {
     });
   });
 });
+}
 
 
 /*slider*/
@@ -170,92 +172,61 @@ document.addEventListener('DOMContentLoaded', function () {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
 
+    let obj = {
+      labels: ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022', '01.09.2022'],
+      datasets: [
+        {
+          label: 'Уголь',
+          data: [11400, 11900, 12400, 12000, 12600, 12800],
+        },
+        {
+          label: 'Цемент',
+          data: [11400, 11500, 11800, 12200, 12200, 12700],
+        },
+        {
+          label: 'ГСМ',
+          data: [11800, 11400, 11800, 12000, 12400, 12200],
+        },
+        {
+          label: 'Картофель',
+          data: [11400, 11700, 11800, 12200, 12400, 12000],
+        },
+        {
+          label: 'Сахар',
+          data: [11400, 11600, 11800, 12000, 12200, 12700],
+        },
+        {
+          label: 'Пшеница',
+          data: [11400, 11600, 11800, 12000, 12200, 12600],
+        }
+      ]
+    };
+    
+    let params = {
+      borderColor: '#40A3FF',
+      borderWidth: 2,
+      pointBackgroundColor: '#1A2738',
+      pointBorderColor: '#40A3FF',
+      pointBorderWidth: 2,
+      backgroundColor: gradient,
+      cubicInterpolationMode: 'monotone',
+      fill: true,
+      hidden: true // true
+    };
+
+    obj.datasets.forEach(item => {
+      Object.keys(params).forEach((key,i) => {
+        item[key] = Object.values(params)[i];
+      });
+      console.log(item)
+    });
+  
+    obj.datasets[0].hidden = false;
+
     var chart = new Chart(ctx,
       {
         type: 'line',
-        data: {
-          labels: ['01.04.2022', '01.05.2022', '01.06.2022', '01.07.2022', '01.08.2022', '01.09.2022'],
-          datasets: [
-            {
-              label: 'Уголь',
-              data: [11400, 11900, 12400, 12000, 12600, 12800],
-              borderColor: '#40A3FF',
-              borderWidth: 2,
-              pointBackgroundColor: '#1A2738',
-              pointBorderColor: '#40A3FF',
-              pointBorderWidth: 2,
-              backgroundColor: gradient,
-              cubicInterpolationMode: 'monotone',
-              fill: true,
-              hidden: false
-            },
-            {
-              label: 'Цемент',
-              data: [11400, 11500, 11800, 12200, 12200, 12700],
-              borderColor: '#40A3FF',
-              borderWidth: 2,
-              pointBackgroundColor: '#1A2738',
-              pointBorderColor: '#40A3FF',
-              pointBorderWidth: 2,
-              backgroundColor: gradient,
-              cubicInterpolationMode: 'monotone',
-              fill: true,
-              hidden: true
-            },
-            {
-              label: 'ГСМ',
-              data: [11800, 11400, 11800, 12000, 12400, 12200],
-              borderColor: '#40A3FF',
-              borderWidth: 2,
-              pointBackgroundColor: '#1A2738',
-              pointBorderColor: '#40A3FF',
-              pointBorderWidth: 2,
-              backgroundColor: gradient,
-              cubicInterpolationMode: 'monotone',
-              fill: true,
-              hidden: true
-            },
-            {
-              label: 'Картофель',
-              data: [11400, 11700, 11800, 12200, 12400, 12000],
-              borderColor: '#40A3FF',
-              borderWidth: 2,
-              pointBackgroundColor: '#1A2738',
-              pointBorderColor: '#40A3FF',
-              pointBorderWidth: 2,
-              backgroundColor: gradient,
-              cubicInterpolationMode: 'monotone',
-              fill: true,
-              hidden: true
-            },
-            {
-              label: 'Сахар',
-              data: [11400, 11600, 11800, 12000, 12200, 12700],
-              borderColor: '#40A3FF',
-              borderWidth: 2,
-              pointBackgroundColor: '#1A2738',
-              pointBorderColor: '#40A3FF',
-              pointBorderWidth: 2,
-              backgroundColor: gradient,
-              cubicInterpolationMode: 'monotone',
-              fill: true,
-              hidden: true
-            },
-            {
-              label: 'Пшеница',
-              data: [11400, 11600, 11800, 12000, 12200, 12600],
-              borderColor: '#40A3FF',
-              borderWidth: 2,
-              pointBackgroundColor: '#1A2738',
-              pointBorderColor: '#40A3FF',
-              pointBorderWidth: 2,
-              backgroundColor: gradient,
-              cubicInterpolationMode: 'monotone',
-              fill: true,
-              hidden: true
-            }
-          ]
-        },
+        data: obj,
         options: {
           responsive: true,
           maintainAspectRatio: true,
