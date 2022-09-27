@@ -999,16 +999,22 @@ tr:first-child {
   color: #00A3FF;
 }
 .arr-green, .arr-red {
-  display: flex;
+  display: none;
 }
 .info-mart__growth .arr-red, .chart_growth .arr-red {
   display: none;
+}
+.info-mart__growth .arr-green, .chart_growth .arr-green {
+  display: flex;
 }
 .info-mart__growth .ton {
   color: #40FFB5;
 }
 .info-mart__decline .arr-green, .chart_decline .arr-green {
   display: none;
+}
+.info-mart__decline .arr-red, .chart_decline .arr-red {
+  display: flex;
 }
 .info-mart__decline .ton {
   color: #FF4040;
