@@ -597,6 +597,8 @@ h4.caption {
   width: 26px;
   height: 26px;
 }
+/*apartment inner*/
+
 
 /*our-complexs section*/
 .our-complexs {
@@ -2906,6 +2908,9 @@ input.file:hover {
   .contact__tabs__contents {
     max-width: 480px;
   }
+  .apartment__inner__text {
+    font-size: 20px;
+  }
 }
 @media (max-width: 1250px) {
   .header__social {
@@ -3302,6 +3307,13 @@ input.file:hover {
   }
   .contact__map, .contact__tabs__contents {
     min-height: 300px;
+  }
+  .apartment__inner__text {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+  .apartment__inner__title {
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 900px) {
