@@ -66,9 +66,16 @@ if(slideFirst.classList.contains('slick-active')) {
 $('.gallery__slider').on('afterChange', function() {
   if (!(slideFirst.classList.contains('slick-active'))) {
     btnPrev.style.display = 'block'
-  } else if(!(slideLast.classList.contains('slick-active'))) {
-    btnNext.style.display = 'block'
+  } else {
+    btnPrev.style.display = 'none'
   }
+
+  if (!(slideLast.classList.contains('slick-active'))) {
+    btnNext.style.display = 'block'
+  } else {
+    btnNext.style.display = 'none'
+  }
+
   $('.gallery__slider').slick('setPosition');
 });
 
@@ -87,6 +94,22 @@ $('#popup').on("click", function(event){
     PopUpHide()
   }
 });
+
+// input mask tel
+$.fn.setCursorPosition = function(pos) {
+  if ($(this).get(0).setSelectionRange) {
+      $(this).get(0).setSelectionRange(pos, pos)
+  } else if ($(this).get(0).createTextRange) {
+      var range = $(this).get(0).createTextRange()
+      range.collapse(true)
+      range.moveEnd('character', pos)
+      range.moveStart('character', pos)
+      range.select()
+  }
+}
+$('input[type="tel"]').click(function() {
+  $(this).setCursorPosition(3);
+}).mask('+7 (999) 999 99 99');
 
 let alertt = document.querySelector(".alert--fixed");
 let alertClose = document.querySelectorAll(".alert--close")
