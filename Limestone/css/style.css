@@ -1196,6 +1196,12 @@ h4 {
   .nav__menu {
     font-size: 16px;
   }
+  .wares__numbers, .advantage, .footer, .consultation {
+    padding: 40px 0;
+  }
+  .company {
+    padding-top: 40px;
+  }
   .wares__stone, .wares__limestone {
     display: grid;
     width: 100%;
@@ -1230,22 +1236,6 @@ h4 {
   .wares__numbers {
     flex-wrap: wrap;
     padding: 0 16px;
-  }
-  .advantage__cards {
-    grid-template-columns: 1fr;
-  }
-  .wares__numbers, .advantage, .footer, .consultation {
-    padding: 40px 0;
-  }
-  .company {
-    padding-top: 40px;
-  }
-  .consultation__form input {
-    margin-right: 0px;
-    width: 80%;
-    margin-bottom: 30px;
-  }
-  .wares__numbers {
     justify-content: center;
   }
   .wares__number {
@@ -1253,6 +1243,21 @@ h4 {
   }
   .wares__number span {
     font-size: 24px;
+  }
+  .advantage__cards {
+    grid-template-columns: 1fr;
+  }
+  .advantage__card {
+    grid-template-columns: 40px 1fr;
+  }
+  .advantage__img {
+    width: 40px;
+    height: 40px;
+  }
+  .consultation__form input {
+    margin-right: 0px;
+    width: 80%;
+    margin-bottom: 30px;
   }
   .slick_next {
     right: 16px;
