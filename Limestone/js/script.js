@@ -26,7 +26,6 @@ if(menu){
   document.addEventListener('click', e => {
     let target = e.target;
     if (!(target.classList.contains('header__nav')) && !(target.classList.contains('header__icon'))) {
-      console.log(target)
         link.classList.remove('active');
         menu.classList.remove('opened');
     }
