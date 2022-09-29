@@ -5,7 +5,7 @@
   font-style: normal;
   font-weight: 300;
   src: local(''),
-       url('../fonts/poppins-v20-latin-300.ttf') format('truetype');
+       url('../fonts/Poppins-Light.ttf') format('truetype');
 }
 /* poppins-regular - latin */
 @font-face {
@@ -13,7 +13,7 @@
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url('../fonts/poppins-v20-latin-regular.ttf') format('truetype');
+       url('../fonts/Poppins-Regular.ttf') format('truetype');
 }
 /* poppins-500 - latin */
 @font-face {
@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 500;
   src: local(''),
-       url('../fonts/poppins-v20-latin-500.ttf') format('truetype');
+       url('../fonts/Poppins-Medium.ttf') format('truetype');
 }
 /* poppins-600 - latin */
 @font-face {
@@ -29,7 +29,7 @@
   font-style: normal;
   font-weight: 600;
   src: local(''),
-       url('../fonts/poppins-v20-latin-600.ttf') format('truetype');
+       url('../fonts/Poppins-SemiBold.ttf') format('truetype');
 }
 /* poppins-700 - latin */
 @font-face {
@@ -37,7 +37,7 @@
   font-style: normal;
   font-weight: 700;
   src: local(''),
-       url('../fonts/poppins-v20-latin-700.ttf') format('truetype');
+       url('../fonts/Poppins-Bold.ttf') format('truetype');
 }
 
 /* montserrat-300 - latin */
@@ -46,7 +46,7 @@
   font-style: normal;
   font-weight: 300;
   src: local(''),
-       url('../fonts/montserrat-v25-latin-300.ttf') format('truetype');
+       url('../fonts/Montserrat-Light.ttf') format('truetype');
 }
 /* montserrat-regular - latin */
 @font-face {
@@ -54,7 +54,7 @@
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url('../fonts/montserrat-v25-latin-regular.ttf') format('truetype');
+       url('../fonts/Montserrat-Regular.ttf') format('truetype');
 }
 /* montserrat-500 - latin */
 @font-face {
@@ -62,7 +62,7 @@
   font-style: normal;
   font-weight: 500;
   src: local(''),
-       url('../fonts/montserrat-v25-latin-500.ttf') format('truetype');
+       url('../fonts/Montserrat-Medium.ttf') format('truetype');
 }
 /* montserrat-600 - latin */
 @font-face {
@@ -70,7 +70,7 @@
   font-style: normal;
   font-weight: 600;
   src: local(''),
-       url('../fonts/montserrat-v25-latin-600.ttf') format('truetype');
+       url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
 }
 /* montserrat-700 - latin */
 @font-face {
@@ -78,7 +78,7 @@
   font-style: normal;
   font-weight: 700;
   src: local(''),
-       url('../fonts/montserrat-v25-latin-700.ttf') format('truetype');
+       url('../fonts/Montserrat-Bold.ttf') format('truetype');
 }
 /*----- End fonts -----*/
 
@@ -692,6 +692,9 @@ h4 {
 .gallery__slide img {
   height: 480px;
 }
+.gallery__slide:hover {
+  cursor: zoom-in;
+}
 /*----- End gallery -----*/
 
 /*----- Start consultation -----*/
@@ -760,6 +763,9 @@ h4 {
 .footer__logo {
   display: block;
   width: 300px;
+  margin-bottom: 30px;
+}
+.footer__logo img {
   object-fit: contain;
 }
 .footer__title {
@@ -1162,6 +1168,9 @@ h4 {
   .footer__column:first-child {
     width: 100%;
     margin-bottom: 40px;
+  }
+  .footer__logo {
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 767px) {
