@@ -72,5 +72,28 @@ $('.gallery__slider').on('afterChange', function() {
   $('.gallery__slider').slick('setPosition');
 });
 
+function submitForm() {
+  $('#form_loader').show()
+}
+function PopUpShow(){
+  $("#popup").show();
+}
+function PopUpHide(){
+  $("#popup").hide();
+}
+$('#popup').on("click", function(event){
+  var target = event.target;
+  if ($(target).hasClass('popup')){
+    PopUpHide()
+  }
+});
 
-
+let alertt = document.querySelector(".alert--fixed");
+let alertClose = document.querySelectorAll(".alert--close")
+for (let item of alertClose) {
+ item.addEventListener('click', function (event) {
+    alertt.classList.remove("alert--active")
+   alertt.classList.remove("alert--warning")
+   alertt.classList.remove("alert--error")
+ })
+}

@@ -37,7 +37,7 @@
         <div class="stone_center">
           <h1 class="wares__title caption">Самые лучшие изделия из камня</h1>
           <div class="wares__txt stone__txt">Оригинальный и благородный лаймстоун камень – это натуральный известняк, который очень часто можно увидеть на утонченных и роскошных виллах Средиземноморья.</div>
-          <a class="wares__btn button" href="">Заказать звонок</a>
+          <a class="wares__btn button" href="javascript:PopUpShow();">Заказать звонок</a>
         </div>
         <div class="stone__img_right"><img src="img/image-3.png"></div>
       </div>
@@ -65,7 +65,7 @@
         <div class="company__container">
           <h2 class="company__title caption">О компании</h2>
           <div class="company__txt">Компания “Limestone.kz” владеет складом в городе Нур-Султан.  Вы можете приехать по  предыдущему звонку и посмотреть имеющийся у нас в наличии материал.  Наличие складких помещений с хорошими подъездными путями, парк своего автотранспорта и погрузочно-разгрузочные механизмы позволяют оперативно решать вопросы снабжения сырьем.</div>
-          <a class="company__btn button" href="">Заказать звонок</a>
+          <a class="company__btn button" href="javascript:PopUpShow();">Заказать звонок</a>
         </div>
       </div>
     </section>
@@ -112,8 +112,8 @@
       <div class="container">
         <div class="consultation__container">
           <h3 class="consultation__title caption">Закажите беслатную консультацию</h3>
-          <form action="" onsubmit="" class="consultation__form">
-            <input type="text" name="name" placeholder="Ваше имя">
+          <form action="" onsubmit="submitForm()" class="consultation__form">
+            <input type="text" name="name" placeholder="Ваше имя" required>
             <input type="tel" name="phone" placeholder="Номер телефона">
             <button class="form__btn button"type="submit">Заказать звонок</button>
           </form>
@@ -140,6 +140,23 @@
       </div>
     </div>
   </footer>
+
+  <div id="popup" class="popup">
+    <div class="popup__container">
+      <button class="popup-close" onclick="PopUpHide()">
+        <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.0869 12.1874L22.1994 2.26097C22.4042 2.00048 22.5112 1.66541 22.4991 1.32272C22.4869 0.98002 22.3565 0.65494 22.1339 0.412437C21.9113 0.169933 21.6128 0.0278679 21.2982 0.0146311C20.9837 0.00139421 20.6761 0.117961 20.4369 0.341036L11.3244 10.2675L2.21193 0.327419C1.9728 0.104344 1.66521 -0.0122214 1.35061 0.0010155C1.03602 0.0142524 0.737594 0.156317 0.514976 0.39882C0.292358 0.641323 0.161942 0.966404 0.14979 1.3091C0.137639 1.6518 0.244647 1.98687 0.44943 2.24735L9.56193 12.1874L0.43693 22.1139C0.306078 22.236 0.199802 22.3862 0.124773 22.5551C0.0497441 22.7241 0.00758084 22.9081 0.000931474 23.0956C-0.00571789 23.2831 0.0232895 23.4701 0.0861327 23.6449C0.148976 23.8196 0.244299 23.9783 0.366117 24.111C0.487936 24.2437 0.63362 24.3475 0.794026 24.416C0.954432 24.4844 1.1261 24.516 1.29825 24.5088C1.4704 24.5015 1.63931 24.4556 1.79439 24.3739C1.94947 24.2922 2.08737 24.1764 2.19943 24.0338L11.3244 14.1074L20.4369 24.0338C20.6761 24.2569 20.9837 24.3735 21.2982 24.3602C21.6128 24.347 21.9113 24.2049 22.1339 23.9624C22.3565 23.7199 22.4869 23.3949 22.4991 23.0522C22.5112 22.7095 22.4042 22.3744 22.1994 22.1139L13.0869 12.1874Z" fill="white"/>
+        </svg>          
+      </button>
+      <h3 class="popup__title caption">Заявка на звонок</h3>
+      <form action="" onsubmit="submitForm()" class="popup__form">
+        <input type="text" name="name" placeholder="Иван Иванов" required>
+        <input type="tel" name="phone" placeholder="Номер телефона">
+        <button class="form__btn button" type="submit">Заказать звонок</button>
+      </form>
+    </div>
+  </div>
+
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/fancybox.umd.js"></script>
   <script src="js/slick.min.js"></script>

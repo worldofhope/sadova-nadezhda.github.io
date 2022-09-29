@@ -737,6 +737,59 @@ h4 {
   background: #CEB597;
 }
 
+/*popup*/
+.popup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 99;
+  display: none;
+}
+.popup__container {
+  padding: 28px 23px;
+  background: rgb(255, 255, 255);
+  max-width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 364px;
+}
+.popup-close {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  border: none;
+  background-color: transparent;
+}
+.popup-close:hover {
+  cursor: pointer;
+}
+.popup__title {
+  text-align: center;
+  text-transform: unset;
+  margin-bottom: 23px;
+}
+.popup__form {
+  display: grid;
+  gap: 23px;
+}
+.popup__form input {
+  padding: 15px;
+  border: 1px solid #E6E6E6;
+}
+.popup__form input:focus {
+  outline: none;
+}
+.form__btn {
+  width: 100%;
+  max-width: unset;
+}
+
 /*----- Start Responsive -----*/
 @media (max-width: 1820px) {
   .advantage__cards {
@@ -1030,6 +1083,9 @@ h4 {
   h2 {
     font-size: 22px;
   }
+  h3 {
+    font-size: 18px;
+  }
   .slick_next {
     right: 16px;
   }
@@ -1038,6 +1094,9 @@ h4 {
   }
   .wares .container {
     padding: 0;
+  }
+  .popup__form input {
+    padding: 10px;
   }
 }
 @media (max-width: 568px) {
@@ -1071,6 +1130,9 @@ h4 {
 
     font-size: 16px;
   }
+  .button {
+    padding: 16px;
+  }
 }
 @media (max-width: 420px) {
   .wares__number {
@@ -1078,5 +1140,11 @@ h4 {
   }
   .wares__number {
     font-size: 12px;
+  }
+  .popup__container {
+    min-width: 300px;
+  }
+  .popup-close {
+    right: 0;
   }
 }
