@@ -721,6 +721,7 @@ h4 {
   margin-right: 108px;
   background-color: transparent;
   border: none;
+  border-radius: none;
   border-bottom: .5px solid #CEB597;
   color: #fff;
   font-weight: 400;
@@ -854,6 +855,7 @@ h4 {
 .popup__form input {
   padding: 15px;
   border: 1px solid #E6E6E6;
+  border-radius: none;
   width: 100%;
 }
 .popup__form input:focus {
@@ -902,6 +904,7 @@ h4 {
   transform: translate(-50%, -50%);
   display: block;
   line-height: 1;
+  z-index: 2;
 }
 
 @keyframes pulse {
