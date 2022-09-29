@@ -425,10 +425,11 @@ select {
   color: #CEB597;
 }
 .header__icon {
-  width: 40px;
+  width: 30px;
   height: 30px;
   position: relative;
   cursor: pointer;
+  display: none;
 }
 .header__icon span {
   display: block;
@@ -448,7 +449,7 @@ select {
   width: 100%;
 } 
 #hamburger span {
-  width: 40px;
+  width: 30px;
   height: 3px;
   position: relative;
   top: 0;
@@ -508,7 +509,7 @@ select {
   transition-delay: .625s;
 }
 .header__icon.active #cross span:nth-child(2) {
-  width: 80%;
+  width: 100%;
   transition-delay: .375s;
 }
 /*----- End Header -----*/

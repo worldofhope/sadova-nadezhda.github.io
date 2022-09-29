@@ -1,22 +1,23 @@
+/*---------- Start menu ------------- */
 let header = document.querySelector('.header')
 document.addEventListener('scroll', function() {
     let scroll = window.scrollY
     if(scroll > 0) {
          header.classList.add('scroll')
-    }else{
+    } else{
         header.classList.remove('scroll')
     }
 });
 
-/*---------- Start burger menu ------------- */
 var link = document.querySelector('.header__icon');
 var menu = document.querySelector('.header__nav');
 link.addEventListener('click', function () {
   link.classList.toggle('active');
   menu.classList.toggle('opened');
 }, false);
-/*---------- End burger menu ------------- */
+/*---------- End menu ------------- */
 
+/*---------- Start slick ------------- */
 $('.gallery__slider').slick({
   infinite: false,
   slidesToShow: 3,
@@ -54,31 +55,27 @@ let btnPrev = document.querySelector('.slick_prev');
 let btnNext = document.querySelector('.slick_next');
 let slideFirst = slide[0];
 let slideLast = slide[slide.length - 1] ;
-
-
 slideFirst.classList.add('slide_first');
 slideLast.classList.add('slide_last');
-
 if(slideFirst.classList.contains('slick-active')) {
   btnPrev.style.display = 'none'
 }
-
 $('.gallery__slider').on('afterChange', function() {
   if (!(slideFirst.classList.contains('slick-active'))) {
     btnPrev.style.display = 'block'
   } else {
     btnPrev.style.display = 'none'
   }
-
   if (!(slideLast.classList.contains('slick-active'))) {
     btnNext.style.display = 'block'
   } else {
     btnNext.style.display = 'none'
   }
-
   $('.gallery__slider').slick('setPosition');
 });
+/*---------- End slick ------------- */
 
+/*---------- Start form ------------- */
 function submitForm() {
   $('#form_loader').show()
 }
@@ -111,6 +108,7 @@ $('input[type="tel"]').click(function() {
   $(this).setCursorPosition(3);
 }).mask('+7 (999) 999 99 99');
 
+//alert
 let alertt = document.querySelector(".alert--fixed");
 let alertClose = document.querySelectorAll(".alert--close")
 for (let item of alertClose) {
@@ -120,3 +118,4 @@ for (let item of alertClose) {
    alertt.classList.remove("alert--error")
  })
 }
+/*---------- End form ------------- */
