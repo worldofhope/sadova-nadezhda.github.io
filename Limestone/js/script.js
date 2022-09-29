@@ -73,22 +73,24 @@ let slideFirst = slide[0];
 let slideLast = slide[slide.length - 1] ;
 slideFirst.classList.add('slide_first');
 slideLast.classList.add('slide_last');
-if(slideFirst.classList.contains('slick-active')) {
-  btnPrev.style.display = 'none'
-}
-$('.gallery__slider').on('afterChange', function() {
-  if (!(slideFirst.classList.contains('slick-active'))) {
-    btnPrev.style.display = 'block'
-  } else {
+if (btnPrev && btnNext) {
+  if(slideFirst.classList.contains('slick-active')) {
     btnPrev.style.display = 'none'
   }
-  if (!(slideLast.classList.contains('slick-active'))) {
-    btnNext.style.display = 'block'
-  } else {
-    btnNext.style.display = 'none'
-  }
-  $('.gallery__slider').slick('setPosition');
-});
+  $('.gallery__slider').on('afterChange', function() {
+    if (!(slideFirst.classList.contains('slick-active'))) {
+      btnPrev.style.display = 'block'
+    } else {
+      btnPrev.style.display = 'none'
+    }
+    if (!(slideLast.classList.contains('slick-active'))) {
+      btnNext.style.display = 'block'
+    } else {
+      btnNext.style.display = 'none'
+    }
+    $('.gallery__slider').slick('setPosition');
+  });
+}
 /*---------- End slick ------------- */
 
 /*---------- Start form ------------- */
