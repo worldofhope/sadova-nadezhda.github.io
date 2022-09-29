@@ -1205,9 +1205,7 @@ h4 {
   .wares__stone, .wares__limestone {
     display: grid;
     width: 100%;
-  }
-  .wares__stone {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
   .stone__img_right {
     height: 350px;
@@ -1237,6 +1235,7 @@ h4 {
     flex-wrap: wrap;
     padding: 0 16px;
     justify-content: center;
+    margin-bottom: 40px;
   }
   .wares__number {
     width: 150px;
