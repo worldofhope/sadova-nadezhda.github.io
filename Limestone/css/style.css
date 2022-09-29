@@ -1271,6 +1271,9 @@ h4 {
   .popup__form input {
     padding: 10px;
   }
+  .footer__logo {
+    width: 200px;
+  }
 }
 @media (max-width: 568px) {
   .header__phone {
