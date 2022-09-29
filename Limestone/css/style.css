@@ -425,11 +425,9 @@ select {
   color: #CEB597;
 }
 .header__icon {
-  display: none;
-  width: 30px;
-  height: 20px;
+  width: 40px;
+  height: 30px;
   position: relative;
-  transition: 0.5s ease-in-out;
   cursor: pointer;
 }
 .header__icon span {
@@ -444,14 +442,74 @@ select {
   transition: 0.25s ease-in-out;
   transform-origin: left center;
 }
-.header__icon span:nth-child(1) {
-  top: 0px;
+#hamburger {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+} 
+#hamburger span {
+  width: 40px;
+  height: 3px;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-bottom: 8px;
 }
-.header__icon span:nth-child(2) {
-  top: 7px;
+#hamburger span:last-child {
+  margin-bottom: 0;
 }
-.header__icon span:nth-child(3) {
-  top: 14px;
+#hamburger span:nth-child(1) {
+  transition-delay: .5s;
+}
+#hamburger span:nth-child(2) {
+  transition-delay: .625s;
+}
+#hamburger span:nth-child(3) {
+  transition-delay: .75s;
+}
+#cross {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: rotate(45deg);
+}
+#cross span:nth-child(1) {
+  height: 0%;
+  width: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition-delay: 0s;
+}
+#cross span:nth-child(2) {
+  width: 0%;
+  height: 3px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  transition-delay: .25s;
+}
+.header__icon.active #hamburger span {
+  width: 0%;
+}
+.header__icon.active #hamburger span:nth-child(1) {
+  transition-delay: 0s;
+}
+.header__icon.active #hamburger span:nth-child(2) {
+  transition-delay: .125s;
+}
+.header__icon.active #hamburger span:nth-child(3) {
+  transition-delay: .25s;
+}
+.header__icon.active #cross span:nth-child(1) {
+  height: 100%;
+  transition-delay: .625s;
+}
+.header__icon.active #cross span:nth-child(2) {
+  width: 80%;
+  transition-delay: .375s;
 }
 /*----- End Header -----*/
 
@@ -861,11 +919,11 @@ h4 {
   .container {
       max-width: 1540px;
   }
-  .advantage__cards {
-    column-gap: 50px;
-  }
   h1 {
     font-size: 50px;
+  }
+  .advantage__cards {
+    column-gap: 50px;
   }
 }
 @media (max-width: 1440px) {
@@ -884,16 +942,6 @@ h4 {
   h4 {
     font-size: 18px;
   }
-  .company__container {
-    padding: 80px;
-  }
-  .advantage__cards {
-    column-gap: 30px;
-    row-gap: 30px;
-  }
-  .advantage__card {
-    width: unset;
-  }
   .stone_center {
     padding: 0 80px;
   }
@@ -903,28 +951,28 @@ h4 {
   .wares__limestone {
     max-width: 63%;
   }
+  .wares__number span {
+    font-size: 44px;
+  }
   .limestone__img {
     margin-right: 60px;
   }
-  .footer__container {
-    justify-content: space-between;
-  }
-  .footer__column:first-child {
-    flex-grow: unset;
+  .company__container {
+    padding: 80px;
   }
   .consultation__form input {
     width: 250px;
     margin-right: 80px;
   }
-  .footer__column {
-    width: unset;
-    margin-right: 80px;
-  }
   .advantage__title {
     margin-bottom: 80px;
   }
-  .wares__number span {
-    font-size: 44px;
+  .advantage__cards {
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+  .advantage__card {
+    width: unset;
   }
   .slick_prev {
     left: 40px;
@@ -932,13 +980,38 @@ h4 {
   .slick_next {
     right: 40px;
   }
+  .footer__container {
+    justify-content: space-between;
+  }
+  .footer__column {
+    width: unset;
+    margin-right: 80px;
+  }
+  .footer__column:first-child {
+    flex-grow: unset;
+  }
 }
 @media (max-width: 1260px) {
   .container {
       max-width: 1100px;
   }
-  .advantage__cards {
-    grid-template-columns: repeat(2,1fr);
+  .header__container {
+    min-height: 100px;
+    padding: 30px 0px;
+    font-size: 18px;
+  }
+  .nav__item {
+    margin-right: 30px;
+  }
+  .wares__stone {
+    min-height: 800px;
+    padding-top: 100px;
+  }
+  .wares__numbers, .advantage {
+    padding: 100px 0;
+  }
+  .wares__limestone {
+    max-width: 90%;
   }
   .consultation__container {
     display: block;
@@ -953,29 +1026,14 @@ h4 {
   .company__container {
     padding: 60px;
   }
-  .header__container {
-    min-height: 100px;
-    padding: 30px 0px;
-    font-size: 18px;
-  }
-  .wares__stone {
-    min-height: 800px;
-    padding-top: 100px;
-  }
-  .nav__item {
-    margin-right: 30px;
-  }
-  .wares__numbers, .advantage {
-    padding: 100px 0;
-  }
   .advantage__title {
     margin-bottom: 60px;
   }
   .advantage__caption {
     font-size: 20px;
   }
-  .wares__limestone {
-    max-width: 90%;
+  .advantage__cards {
+    grid-template-columns: repeat(2,1fr);
   }
 }
 @media (max-width: 1100px) {
@@ -1000,6 +1058,38 @@ h4 {
   .container {
       width: 100%;
       max-width: unset;
+  }
+  .header__nav {
+    position: absolute;
+    right: -100vw;
+    top: 100px;
+    min-width: 40%;
+    padding: 40px;
+    text-align: end;
+    background-color: #fff;
+    border-top: 1px solid #CEB597;
+    transition: all 1s ease;
+  }
+  .header__nav.opened {
+    right: 0;
+  }
+  .nav__menu {
+    display: block;
+  }
+  .nav__item {
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+  .nav__item:last-child {
+    margin-bottom: 0px;
+  }
+  .header__icon {
+    display: block;
+  }
+  .header__phone {
+    flex-grow: 1;
+    text-align: end;
+    margin-right: 30px;
   }
   .wares {
     background: unset;
@@ -1045,40 +1135,8 @@ h4 {
   .advantage__caption {
     font-size: 18px;
   }
-  .footer__title {
-    margin-bottom: 20px;
-  }
   .gallery__slide img {
     height: 380px;
-  }
-  .header__nav {
-    position: absolute;
-    right: -100vw;
-    top: 100px;
-    min-width: 40%;
-    padding: 40px;
-    text-align: end;
-    background-color: #fff;
-    border-top: 1px solid #CEB597;
-    transition: all 1s ease;
-  }
-  .header__nav.opened {
-    right: 0;
-  }
-  .nav__menu {
-    display: block;
-  }
-  .nav__item {
-    margin-right: 0px;
-    margin-bottom: 30px;
-  }
-  .header__icon {
-    display: block;
-  }
-  .header__phone {
-    flex-grow: 1;
-    text-align: end;
-    margin-right: 30px;
   }
   .consultation__form input {
     margin-right: 60px;
@@ -1088,20 +1146,38 @@ h4 {
   .consultation__form {
     flex-wrap: wrap;
   }
-  .footer__column:first-child {
-    width: 100%;
-    margin-bottom: 40px;
-  }
   .consultation__form input {
     font-size: 18px;
   }
   .consultation__form input::placeholder {
-
     font-size: 18px;
+  }
+  .footer__title {
+    margin-bottom: 20px;
+  }
+  .footer__column:first-child {
+    width: 100%;
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 767px) {
   body {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  .header__logo {
+    width: 135px;
+    height: 25px;
+  }
+  .nav__menu {
     font-size: 16px;
   }
   .wares__stone, .wares__limestone {
@@ -1162,15 +1238,6 @@ h4 {
   .wares__number span {
     font-size: 24px;
   }
-  h1 {
-    font-size: 28px;
-  }
-  h2 {
-    font-size: 22px;
-  }
-  h3 {
-    font-size: 18px;
-  }
   .slick_next {
     right: 16px;
   }
@@ -1185,21 +1252,17 @@ h4 {
   }
 }
 @media (max-width: 568px) {
-  .footer__container {
-    display: grid;
-    gap: 30px;
-  }
-  .footer__column:first-child, .footer__column {
-    margin: 0;
-  }
-  .wares__number {
-    font-size: 14px;
-  }
   .header__phone {
     display: none;
   }
   .sticky__phone {
     display: block;
+  }
+  .button {
+    padding: 16px;
+  }
+  .wares__number {
+    font-size: 14px;
   }
   .advantage__caption {
     font-size: 16px;
@@ -1215,14 +1278,17 @@ h4 {
     font-size: 16px;
   }
   .consultation__form input::placeholder {
-
     font-size: 16px;
-  }
-  .button {
-    padding: 16px;
   }
   .consultation__form input {
     width: 100%;
+  }
+  .footer__container {
+    display: grid;
+    gap: 30px;
+  }
+  .footer__column:first-child, .footer__column {
+    margin: 0;
   }
 }
 @media (max-width: 420px) {
