@@ -9,12 +9,29 @@ document.addEventListener('scroll', function() {
     }
 });
 
-var link = document.querySelector('.header__icon');
-var menu = document.querySelector('.header__nav');
-link.addEventListener('click', function () {
-  link.classList.toggle('active');
-  menu.classList.toggle('opened');
-}, false);
+let body = document.querySelector('body');
+let link = document.querySelector('.header__icon');
+let menu = document.querySelector('.header__nav');
+if(menu){
+  link.addEventListener('click', function () {
+    link.classList.toggle('active');
+    menu.classList.toggle('opened');
+  }, false);
+  window.addEventListener('scroll', () => {
+    if (menu.classList.contains('opened')) {
+      link.classList.remove('active');
+        menu.classList.remove('opened');
+    }
+  })
+  document.addEventListener('click', e => {
+    let target = e.target;
+    if (!(target.classList.contains('header__nav')) && !(target.classList.contains('header__icon'))) {
+      console.log(target)
+        link.classList.remove('active');
+        menu.classList.remove('opened');
+    }
+  })
+}
 /*---------- End menu ------------- */
 
 /*---------- Start slick ------------- */
