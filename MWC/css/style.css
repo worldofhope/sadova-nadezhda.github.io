@@ -1492,6 +1492,10 @@ h4.caption {
   height: max-content;
   width: 716px;
 }
+.hol__slider_img {
+  width: 100%;
+  max-width: 1008px;
+}
 .hol__sliders::before {
   content: ' ';
   position: absolute;
@@ -1504,7 +1508,6 @@ h4.caption {
  }
 .hol__img {
   height: 585px;
-  width: 100%;
 }
 .hol__img img {
   width: 100%;
