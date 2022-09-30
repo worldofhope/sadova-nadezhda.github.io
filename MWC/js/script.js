@@ -121,6 +121,27 @@ $('.posts-column-2').slick({
   ]
 });
 
+$('.hol__slider_txt').slick({
+  infinite: false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  nextArrow: '.slide__next',
+  prevArrow: '.slide__prev', 
+  dots: false,
+  fade: true,
+  asNavFor: '.hol__slider_img'
+});
+$('.hol__slider_img').slick({
+  infinite: false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: false,
+  arrows: false,
+  asNavFor: '.hol__slider_txt'
+});
+
+
 let flag = true;
 $(window).on('resize', function(){
   if ($(this).width() < 569 && flag) {
