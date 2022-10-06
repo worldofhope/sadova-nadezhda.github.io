@@ -84,11 +84,13 @@ body {
   color: #333333;
   font-size: 18px;
   font-weight: 400;
-  font-family: 'Gilroy';
+  /* font-family: 'Gilroy'; */
+  font-family: sans-serif;
   margin: 0px;
   padding: 0px;
   display: flex;
   flex-direction: column;
+  background: #F7FAFD;
 }
 body.kz {
   font-family: sans-serif;
@@ -120,6 +122,10 @@ img {
 
 article>*+* {
   margin-top: 1em;
+}
+
+ul, ol {
+  list-style-position: inside;
 }
 
 input,

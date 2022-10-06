@@ -130,6 +130,7 @@ $('.hol__slider_txt').slick({
   prevArrow: '.slide__prev', 
   dots: false,
   fade: true,
+  variableWidth: true,
   asNavFor: '.hol__slider_img'
 });
 $('.hol__slider_img').slick({
@@ -138,6 +139,7 @@ $('.hol__slider_img').slick({
   slidesToScroll: 1,
   dots: false,
   arrows: false,
+  variableWidth: true,
   asNavFor: '.hol__slider_txt'
 });
 
