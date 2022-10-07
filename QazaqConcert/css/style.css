@@ -370,8 +370,10 @@ h1 {
 }
 .astana__list li.active {
   background-color: #8A643B;
+  pointer-events: none;
 }
 .astana__list li:hover {
+  background-color: rgba(138, 100, 59, 0.8);
   cursor: pointer;
 }
 .astana__list li.active:hover {
