@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Артисты</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../../../css/fancybox.css">
     <link rel="stylesheet" href="../../../css/slick.css">
     <link rel="stylesheet" href="../../../css/global.css?v=1">
@@ -59,8 +60,8 @@
         <div class="artist__container">
           <h1 class="artist__title caption">Айгүл Елшібаева</h1>
           <div class="artist__column">
-            <div class="artist__sliders">
-              <div class="artist__gallery slider-for">
+            <!-- <div class="artist__sliders">
+              <div class="artist__gallery slider-for swiper ">
                 <div class="gallery__item">
                     <img class="gallery__img" src="../img/artists-1.png">
                 </div>
@@ -76,8 +77,11 @@
                 <div class="gallery__item">
                     <img class="gallery__img" src="https://img2.akspic.ru/previews/5/8/2/8/6/168285/168285-astronavt-risovanie-kosmos-kosmicheskoe_prostranstvo-multfilm-500x.jpg">
                 </div>
+                <div class="gallery__item">
+                  <img class="gallery__img" src="https://img2.akspic.ru/previews/5/8/2/8/6/168285/168285-astronavt-risovanie-kosmos-kosmicheskoe_prostranstvo-multfilm-500x.jpg">
+                </div>
               </div>
-              <div class="artist__gallery_sm slider-nav">
+              <div class="artist__gallery_sm slider-nav swiper">
                 <div class="gallery__item_sm">
                     <img class="gallery__img_sm" src="../img/artists-1.png">
                 </div>
@@ -93,7 +97,52 @@
                 <div class="gallery__item_sm">
                     <img class="gallery__img_sm" src="https://img2.akspic.ru/previews/5/8/2/8/6/168285/168285-astronavt-risovanie-kosmos-kosmicheskoe_prostranstvo-multfilm-500x.jpg">
                 </div>
+                <div class="gallery__item_sm">
+                  <img class="gallery__img_sm" src="https://img2.akspic.ru/previews/5/8/2/8/6/168285/168285-astronavt-risovanie-kosmos-kosmicheskoe_prostranstvo-multfilm-500x.jpg">
+                </div>
               </div>
+            </div> -->
+            <div class="artist__sliders">
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 artist__gallery">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide gallery__item">
+                  <img class="gallery__img" src="../img/artists-1.png">
+                </div>
+                <div class="swiper-slide gallery__item">
+                  <img class="gallery__img" src="../img/artists-1.png">
+                </div>
+                <div class="swiper-slide gallery__item">
+                  <img class="gallery__img" src="../img/artists-1.png">
+                </div>
+                <div class="swiper-slide gallery__item">
+                  <img class="gallery__img" src="../img/artists-1.png">
+                </div>
+                <div class="swiper-slide gallery__item">
+                  <img class="gallery__img" src="../img/artists-1.png">
+                </div>
+              </div>
+              <div class="swiper-button-next"><svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.666504 17.1429L7.95817 10L0.666504 2.85714L2.12484 0L12.3332 10L2.12484 20L0.666504 17.1429Z" fill="#111111"/></svg></div>
+              <div class="swiper-button-prev"><svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6665 17.1429L4.37484 10L11.6665 2.85714L10.2082 0L-0.000163078 10L10.2082 20L11.6665 17.1429Z" fill="#111111"/></svg></div>
+            </div>
+            <div thumbsSlider="" class="swiper mySwiper artist__gallery_sm">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide gallery__item_sm">
+                  <img class="gallery__img" src="../img/artists-1.png">
+                </div>
+                <div class="swiper-slide gallery__item_sm">
+                  <img class="gallery__img" src="../img/artists-1.png">
+                </div>
+                <div class="swiper-slide gallery__item_sm">
+                  <img class="gallery__img" src="../img/artists-1.png">
+                </div>
+                <div class="swiper-slide gallery__item_sm">
+                  <img class="gallery__img" src="../img/artists-1.png">
+                </div>
+                <div class="swiper-slide gallery__item_sm">
+                  <img class="gallery__img" src="../img/artists-1.png">
+                </div>
+              </div>
+            </div>
             </div>
             <h2 class="music__title caption">Музыка</h2>
             <div class="artist__audio_box">
@@ -161,10 +210,12 @@
       </div>
     </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script src="../../../js/jquery-3.6.0.min.js "></script>
 <script src="../../../js/fancybox.umd.js "></script>
 <script src="../../../js/slick.min.js "></script>
 <script src="../../../js/script.js?v=1 "></script>
+
 </body>
 
 </html>

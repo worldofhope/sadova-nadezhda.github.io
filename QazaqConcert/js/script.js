@@ -40,23 +40,44 @@ $(function() {
 
   /*slick slider gallery*/
   
-  $('.slider-for').slick({
-    infinity: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.slider-nav'
-    });
-    $('.slider-nav').slick({
-    infinity: false,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    asNavFor: '.slider-for',
-    dots: false,
-    focusOnSelect: true,
-    arrows: false
-    });
+  // $('.slider-for').slick({
+  //   infinite: true,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   arrows: true,
+  //   nextArrow: '<button type="button" class="slick_arrow slick_next"></button>',
+  //   prevArrow: '<button type="button" class="slick_arrow slick_prev"></button>',
+  //   fade: true,
+  //   asNavFor: '.slider-nav'
+  //   });
+  //   $('.slider-nav').slick({
+  //   infinite: true,
+  //   slidesToShow: 6,
+  //   slidesToScroll: 1,
+  //   asNavFor: '.slider-for',
+  //   dots: false,
+  //   arrows: false,
+  //   centerMode: true,
+  //   focusOnSelect: true
+  //   });
+
+  /*swiper*/
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 10,
+    slidesPerView: 6,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+  var swiper2 = new Swiper(".mySwiper2", {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper,
+    },
+  });
 
 
 /*Fancybox*/
