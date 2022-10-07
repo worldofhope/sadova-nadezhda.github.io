@@ -249,6 +249,7 @@ h1 {
   font-size: 26px;
   line-height: 180%;
 }
+
 /*artist*/
 .artist {
   position: relative;
@@ -305,19 +306,42 @@ h1 {
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
   border-radius: 25px;
 }
-.artist__description p, .artist__description ol, .artist__description ul {
+.artist__description p, .artist__description ol, .artist__description ul, 
+.director__description p, .director__description ol, .director__description ul {
   margin-bottom: 20px;
   font-size: 20px;
   font-weight: 500;
   line-height: 180%;
 }
-.artist__description ul {
-  list-style: none;
-}
-.artist__description h6 {
+.artist__description h6, .director__description h6 {
   font-weight: 600;
   font-size: 20px;
   line-height: 180%;
+}
+.artist__audio_box {
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 25px;
+}
+.artist__audio {
+  max-height: 400px;
+  padding-right: 20px;
+  overflow: auto;
+}
+.artist__audio .audio__content {
+  border: none;
+  padding: 0px;
+  margin-bottom: 35px;
+}
+.artist__audio .audio__content:last-child {
+  margin-bottom: 0px;
+}
+.artist__audio audio {
+  width: 100%;
+}
+.artist__audio audio::-webkit-media-controls-panel, .artist__audio .audio__content {
+  background-color: #fff;
 }
 
 /*astana*/
@@ -331,7 +355,7 @@ h1 {
   position: relative;
   padding-top: 200px;
 }
-.astana-artists, .audio {
+.astana-artists, .audio, .video, .photo, .director, .presentation {
   padding: 80px 0;
   height: auto;
 }
@@ -368,15 +392,55 @@ h1 {
   font-size: 20px;
   line-height: 180%;
 }
-.audio__container {
+.audio__container, .video__container, .photo__container, .presentation__container {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 20px;
 }
-audio {
-  width: 100%;
+.director__container {
+  display: grid;
+  grid-template-columns: 527px 1fr;
+  gap: 70px;
 }
-audio::-webkit-media-controls-panel {
+.director__img {
+  height: 723px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.audio__content {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f1f3f4;
+  border-radius: 25px;
+  border: 1px solid #7A7A7A;
+}
+.video__content, .photo__content, .presentation__content {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 352px;
+}
+.video__content svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+.audio__name {
+  width: 100%;
+  max-width: max-content;
+  margin-right: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  /* color: #7A7A7A; */
+}
+.audio audio {
+  width: 100%;
+  height: 100%;
+}
+.audio audio::-webkit-media-controls-panel {
   background-color: transparent;
 }
 /*history*/

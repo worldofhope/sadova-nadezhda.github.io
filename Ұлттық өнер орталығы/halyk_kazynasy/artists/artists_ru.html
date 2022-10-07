@@ -13,38 +13,45 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header__container">
-              <ul class="header__lang">
+  <header class="header">
+    <div class="container">
+        <div class="header__container">
+            <ul class="header__lang">
                 <li><a href="artists_kz.html">Қазақ</a></li>
                 <li  class="active"><a href="artists_ru.html">Русский</a></li>
                 <li><a href="artists_en.html">English</a></li>
             </ul>
-                <a href="../../index_ru.html" class="header__logo"><img src="../../img/logo.png" alt="logo"></a>
-                <div class="nav_icon">
-                    <span>Меню</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_166_385)">
-                            <path d="M3 19H21V17H3V19ZM3 14H21V12H3V14ZM3 7V9H21V7H3Z" fill="#4F4F4F" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_166_385">
-                                <rect width="24" height="24" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </div>
-                <nav class="header__nav">
-                    <ul class="header__list">
-                        <li class="header__item"><a href="">Халық қазынасы</a></li>
-                        <li class="header__item"><a href="">Астана сазы</a></li>
-                        <li class="header__item"><a href="">Тұран</a></li>
-                    </ul>
-                </nav>
+            <a href="../../index_ru.html" class="header__logo"><img src="../../img/logo.png" alt="logo"></a>
+            <div class="nav_icon">
+                <span>Меню</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_166_385)">
+                        <path d="M3 19H21V17H3V19ZM3 14H21V12H3V14ZM3 7V9H21V7H3Z" fill="#4F4F4F" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_166_385">
+                            <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
             </div>
+            <nav class="header__nav">
+                <ul class="header__list">
+                  <li class="header__item header__dropdown"><a class="dropdown__link">Халық қазынасы</a>
+                    <ul class="dropdown-list">
+                      <li class="dropdown-item"><a href="../../halyk_kazynasy/artists/artists_ru.html">Артисты</a></li>
+                      <li class="dropdown-item"><a href="../../halyk_kazynasy/history_ru.html">История</a></li>
+                    </ul>
+                  </li>
+                  <li class="header__item header__dropdown"><a class="dropdown__link" href="../../astana_sazy/astana_ru.html">Астана сазы</a>
+                  </li>
+                  <li class="header__item header__dropdown"><a class="dropdown__link" href="../../turan/turan_ru.html">Тұран</a>
+                  </li>
+                </ul>
+            </nav>
         </div>
-    </header>
+    </div>
+</header>
 
   <main>
     <section class="artists">

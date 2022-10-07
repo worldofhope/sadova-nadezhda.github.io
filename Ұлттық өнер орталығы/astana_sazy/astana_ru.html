@@ -13,38 +13,45 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header__container">
-              <ul class="header__lang">
+  <header class="header">
+    <div class="container">
+        <div class="header__container">
+            <ul class="header__lang">
                 <li><a href="astana_kz.html">Қазақ</a></li>
-                <li class="active"><a href="astana_ru.html">Русский</a></li>
+                <li  class="active"><a href="astana_ru.html">Русский</a></li>
                 <li><a href="astana_en.html">English</a></li>
-              </ul>
-                <a href="" class="header__logo"><img src="../img/logo.png" alt="logo"></a>
-                <div class="nav_icon">
-                    <span>Меню</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_166_385)">
-                            <path d="M3 19H21V17H3V19ZM3 14H21V12H3V14ZM3 7V9H21V7H3Z" fill="#4F4F4F" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_166_385">
-                                <rect width="24" height="24" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </div>
-                <nav class="header__nav">
-                    <ul class="header__list">
-                        <li class="header__item"><a href="">Халық қазынасы</a></li>
-                        <li class="header__item"><a href="">Астана сазы</a></li>
-                        <li class="header__item"><a href="">Тұран</a></li>
-                    </ul>
-                </nav>
+            </ul>
+            <a href="../index_ru.html" class="header__logo"><img src="../img/logo.png" alt="logo"></a>
+            <div class="nav_icon">
+                <span>Меню</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_166_385)">
+                        <path d="M3 19H21V17H3V19ZM3 14H21V12H3V14ZM3 7V9H21V7H3Z" fill="#4F4F4F" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_166_385">
+                            <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
             </div>
+            <nav class="header__nav">
+                <ul class="header__list">
+                  <li class="header__item header__dropdown"><a class="dropdown__link">Халық қазынасы</a>
+                    <ul class="dropdown-list">
+                      <li class="dropdown-item"><a href="../halyk_kazynasy/artists/artists_ru.html">Артисты</a></li>
+                      <li class="dropdown-item"><a href="../halyk_kazynasy/history_ru.html">История</a></li>
+                    </ul>
+                  </li>
+                  <li class="header__item header__dropdown"><a class="dropdown__link" href="../astana_sazy/astana_ru.html">Астана сазы</a>
+                  </li>
+                  <li class="header__item header__dropdown"><a class="dropdown__link" href="../turan/turan_ru.html">Тұран</a>
+                  </li>
+                </ul>
+            </nav>
         </div>
-    </header>
+    </div>
+</header>
 
   <main>
     <section class="astana">
@@ -95,10 +102,22 @@
     <section class="section audio">
       <div class="container">
         <div class="audio__container">
-          <audio controls="true" controlsList="nodownload" src="audio/ademi-au.mp3"></audio>
-          <audio controls="true" controlsList="nodownload" src="audio/ademi-au.mp3"></audio>
-          <audio controls="true" controlsList="nodownload" src="audio/ademi-au.mp3"></audio>
-          <audio controls="true" controlsList="nodownload" src="audio/ademi-au.mp3"></audio>
+          <div class="audio__content">
+            <div class="audio__name">Айгүл Елшібаева </div>
+            <audio controls="true" controlsList="nodownload" src="audio/ademi-au.mp3"></audio>
+          </div>
+          <div class="audio__content">
+            <div class="audio__name">Айгүл Елшібаева </div>
+            <audio controls="true" controlsList="nodownload" src="audio/ademi-au.mp3"></audio>
+          </div>
+          <div class="audio__content">
+            <div class="audio__name">Айгүл Елшібаева </div>
+            <audio controls="true" controlsList="nodownload" src="audio/ademi-au.mp3"></audio>
+          </div>
+          <div class="audio__content">
+            <div class="audio__name">Айгүл Елшібаева </div>
+            <audio controls="true" controlsList="nodownload" src="audio/ademi-au.mp3"></audio>
+          </div>
         </div>
       </div>
     </section>
@@ -106,6 +125,18 @@
     <section class="section video">
       <div class="container">
         <div class="video__container">
+          <div class="video__content">
+            <a href="video/test.mp4" data-fancybox=""><img src="img/video-1.png"></a>
+            <svg width="47" height="50" viewBox="0 0 47 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0V50L46.9283 25L0 0Z" fill="white"/>
+            </svg>              
+          </div>
+          <div class="video__content">
+            <a href="video/test.mp4" data-fancybox=""><img src="img/video-1.png"></a>
+            <svg width="47" height="50" viewBox="0 0 47 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0V50L46.9283 25L0 0Z" fill="white"/>
+            </svg>              
+          </div>
         </div>
       </div>
     </section>
@@ -114,7 +145,7 @@
       <div class="container">
         <div class="info__container">
           <div class="info__description">
-            <p>Казахский государственный фольклорный ансамбль «Астана сазы» –   это   творческий  коллектив  Қазақконцерт,   развивающий  казахскуюнародную музыку.  
+            <p><strong>Казахский государственный фольклорный ансамбль «Астана сазы»</strong> –   это   творческий  коллектив  Қазақконцерт,   развивающий  казахскуюнародную музыку.  
               Музыканты  фольклорного   ансамбля   знакомят   слушателей   звучанием народных   музыкальных   инструментов,   как:   домбыра,   кобыз,   шертер,
               шанкобыз, саз сырнай, сыбызгы, асатаяк, дауылпаз, туяктас, конырау и др.  Художественный   руководитель   "Астана   сазы"   –   дипломант международного фестиваля «Шабыт», лауреат республиканских конкурсов, обладатель   гран-при   конкурса   традиционных   певцов,   посвященного   200- летию М. Өтемісұлы, лауреат международного фестиваля «Ғасырлар сазы», обладатель медали «Алаш Ұстазы», композитор Бауыржан  Актаев.</p>
               <p>Репертуар:</p> 
@@ -148,6 +179,12 @@
     <section class="section photo">
       <div class="container">
         <div class="photo__container">
+          <div class="photo__content">
+            <a href="img/video-1.png" data-fancybox="photo-item"><img src="img/video-1.png"></a>
+          </div>
+          <div class="photo__content">
+            <a href="https://klike.net/uploads/posts/2019-05/1556708032_1.jpg" data-fancybox="photo-item"><img src="https://klike.net/uploads/posts/2019-05/1556708032_1.jpg"></a>
+          </div>
         </div>
       </div>
     </section>
@@ -155,6 +192,39 @@
     <section class="section director">
       <div class="container">
         <div class="director__container">
+          <div class="director__img"><img src="img/director.png"></div>
+          <div class="director__description">
+            <p><strong>Бауыржан Ақтаев</strong> – композитор, музыкант-мультиинструменталист, художественный руководитель Казахского государственного фольклорного ансамбля "Астана сазы". Бауыржан Актаев создал аранжировки для 60 кюев и песен для творческих коллективов, из них 10 кюев он написал сам.
+              Является автором музыки к фильмам «Бір кем дүние» (2013 г.), а также к документальным фильмам «Ұлы дала дүбірі» (2013 г.), «Мәлім де беймәлім Қазақстан» (2014 г.), к спектаклю «Мәңгүрт» по трагедии Ш.Айтматова «Боранды бекет» (2015 г.).</p> 
+              <h6>Образование:</h6>
+              <ul>
+                <li>2008 г. – музыкальная школа по специальности "скрипка", Музыкальный колледж им. Д. Нурпеисовой (г. Атырау);</li>
+                <li>2012 г. – Казахская Национальная консерватория им. Курмангазы по специальности «Традиционное музыкальное искусство» (г. Алматы).</li>
+              </ul>
+              <h6>Творческие достижения:</h6>
+              <ul>
+                <li>2002 – Гран-при на Республиканском конкурсе традиционного
+                исполнения к 200-летию М.Утемисова;</li>
+                <li>2005 – Дипломант Международного фестиваля «Шабыт» по
+                номинации «Домбыра»;</li>
+                <li>2007 – І место на Республиканском конкурсе домбристов;</li>
+                <li>2011 – Детский фольклорный ансамбль «Бабалар сазы» под
+                его руководством стали лауреатами Международного
+                фестиваля «Ғасырлар Сазы»;</li>
+                <li>2013 – Фольклорный ансамбль «Сүйінбай сазы» стали
+                обладатели гран-при среди конкурсов ансамблей;</li>
+                <li>2013 – Ансамбль «Ақ ерке Жайық» получили гран-при на
+                международном конкурсе в России;</li>
+                <li>2013 – Лауреат Международного фестиваля «Ғасырлар Сазы»;</li>
+                <li>2014 – І место на Республиканском конкурсе ансамблей среди
+                студентов музыкального колледжа им. Д.Нурпеисовой;</li>
+                <li>2015 – Лауреат Международного фестиваля «Ғасырлар Сазы»;</li>
+                <li>2015 – Ансамбль «Ақ ерке Жайық» лауреаты Международного
+                фестиваля «Ғасырлар Сазы»;</li>
+                <li>Фольклорный ансамбль «Еспай» (Кызылкогинский район) под
+                его руководством стали лауреатами областных конкурсов.</li>
+              </ul>
+          </div>
         </div>
       </div>
     </section>

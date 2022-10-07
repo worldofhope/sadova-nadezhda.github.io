@@ -98,9 +98,12 @@ body.kz {
 ::-webkit-scrollbar {
   width: 4px;
   background-color: #DEDEDE;
+  border-radius: 25px;
+  margin-left: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #4F4F4F;
+  background-color: #429D9F;
+  border-radius: 25px;
 }
 
 ul[class],
